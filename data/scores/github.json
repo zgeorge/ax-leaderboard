@@ -1,0 +1,2180 @@
+{
+  "schemaVersion": 1,
+  "server": {
+    "name": "github-mcp-server",
+    "registry": null,
+    "manifestSource": "file",
+    "executionMode": "mock",
+    "scoredAt": "2026-06-09T06:38:31.772Z",
+    "generationModel": "claude-sonnet-4-6"
+  },
+  "tools": {
+    "create_or_update_file": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "search_repositories": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "create_repository": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get_file_contents": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "push_files": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "create_issue": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "create_pull_request": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "fork_repository": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "create_branch": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "list_commits": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "list_issues": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "update_issue": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "add_issue_comment": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "search_code": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "search_issues": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "search_users": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get_issue": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get_pull_request": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "list_pull_requests": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "create_pull_request_review": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "merge_pull_request": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get_pull_request_files": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get_pull_request_status": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "update_pull_request_branch": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get_pull_request_comments": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get_pull_request_reviews": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    }
+  },
+  "models": {
+    "claude-sonnet-4-6": {
+      "axScore": 90,
+      "subScores": {
+        "intentInterpretation": 1,
+        "toolCallConstruction": 1,
+        "resultSynthesis": 0.5000000000000001,
+        "errorRecovery": 0.9550000000000001,
+        "tokensPerTask": 1197.15,
+        "latencyMs": 8058.25
+      },
+      "scoreWeights": {
+        "intentInterpretation": 0.35,
+        "toolCallConstruction": 0.35,
+        "resultSynthesis": 0.2,
+        "errorRecovery": 0.1
+      },
+      "lowProgrammaticSignal": false,
+      "tasks": [
+        {
+          "intent": "Can you find GitHub repositories related to machine learning in Python?",
+          "expectedTool": "search_repositories",
+          "calledTool": "search_repositories",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1663,
+          "latencyMs": 9198
+        },
+        {
+          "intent": "Can you find GitHub repositories related to machine learning in Python?",
+          "expectedTool": "search_repositories",
+          "calledTool": "search_repositories",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 1250,
+          "latencyMs": 17196
+        },
+        {
+          "intent": "Can you find GitHub repositories related to machine learning in Python?",
+          "expectedTool": "search_repositories",
+          "calledTool": "search_repositories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 475,
+          "latencyMs": 9425
+        },
+        {
+          "intent": "Can you find GitHub repositories related to machine learning in Python?",
+          "expectedTool": "search_repositories",
+          "calledTool": "search_repositories",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 412,
+          "latencyMs": 9007
+        },
+        {
+          "intent": "Create a new public repository called 'my-portfolio' with a README file and description 'My personal portfolio website'",
+          "expectedTool": "create_repository",
+          "calledTool": "create_repository",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1005,
+          "latencyMs": 7177
+        },
+        {
+          "intent": "Create a new public repository called 'my-portfolio' with a README file and description 'My personal portfolio website'",
+          "expectedTool": "create_repository",
+          "calledTool": "create_repository",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 708,
+          "latencyMs": 5798
+        },
+        {
+          "intent": "Create a new public repository called 'my-portfolio' with a README file and description 'My personal portfolio website'",
+          "expectedTool": "create_repository",
+          "calledTool": "create_repository",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 263,
+          "latencyMs": 6044
+        },
+        {
+          "intent": "Create a new public repository called 'my-portfolio' with a README file and description 'My personal portfolio website'",
+          "expectedTool": "create_repository",
+          "calledTool": "create_repository",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 257,
+          "latencyMs": 7194
+        },
+        {
+          "intent": "I need to see the contents of the README.md file in the main branch of facebook/react",
+          "expectedTool": "get_file_contents",
+          "calledTool": "get_file_contents",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1117,
+          "latencyMs": 9628
+        },
+        {
+          "intent": "I need to see the contents of the README.md file in the main branch of facebook/react",
+          "expectedTool": "get_file_contents",
+          "calledTool": "get_file_contents",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 1118,
+          "latencyMs": 14537
+        },
+        {
+          "intent": "I need to see the contents of the README.md file in the main branch of facebook/react",
+          "expectedTool": "get_file_contents",
+          "calledTool": "get_file_contents",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 327,
+          "latencyMs": 7784
+        },
+        {
+          "intent": "I need to see the contents of the README.md file in the main branch of facebook/react",
+          "expectedTool": "get_file_contents",
+          "calledTool": "get_file_contents",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 632,
+          "latencyMs": 10856
+        },
+        {
+          "intent": "Fork the tensorflow/tensorflow repository to my account",
+          "expectedTool": "fork_repository",
+          "calledTool": "fork_repository",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 831,
+          "latencyMs": 5506
+        },
+        {
+          "intent": "Fork the tensorflow/tensorflow repository to my account",
+          "expectedTool": "fork_repository",
+          "calledTool": "fork_repository",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 616,
+          "latencyMs": 5553
+        },
+        {
+          "intent": "Fork the tensorflow/tensorflow repository to my account",
+          "expectedTool": "fork_repository",
+          "calledTool": "fork_repository",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 207,
+          "latencyMs": 6352
+        },
+        {
+          "intent": "Fork the tensorflow/tensorflow repository to my account",
+          "expectedTool": "fork_repository",
+          "calledTool": "fork_repository",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 186,
+          "latencyMs": 6139
+        },
+        {
+          "intent": "Create a new branch called 'feature/login' from the main branch in my repo 'myuser/webapp'",
+          "expectedTool": "create_branch",
+          "calledTool": "create_branch",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 918,
+          "latencyMs": 6264
+        },
+        {
+          "intent": "Create a new branch called 'feature/login' from the main branch in my repo 'myuser/webapp'",
+          "expectedTool": "create_branch",
+          "calledTool": "create_branch",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 714,
+          "latencyMs": 6024
+        },
+        {
+          "intent": "Create a new branch called 'feature/login' from the main branch in my repo 'myuser/webapp'",
+          "expectedTool": "create_branch",
+          "calledTool": "create_branch",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 242,
+          "latencyMs": 6547
+        },
+        {
+          "intent": "Create a new branch called 'feature/login' from the main branch in my repo 'myuser/webapp'",
+          "expectedTool": "create_branch",
+          "calledTool": "create_branch",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 282,
+          "latencyMs": 6424
+        },
+        {
+          "intent": "Open a new issue in vuejs/vue titled 'Button component not rendering correctly' with a description of the bug",
+          "expectedTool": "create_issue",
+          "calledTool": "create_issue",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 2039,
+          "latencyMs": 15497
+        },
+        {
+          "intent": "Open a new issue in vuejs/vue titled 'Button component not rendering correctly' with a description of the bug",
+          "expectedTool": "create_issue",
+          "calledTool": "create_issue",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 1453,
+          "latencyMs": 13726
+        },
+        {
+          "intent": "Open a new issue in vuejs/vue titled 'Button component not rendering correctly' with a description of the bug",
+          "expectedTool": "create_issue",
+          "calledTool": "create_issue",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 845,
+          "latencyMs": 15356
+        },
+        {
+          "intent": "Open a new issue in vuejs/vue titled 'Button component not rendering correctly' with a description of the bug",
+          "expectedTool": "create_issue",
+          "calledTool": "create_issue",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 952,
+          "latencyMs": 17094
+        },
+        {
+          "intent": "Show me all open pull requests in the torvalds/linux repository",
+          "expectedTool": "list_pull_requests",
+          "calledTool": "list_pull_requests",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1475,
+          "latencyMs": 7685
+        },
+        {
+          "intent": "Show me all open pull requests in the torvalds/linux repository",
+          "expectedTool": "list_pull_requests",
+          "calledTool": "list_pull_requests",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 589,
+          "latencyMs": 7481
+        },
+        {
+          "intent": "Show me all open pull requests in the torvalds/linux repository",
+          "expectedTool": "list_pull_requests",
+          "calledTool": "list_pull_requests",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 298,
+          "latencyMs": 9338
+        },
+        {
+          "intent": "Show me all open pull requests in the torvalds/linux repository",
+          "expectedTool": "list_pull_requests",
+          "calledTool": "list_pull_requests",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 282,
+          "latencyMs": 7967
+        },
+        {
+          "intent": "What are the recent commits on the develop branch of myorg/backend-api?",
+          "expectedTool": "list_commits",
+          "calledTool": "list_commits",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1538,
+          "latencyMs": 7370
+        },
+        {
+          "intent": "What are the recent commits on the develop branch of myorg/backend-api?",
+          "expectedTool": "list_commits",
+          "calledTool": "list_commits",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 619,
+          "latencyMs": 6874
+        },
+        {
+          "intent": "What are the recent commits on the develop branch of myorg/backend-api?",
+          "expectedTool": "list_commits",
+          "calledTool": "list_commits",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 248,
+          "latencyMs": 6032
+        },
+        {
+          "intent": "What are the recent commits on the develop branch of myorg/backend-api?",
+          "expectedTool": "list_commits",
+          "calledTool": "list_commits",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 234,
+          "latencyMs": 6431
+        },
+        {
+          "intent": "Add a comment to issue #42 in myuser/project-tracker saying 'I can reproduce this bug on version 2.1'",
+          "expectedTool": "add_issue_comment",
+          "calledTool": "add_issue_comment",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 760,
+          "latencyMs": 4451
+        },
+        {
+          "intent": "Add a comment to issue #42 in myuser/project-tracker saying 'I can reproduce this bug on version 2.1'",
+          "expectedTool": "add_issue_comment",
+          "calledTool": "add_issue_comment",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 534,
+          "latencyMs": 4201
+        },
+        {
+          "intent": "Add a comment to issue #42 in myuser/project-tracker saying 'I can reproduce this bug on version 2.1'",
+          "expectedTool": "add_issue_comment",
+          "calledTool": "add_issue_comment",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 171,
+          "latencyMs": 4778
+        },
+        {
+          "intent": "Add a comment to issue #42 in myuser/project-tracker saying 'I can reproduce this bug on version 2.1'",
+          "expectedTool": "add_issue_comment",
+          "calledTool": "add_issue_comment",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 271,
+          "latencyMs": 6523
+        },
+        {
+          "intent": "Search for code that uses 'useState' hook in React repositories",
+          "expectedTool": "search_code",
+          "calledTool": "search_code",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 2932,
+          "latencyMs": 14812
+        },
+        {
+          "intent": "Search for code that uses 'useState' hook in React repositories",
+          "expectedTool": "search_code",
+          "calledTool": "search_code",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 3090,
+          "latencyMs": 23516
+        },
+        {
+          "intent": "Search for code that uses 'useState' hook in React repositories",
+          "expectedTool": "search_code",
+          "calledTool": "search_code",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 944,
+          "latencyMs": 13268
+        },
+        {
+          "intent": "Search for code that uses 'useState' hook in React repositories",
+          "expectedTool": "search_code",
+          "calledTool": "search_code",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 723,
+          "latencyMs": 12317
+        },
+        {
+          "intent": "Create a pull request in myuser/webapp from the 'feature/login' branch to 'main' with title 'Add login functionality'",
+          "expectedTool": "create_pull_request",
+          "calledTool": "create_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1187,
+          "latencyMs": 6403
+        },
+        {
+          "intent": "Create a pull request in myuser/webapp from the 'feature/login' branch to 'main' with title 'Add login functionality'",
+          "expectedTool": "create_pull_request",
+          "calledTool": "create_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 759,
+          "latencyMs": 6386
+        },
+        {
+          "intent": "Create a pull request in myuser/webapp from the 'feature/login' branch to 'main' with title 'Add login functionality'",
+          "expectedTool": "create_pull_request",
+          "calledTool": "create_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 244,
+          "latencyMs": 5863
+        },
+        {
+          "intent": "Create a pull request in myuser/webapp from the 'feature/login' branch to 'main' with title 'Add login functionality'",
+          "expectedTool": "create_pull_request",
+          "calledTool": "create_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 273,
+          "latencyMs": 6149
+        },
+        {
+          "intent": "Can you deploy my repository to AWS and set up a CI/CD pipeline?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 782,
+          "latencyMs": 9102
+        },
+        {
+          "intent": "Can you deploy my repository to AWS and set up a CI/CD pipeline?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 451,
+          "latencyMs": 9992
+        },
+        {
+          "intent": "Can you deploy my repository to AWS and set up a CI/CD pipeline?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 486,
+          "latencyMs": 10192
+        },
+        {
+          "intent": "Can you deploy my repository to AWS and set up a CI/CD pipeline?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 459,
+          "latencyMs": 10261
+        },
+        {
+          "intent": "Get the details of pull request #15 in the microsoft/vscode repository",
+          "expectedTool": "get_pull_request",
+          "calledTool": "get_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1380,
+          "latencyMs": 9397
+        },
+        {
+          "intent": "Get the details of pull request #15 in the microsoft/vscode repository",
+          "expectedTool": "get_pull_request",
+          "calledTool": "get_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 640,
+          "latencyMs": 7781
+        },
+        {
+          "intent": "Get the details of pull request #15 in the microsoft/vscode repository",
+          "expectedTool": "get_pull_request",
+          "calledTool": "get_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 351,
+          "latencyMs": 6563
+        },
+        {
+          "intent": "Get the details of pull request #15 in the microsoft/vscode repository",
+          "expectedTool": "get_pull_request",
+          "calledTool": "get_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 315,
+          "latencyMs": 7363
+        },
+        {
+          "intent": "Close issue #7 in myuser/todo-app and add the label 'resolved'",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1081,
+          "latencyMs": 6143
+        },
+        {
+          "intent": "Close issue #7 in myuser/todo-app and add the label 'resolved'",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 720,
+          "latencyMs": 5776
+        },
+        {
+          "intent": "Close issue #7 in myuser/todo-app and add the label 'resolved'",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 481,
+          "latencyMs": 6174
+        },
+        {
+          "intent": "Close issue #7 in myuser/todo-app and add the label 'resolved'",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 366,
+          "latencyMs": 8536
+        },
+        {
+          "intent": "What files were changed in pull request #23 of the rails/rails repository?",
+          "expectedTool": "get_pull_request_files",
+          "calledTool": "get_pull_request_files",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1470,
+          "latencyMs": 7162
+        },
+        {
+          "intent": "What files were changed in pull request #23 of the rails/rails repository?",
+          "expectedTool": "get_pull_request_files",
+          "calledTool": "get_pull_request_files",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 577,
+          "latencyMs": 9140
+        },
+        {
+          "intent": "What files were changed in pull request #23 of the rails/rails repository?",
+          "expectedTool": "get_pull_request_files",
+          "calledTool": "get_pull_request_files",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 264,
+          "latencyMs": 6349
+        },
+        {
+          "intent": "What files were changed in pull request #23 of the rails/rails repository?",
+          "expectedTool": "get_pull_request_files",
+          "calledTool": "get_pull_request_files",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 244,
+          "latencyMs": 6838
+        },
+        {
+          "intent": "Can you send an email notification to all contributors of my repository when a new issue is opened?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 774,
+          "latencyMs": 10648
+        },
+        {
+          "intent": "Can you send an email notification to all contributors of my repository when a new issue is opened?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 371,
+          "latencyMs": 8757
+        },
+        {
+          "intent": "Can you send an email notification to all contributors of my repository when a new issue is opened?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 439,
+          "latencyMs": 10129
+        },
+        {
+          "intent": "Can you send an email notification to all contributors of my repository when a new issue is opened?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 371,
+          "latencyMs": 8626
+        },
+        {
+          "intent": "Search for GitHub users with the name 'john' who are located in San Francisco",
+          "expectedTool": "search_users",
+          "calledTool": "search_users",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1016,
+          "latencyMs": 6283
+        },
+        {
+          "intent": "Search for GitHub users with the name 'john' who are located in San Francisco",
+          "expectedTool": "search_users",
+          "calledTool": "search_users",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 1106,
+          "latencyMs": 18021
+        },
+        {
+          "intent": "Search for GitHub users with the name 'john' who are located in San Francisco",
+          "expectedTool": "search_users",
+          "calledTool": "search_users",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 309,
+          "latencyMs": 7590
+        },
+        {
+          "intent": "Search for GitHub users with the name 'john' who are located in San Francisco",
+          "expectedTool": "search_users",
+          "calledTool": "search_users",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 326,
+          "latencyMs": 9675
+        },
+        {
+          "intent": "Merge pull request #8 in myuser/api-service using the squash method",
+          "expectedTool": "merge_pull_request",
+          "calledTool": "merge_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 878,
+          "latencyMs": 6287
+        },
+        {
+          "intent": "Merge pull request #8 in myuser/api-service using the squash method",
+          "expectedTool": "merge_pull_request",
+          "calledTool": "merge_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 677,
+          "latencyMs": 5323
+        },
+        {
+          "intent": "Merge pull request #8 in myuser/api-service using the squash method",
+          "expectedTool": "merge_pull_request",
+          "calledTool": "merge_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 287,
+          "latencyMs": 6142
+        },
+        {
+          "intent": "Merge pull request #8 in myuser/api-service using the squash method",
+          "expectedTool": "merge_pull_request",
+          "calledTool": "merge_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 363,
+          "latencyMs": 8492
+        },
+        {
+          "intent": "Please generate a visual graph showing the commit history and branching structure of my repository",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 433,
+          "latencyMs": 4621
+        },
+        {
+          "intent": "Please generate a visual graph showing the commit history and branching structure of my repository",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 97,
+          "latencyMs": 2452
+        },
+        {
+          "intent": "Please generate a visual graph showing the commit history and branching structure of my repository",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 97,
+          "latencyMs": 2665
+        },
+        {
+          "intent": "Please generate a visual graph showing the commit history and branching structure of my repository",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 77,
+          "latencyMs": 2093
+        },
+        {
+          "intent": "Can you set up two-factor authentication for my GitHub account?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 664,
+          "latencyMs": 7531
+        },
+        {
+          "intent": "Can you set up two-factor authentication for my GitHub account?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 342,
+          "latencyMs": 8873
+        },
+        {
+          "intent": "Can you set up two-factor authentication for my GitHub account?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 325,
+          "latencyMs": 7188
+        },
+        {
+          "intent": "Can you set up two-factor authentication for my GitHub account?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 338,
+          "latencyMs": 7266
+        }
+      ]
+    }
+  },
+  "topFixes": [
+    {
+      "issue": "list_issues: Tool exposes 9 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "update_issue: Tool exposes 9 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "list_pull_requests: Tool exposes 9 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "create_or_update_file: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "search_repositories: Description is only 4 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "search_repositories: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "create_repository: Description is only 8 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "create_repository: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get_file_contents: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "push_files: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ],
+  "staticReport": {
+    "server": "github-mcp-server",
+    "metrics": {
+      "toolCount": 26,
+      "estimatedListTokens": 3964,
+      "consistentToolNaming": true
+    },
+    "manifestFlags": [],
+    "tools": [
+      {
+        "name": "create_or_update_file",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 7,
+          "requiredParamCount": 6,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "search_repositories",
+        "features": {
+          "descriptionWordCount": 4,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 4 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "create_repository",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "get_file_contents",
+        "features": {
+          "descriptionWordCount": 12,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 3,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "push_files",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 5,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 3,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "create_issue",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 7,
+          "requiredParamCount": 3,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 7,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "7 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "create_pull_request",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 8,
+          "requiredParamCount": 5,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "fork_repository",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 2,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "create_branch",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 3,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "list_commits",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 2,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 5,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "5 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "list_issues",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 9,
+          "requiredParamCount": 2,
+          "optionalParamCount": 7,
+          "undocumentedParamCount": 9,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 9 params; likely overloaded — split into focused tools."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "9 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "update_issue",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 9,
+          "requiredParamCount": 3,
+          "optionalParamCount": 6,
+          "undocumentedParamCount": 9,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 9 params; likely overloaded — split into focused tools."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "9 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "add_issue_comment",
+        "features": {
+          "descriptionWordCount": 7,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 4,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 4,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 7 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "4 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "search_code",
+        "features": {
+          "descriptionWordCount": 6,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 4,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 6 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "4 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "search_issues",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 1,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 5,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "5 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "search_users",
+        "features": {
+          "descriptionWordCount": 5,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 1,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 5,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 5 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "5 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "get_issue",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 3,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 3,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "3 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "get_pull_request",
+        "features": {
+          "descriptionWordCount": 7,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 3,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 7 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "list_pull_requests",
+        "features": {
+          "descriptionWordCount": 6,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 9,
+          "requiredParamCount": 2,
+          "optionalParamCount": 7,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 6 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 9 params; likely overloaded — split into focused tools."
+          }
+        ]
+      },
+      {
+        "name": "create_pull_request_review",
+        "features": {
+          "descriptionWordCount": 7,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 7,
+          "requiredParamCount": 5,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 7 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "merge_pull_request",
+        "features": {
+          "descriptionWordCount": 4,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 6,
+          "requiredParamCount": 3,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 4 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get_pull_request_files",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 3,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get_pull_request_status",
+        "features": {
+          "descriptionWordCount": 12,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 3,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "update_pull_request_branch",
+        "features": {
+          "descriptionWordCount": 13,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 3,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get_pull_request_comments",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 3,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get_pull_request_reviews",
+        "features": {
+          "descriptionWordCount": 7,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 3,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 7 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      }
+    ]
+  },
+  "featureSignals": {
+    "tools": {
+      "create_or_update_file": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 7,
+        "requiredParamCount": 6,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "search_repositories": {
+        "descriptionWordCount": 4,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "create_repository": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "get_file_contents": {
+        "descriptionWordCount": 12,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 3,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "push_files": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 5,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 3,
+        "consistentParamCasing": true
+      },
+      "create_issue": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 7,
+        "requiredParamCount": 3,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 7,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "create_pull_request": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 8,
+        "requiredParamCount": 5,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "fork_repository": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 2,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "create_branch": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 3,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "list_commits": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 2,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 5,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "list_issues": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 9,
+        "requiredParamCount": 2,
+        "optionalParamCount": 7,
+        "undocumentedParamCount": 9,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "update_issue": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 9,
+        "requiredParamCount": 3,
+        "optionalParamCount": 6,
+        "undocumentedParamCount": 9,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "add_issue_comment": {
+        "descriptionWordCount": 7,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 4,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 4,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "search_code": {
+        "descriptionWordCount": 6,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 4,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "search_issues": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 1,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 5,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "search_users": {
+        "descriptionWordCount": 5,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 1,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 5,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get_issue": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 3,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 3,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get_pull_request": {
+        "descriptionWordCount": 7,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 3,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "list_pull_requests": {
+        "descriptionWordCount": 6,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 9,
+        "requiredParamCount": 2,
+        "optionalParamCount": 7,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "create_pull_request_review": {
+        "descriptionWordCount": 7,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 7,
+        "requiredParamCount": 5,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "merge_pull_request": {
+        "descriptionWordCount": 4,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 6,
+        "requiredParamCount": 3,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get_pull_request_files": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 3,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get_pull_request_status": {
+        "descriptionWordCount": 12,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 3,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "update_pull_request_branch": {
+        "descriptionWordCount": 13,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 3,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get_pull_request_comments": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 3,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get_pull_request_reviews": {
+        "descriptionWordCount": 7,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 3,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "server": {
     "name": "github-mcp-server",
     "registry": null,
     "manifestSource": "file",
     "executionMode": "mock",
-    "scoredAt": "2026-06-09T06:38:31.772Z",
-    "generationModel": "claude-sonnet-4-6"
+    "scoredAt": "2026-06-09T15:56:19.670Z",
+    "generationModel": "gemini-2.5-flash"
   },
   "tools": {
     "create_or_update_file": {
@@ -17,10 +17,11 @@
       ]
     },
     "search_repositories": {
-      "mockConfidence": "medium",
+      "mockConfidence": "low",
       "mockConfidenceReasons": [
         "output schema absent",
-        "description quality: thin"
+        "description quality: thin",
+        "mock generation failed; using synthetic fallback"
       ]
     },
     "create_repository": {
@@ -52,10 +53,11 @@
       ]
     },
     "create_pull_request": {
-      "mockConfidence": "medium",
+      "mockConfidence": "low",
       "mockConfidenceReasons": [
         "output schema absent",
-        "description quality: thin"
+        "description quality: thin",
+        "mock generation failed; using synthetic fallback"
       ]
     },
     "fork_repository": {
@@ -73,10 +75,11 @@
       ]
     },
     "list_commits": {
-      "mockConfidence": "medium",
+      "mockConfidence": "low",
       "mockConfidenceReasons": [
         "output schema absent",
-        "description quality: thin"
+        "description quality: thin",
+        "mock generation failed; using synthetic fallback"
       ]
     },
     "list_issues": {
@@ -101,17 +104,19 @@
       ]
     },
     "search_code": {
-      "mockConfidence": "medium",
+      "mockConfidence": "low",
       "mockConfidenceReasons": [
         "output schema absent",
-        "description quality: thin"
+        "description quality: thin",
+        "mock generation failed; using synthetic fallback"
       ]
     },
     "search_issues": {
-      "mockConfidence": "medium",
+      "mockConfidence": "low",
       "mockConfidenceReasons": [
         "output schema absent",
-        "description quality: thin"
+        "description quality: thin",
+        "mock generation failed; using synthetic fallback"
       ]
     },
     "search_users": {
@@ -129,10 +134,11 @@
       ]
     },
     "get_pull_request": {
-      "mockConfidence": "medium",
+      "mockConfidence": "low",
       "mockConfidenceReasons": [
         "output schema absent",
-        "description quality: thin"
+        "description quality: thin",
+        "mock generation failed; using synthetic fallback"
       ]
     },
     "list_pull_requests": {
@@ -178,10 +184,11 @@
       ]
     },
     "get_pull_request_comments": {
-      "mockConfidence": "medium",
+      "mockConfidence": "low",
       "mockConfidenceReasons": [
         "output schema absent",
-        "description quality: thin"
+        "description quality: thin",
+        "mock generation failed; using synthetic fallback"
       ]
     },
     "get_pull_request_reviews": {
@@ -194,14 +201,14 @@
   },
   "models": {
     "claude-sonnet-4-6": {
-      "axScore": 90,
+      "axScore": 88,
       "subScores": {
-        "intentInterpretation": 1,
+        "intentInterpretation": 0.875,
         "toolCallConstruction": 1,
-        "resultSynthesis": 0.5000000000000001,
-        "errorRecovery": 0.9550000000000001,
-        "tokensPerTask": 1197.15,
-        "latencyMs": 8058.25
+        "resultSynthesis": 0.763888888888889,
+        "errorRecovery": 0.7133333333333334,
+        "tokensPerTask": 970.2222222222223,
+        "latencyMs": 8424.458333333334
       },
       "scoreWeights": {
         "intentInterpretation": 0.35,
@@ -212,806 +219,976 @@
       "lowProgrammaticSignal": false,
       "tasks": [
         {
-          "intent": "Can you find GitHub repositories related to machine learning in Python?",
-          "expectedTool": "search_repositories",
-          "calledTool": "search_repositories",
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": false,
-          "tokensUsed": 1663,
-          "latencyMs": 9198
-        },
-        {
-          "intent": "Can you find GitHub repositories related to machine learning in Python?",
-          "expectedTool": "search_repositories",
-          "calledTool": "search_repositories",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": false,
-          "tokensUsed": 1250,
-          "latencyMs": 17196
-        },
-        {
-          "intent": "Can you find GitHub repositories related to machine learning in Python?",
-          "expectedTool": "search_repositories",
-          "calledTool": "search_repositories",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": false,
-          "tokensUsed": 475,
-          "latencyMs": 9425
-        },
-        {
-          "intent": "Can you find GitHub repositories related to machine learning in Python?",
-          "expectedTool": "search_repositories",
-          "calledTool": "search_repositories",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 412,
-          "latencyMs": 9007
-        },
-        {
-          "intent": "Create a new public repository called 'my-portfolio' with a README file and description 'My personal portfolio website'",
+          "intent": "Can you create a new repository for me called 'my-new-project'? It should be public and initialized with a README.",
           "expectedTool": "create_repository",
           "calledTool": "create_repository",
           "paramsCorrect": true,
           "mockVariant": "success",
-          "completed": false,
-          "tokensUsed": 1005,
-          "latencyMs": 7177
+          "completed": true,
+          "tokensUsed": 212,
+          "latencyMs": 5943
         },
         {
-          "intent": "Create a new public repository called 'my-portfolio' with a README file and description 'My personal portfolio website'",
+          "intent": "Can you create a new repository for me called 'my-new-project'? It should be public and initialized with a README.",
           "expectedTool": "create_repository",
           "calledTool": "create_repository",
           "paramsCorrect": true,
           "mockVariant": "empty",
           "completed": false,
-          "tokensUsed": 708,
-          "latencyMs": 5798
+          "tokensUsed": 211,
+          "latencyMs": 5554
         },
         {
-          "intent": "Create a new public repository called 'my-portfolio' with a README file and description 'My personal portfolio website'",
+          "intent": "Can you create a new repository for me called 'my-new-project'? It should be public and initialized with a README.",
           "expectedTool": "create_repository",
           "calledTool": "create_repository",
           "paramsCorrect": true,
           "mockVariant": "partial",
           "completed": false,
-          "tokensUsed": 263,
-          "latencyMs": 6044
+          "tokensUsed": 659,
+          "latencyMs": 6865
         },
         {
-          "intent": "Create a new public repository called 'my-portfolio' with a README file and description 'My personal portfolio website'",
+          "intent": "Can you create a new repository for me called 'my-new-project'? It should be public and initialized with a README.",
           "expectedTool": "create_repository",
           "calledTool": "create_repository",
           "paramsCorrect": true,
           "mockVariant": "error",
-          "completed": false,
-          "tokensUsed": 257,
-          "latencyMs": 7194
+          "completed": true,
+          "tokensUsed": 715,
+          "latencyMs": 5939
         },
         {
-          "intent": "I need to see the contents of the README.md file in the main branch of facebook/react",
+          "intent": "I need to find all GitHub repositories related to 'machine learning models'.",
+          "expectedTool": "search_repositories",
+          "calledTool": "search_repositories",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 869,
+          "latencyMs": 11470
+        },
+        {
+          "intent": "I need to find all GitHub repositories related to 'machine learning models'.",
+          "expectedTool": "search_repositories",
+          "calledTool": "search_repositories",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 1260,
+          "latencyMs": 15438
+        },
+        {
+          "intent": "I need to find all GitHub repositories related to 'machine learning models'.",
+          "expectedTool": "search_repositories",
+          "calledTool": "search_repositories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 457,
+          "latencyMs": 11719
+        },
+        {
+          "intent": "I need to find all GitHub repositories related to 'machine learning models'.",
+          "expectedTool": "search_repositories",
+          "calledTool": "search_repositories",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 604,
+          "latencyMs": 10647
+        },
+        {
+          "intent": "What's the content of the 'README.md' file in the 'octocat/Spoon-Knife' repository?",
           "expectedTool": "get_file_contents",
           "calledTool": "get_file_contents",
           "paramsCorrect": true,
           "mockVariant": "success",
-          "completed": false,
-          "tokensUsed": 1117,
-          "latencyMs": 9628
+          "completed": true,
+          "tokensUsed": 1055,
+          "latencyMs": 7059
         },
         {
-          "intent": "I need to see the contents of the README.md file in the main branch of facebook/react",
+          "intent": "What's the content of the 'README.md' file in the 'octocat/Spoon-Knife' repository?",
           "expectedTool": "get_file_contents",
           "calledTool": "get_file_contents",
           "paramsCorrect": true,
           "mockVariant": "empty",
-          "completed": false,
-          "tokensUsed": 1118,
-          "latencyMs": 14537
+          "completed": true,
+          "tokensUsed": 618,
+          "latencyMs": 5834
         },
         {
-          "intent": "I need to see the contents of the README.md file in the main branch of facebook/react",
+          "intent": "What's the content of the 'README.md' file in the 'octocat/Spoon-Knife' repository?",
           "expectedTool": "get_file_contents",
           "calledTool": "get_file_contents",
           "paramsCorrect": true,
           "mockVariant": "partial",
-          "completed": false,
-          "tokensUsed": 327,
-          "latencyMs": 7784
+          "completed": true,
+          "tokensUsed": 484,
+          "latencyMs": 6585
         },
         {
-          "intent": "I need to see the contents of the README.md file in the main branch of facebook/react",
+          "intent": "What's the content of the 'README.md' file in the 'octocat/Spoon-Knife' repository?",
           "expectedTool": "get_file_contents",
           "calledTool": "get_file_contents",
           "paramsCorrect": true,
           "mockVariant": "error",
           "completed": true,
-          "tokensUsed": 632,
-          "latencyMs": 10856
+          "tokensUsed": 440,
+          "latencyMs": 6862
         },
         {
-          "intent": "Fork the tensorflow/tensorflow repository to my account",
+          "intent": "I want to add a new file named 'config.json' with content '{\"api_key\": \"123\"}' to my 'my-new-project' repository on the 'main' branch. The commit message should be 'Add initial config file'.",
+          "expectedTool": "create_or_update_file",
+          "calledTool": "create_or_update_file",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 687,
+          "latencyMs": 6146
+        },
+        {
+          "intent": "I want to add a new file named 'config.json' with content '{\"api_key\": \"123\"}' to my 'my-new-project' repository on the 'main' branch. The commit message should be 'Add initial config file'.",
+          "expectedTool": "create_or_update_file",
+          "calledTool": "create_or_update_file",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 495,
+          "latencyMs": 6920
+        },
+        {
+          "intent": "I want to add a new file named 'config.json' with content '{\"api_key\": \"123\"}' to my 'my-new-project' repository on the 'main' branch. The commit message should be 'Add initial config file'.",
+          "expectedTool": "create_or_update_file",
+          "calledTool": "create_or_update_file",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 313,
+          "latencyMs": 5592
+        },
+        {
+          "intent": "I want to add a new file named 'config.json' with content '{\"api_key\": \"123\"}' to my 'my-new-project' repository on the 'main' branch. The commit message should be 'Add initial config file'.",
+          "expectedTool": "create_or_update_file",
+          "calledTool": "create_or_update_file",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 338,
+          "latencyMs": 10400
+        },
+        {
+          "intent": "Can you help me order a pizza for delivery tonight?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 516,
+          "latencyMs": 4735
+        },
+        {
+          "intent": "Can you help me order a pizza for delivery tonight?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 490,
+          "latencyMs": 4401
+        },
+        {
+          "intent": "Can you help me order a pizza for delivery tonight?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 144,
+          "latencyMs": 3990
+        },
+        {
+          "intent": "Can you help me order a pizza for delivery tonight?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 157,
+          "latencyMs": 3903
+        },
+        {
+          "intent": "Create a new issue in 'my-org/my-repo' titled 'Bug: Login button not working' and assign it to 'johndoe'.",
+          "expectedTool": "create_issue",
+          "calledTool": "create_issue",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 625,
+          "latencyMs": 5220
+        },
+        {
+          "intent": "Create a new issue in 'my-org/my-repo' titled 'Bug: Login button not working' and assign it to 'johndoe'.",
+          "expectedTool": "create_issue",
+          "calledTool": "create_issue",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 233,
+          "latencyMs": 7962
+        },
+        {
+          "intent": "Create a new issue in 'my-org/my-repo' titled 'Bug: Login button not working' and assign it to 'johndoe'.",
+          "expectedTool": "create_issue",
+          "calledTool": "create_issue",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 218,
+          "latencyMs": 6657
+        },
+        {
+          "intent": "Create a new issue in 'my-org/my-repo' titled 'Bug: Login button not working' and assign it to 'johndoe'.",
+          "expectedTool": "create_issue",
+          "calledTool": "create_issue",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 290,
+          "latencyMs": 6759
+        },
+        {
+          "intent": "I need to create a pull request in 'my-org/my-repo'. The title should be 'Feature: User Profile Page', the body 'Implements the user profile page with basic information display.', and it's from my 'feature/user-profile' branch to 'main'.",
+          "expectedTool": "create_pull_request",
+          "calledTool": "create_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 857,
+          "latencyMs": 6904
+        },
+        {
+          "intent": "I need to create a pull request in 'my-org/my-repo'. The title should be 'Feature: User Profile Page', the body 'Implements the user profile page with basic information display.', and it's from my 'feature/user-profile' branch to 'main'.",
+          "expectedTool": "create_pull_request",
+          "calledTool": "create_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 472,
+          "latencyMs": 5752
+        },
+        {
+          "intent": "I need to create a pull request in 'my-org/my-repo'. The title should be 'Feature: User Profile Page', the body 'Implements the user profile page with basic information display.', and it's from my 'feature/user-profile' branch to 'main'.",
+          "expectedTool": "create_pull_request",
+          "calledTool": "create_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 294,
+          "latencyMs": 6848
+        },
+        {
+          "intent": "I need to create a pull request in 'my-org/my-repo'. The title should be 'Feature: User Profile Page', the body 'Implements the user profile page with basic information display.', and it's from my 'feature/user-profile' branch to 'main'.",
+          "expectedTool": "create_pull_request",
+          "calledTool": "create_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 385,
+          "latencyMs": 7887
+        },
+        {
+          "intent": "Fork the 'facebook/react' repository to my personal account.",
           "expectedTool": "fork_repository",
           "calledTool": "fork_repository",
           "paramsCorrect": true,
           "mockVariant": "success",
           "completed": false,
-          "tokensUsed": 831,
-          "latencyMs": 5506
+          "tokensUsed": 627,
+          "latencyMs": 6207
         },
         {
-          "intent": "Fork the tensorflow/tensorflow repository to my account",
+          "intent": "Fork the 'facebook/react' repository to my personal account.",
           "expectedTool": "fork_repository",
           "calledTool": "fork_repository",
           "paramsCorrect": true,
           "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 616,
-          "latencyMs": 5553
+          "completed": false,
+          "tokensUsed": 296,
+          "latencyMs": 6115
         },
         {
-          "intent": "Fork the tensorflow/tensorflow repository to my account",
+          "intent": "Fork the 'facebook/react' repository to my personal account.",
           "expectedTool": "fork_repository",
           "calledTool": "fork_repository",
           "paramsCorrect": true,
           "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 207,
-          "latencyMs": 6352
-        },
-        {
-          "intent": "Fork the tensorflow/tensorflow repository to my account",
-          "expectedTool": "fork_repository",
-          "calledTool": "fork_repository",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 186,
-          "latencyMs": 6139
-        },
-        {
-          "intent": "Create a new branch called 'feature/login' from the main branch in my repo 'myuser/webapp'",
-          "expectedTool": "create_branch",
-          "calledTool": "create_branch",
-          "paramsCorrect": true,
-          "mockVariant": "success",
           "completed": false,
-          "tokensUsed": 918,
-          "latencyMs": 6264
-        },
-        {
-          "intent": "Create a new branch called 'feature/login' from the main branch in my repo 'myuser/webapp'",
-          "expectedTool": "create_branch",
-          "calledTool": "create_branch",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 714,
+          "tokensUsed": 209,
           "latencyMs": 6024
         },
         {
-          "intent": "Create a new branch called 'feature/login' from the main branch in my repo 'myuser/webapp'",
+          "intent": "Fork the 'facebook/react' repository to my personal account.",
+          "expectedTool": "fork_repository",
+          "calledTool": "fork_repository",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 313,
+          "latencyMs": 7557
+        },
+        {
+          "intent": "I want to create a new branch called 'develop' from 'main' in my 'my-org/my-repo' repository.",
+          "expectedTool": "create_branch",
+          "calledTool": "create_branch",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 718,
+          "latencyMs": 6080
+        },
+        {
+          "intent": "I want to create a new branch called 'develop' from 'main' in my 'my-org/my-repo' repository.",
+          "expectedTool": "create_branch",
+          "calledTool": "create_branch",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 245,
+          "latencyMs": 6968
+        },
+        {
+          "intent": "I want to create a new branch called 'develop' from 'main' in my 'my-org/my-repo' repository.",
           "expectedTool": "create_branch",
           "calledTool": "create_branch",
           "paramsCorrect": true,
           "mockVariant": "partial",
-          "completed": false,
-          "tokensUsed": 242,
-          "latencyMs": 6547
+          "completed": true,
+          "tokensUsed": 367,
+          "latencyMs": 6164
         },
         {
-          "intent": "Create a new branch called 'feature/login' from the main branch in my repo 'myuser/webapp'",
+          "intent": "I want to create a new branch called 'develop' from 'main' in my 'my-org/my-repo' repository.",
           "expectedTool": "create_branch",
           "calledTool": "create_branch",
           "paramsCorrect": true,
           "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 282,
-          "latencyMs": 6424
-        },
-        {
-          "intent": "Open a new issue in vuejs/vue titled 'Button component not rendering correctly' with a description of the bug",
-          "expectedTool": "create_issue",
-          "calledTool": "create_issue",
-          "paramsCorrect": true,
-          "mockVariant": "success",
           "completed": false,
-          "tokensUsed": 2039,
-          "latencyMs": 15497
+          "tokensUsed": 522,
+          "latencyMs": 8291
         },
         {
-          "intent": "Open a new issue in vuejs/vue titled 'Button component not rendering correctly' with a description of the bug",
-          "expectedTool": "create_issue",
-          "calledTool": "create_issue",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 1453,
-          "latencyMs": 13726
-        },
-        {
-          "intent": "Open a new issue in vuejs/vue titled 'Button component not rendering correctly' with a description of the bug",
-          "expectedTool": "create_issue",
-          "calledTool": "create_issue",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": false,
-          "tokensUsed": 845,
-          "latencyMs": 15356
-        },
-        {
-          "intent": "Open a new issue in vuejs/vue titled 'Button component not rendering correctly' with a description of the bug",
-          "expectedTool": "create_issue",
-          "calledTool": "create_issue",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": false,
-          "tokensUsed": 952,
-          "latencyMs": 17094
-        },
-        {
-          "intent": "Show me all open pull requests in the torvalds/linux repository",
-          "expectedTool": "list_pull_requests",
-          "calledTool": "list_pull_requests",
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": false,
-          "tokensUsed": 1475,
-          "latencyMs": 7685
-        },
-        {
-          "intent": "Show me all open pull requests in the torvalds/linux repository",
-          "expectedTool": "list_pull_requests",
-          "calledTool": "list_pull_requests",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 589,
-          "latencyMs": 7481
-        },
-        {
-          "intent": "Show me all open pull requests in the torvalds/linux repository",
-          "expectedTool": "list_pull_requests",
-          "calledTool": "list_pull_requests",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 298,
-          "latencyMs": 9338
-        },
-        {
-          "intent": "Show me all open pull requests in the torvalds/linux repository",
-          "expectedTool": "list_pull_requests",
-          "calledTool": "list_pull_requests",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 282,
-          "latencyMs": 7967
-        },
-        {
-          "intent": "What are the recent commits on the develop branch of myorg/backend-api?",
+          "intent": "List the last 10 commits on the 'main' branch of 'octocat/Spoon-Knife'.",
           "expectedTool": "list_commits",
           "calledTool": "list_commits",
           "paramsCorrect": true,
           "mockVariant": "success",
-          "completed": true,
-          "tokensUsed": 1538,
-          "latencyMs": 7370
+          "completed": false,
+          "tokensUsed": 621,
+          "latencyMs": 6167
         },
         {
-          "intent": "What are the recent commits on the develop branch of myorg/backend-api?",
+          "intent": "List the last 10 commits on the 'main' branch of 'octocat/Spoon-Knife'.",
           "expectedTool": "list_commits",
           "calledTool": "list_commits",
           "paramsCorrect": true,
           "mockVariant": "empty",
           "completed": true,
-          "tokensUsed": 619,
-          "latencyMs": 6874
+          "tokensUsed": 231,
+          "latencyMs": 5154
         },
         {
-          "intent": "What are the recent commits on the develop branch of myorg/backend-api?",
+          "intent": "List the last 10 commits on the 'main' branch of 'octocat/Spoon-Knife'.",
           "expectedTool": "list_commits",
           "calledTool": "list_commits",
           "paramsCorrect": true,
           "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 248,
-          "latencyMs": 6032
-        },
-        {
-          "intent": "What are the recent commits on the develop branch of myorg/backend-api?",
-          "expectedTool": "list_commits",
-          "calledTool": "list_commits",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 234,
-          "latencyMs": 6431
-        },
-        {
-          "intent": "Add a comment to issue #42 in myuser/project-tracker saying 'I can reproduce this bug on version 2.1'",
-          "expectedTool": "add_issue_comment",
-          "calledTool": "add_issue_comment",
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": true,
-          "tokensUsed": 760,
-          "latencyMs": 4451
-        },
-        {
-          "intent": "Add a comment to issue #42 in myuser/project-tracker saying 'I can reproduce this bug on version 2.1'",
-          "expectedTool": "add_issue_comment",
-          "calledTool": "add_issue_comment",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 534,
-          "latencyMs": 4201
-        },
-        {
-          "intent": "Add a comment to issue #42 in myuser/project-tracker saying 'I can reproduce this bug on version 2.1'",
-          "expectedTool": "add_issue_comment",
-          "calledTool": "add_issue_comment",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 171,
-          "latencyMs": 4778
-        },
-        {
-          "intent": "Add a comment to issue #42 in myuser/project-tracker saying 'I can reproduce this bug on version 2.1'",
-          "expectedTool": "add_issue_comment",
-          "calledTool": "add_issue_comment",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 271,
-          "latencyMs": 6523
-        },
-        {
-          "intent": "Search for code that uses 'useState' hook in React repositories",
-          "expectedTool": "search_code",
-          "calledTool": "search_code",
-          "paramsCorrect": true,
-          "mockVariant": "success",
           "completed": false,
-          "tokensUsed": 2932,
-          "latencyMs": 14812
-        },
-        {
-          "intent": "Search for code that uses 'useState' hook in React repositories",
-          "expectedTool": "search_code",
-          "calledTool": "search_code",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 3090,
-          "latencyMs": 23516
-        },
-        {
-          "intent": "Search for code that uses 'useState' hook in React repositories",
-          "expectedTool": "search_code",
-          "calledTool": "search_code",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": false,
-          "tokensUsed": 944,
-          "latencyMs": 13268
-        },
-        {
-          "intent": "Search for code that uses 'useState' hook in React repositories",
-          "expectedTool": "search_code",
-          "calledTool": "search_code",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": false,
-          "tokensUsed": 723,
-          "latencyMs": 12317
-        },
-        {
-          "intent": "Create a pull request in myuser/webapp from the 'feature/login' branch to 'main' with title 'Add login functionality'",
-          "expectedTool": "create_pull_request",
-          "calledTool": "create_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": false,
-          "tokensUsed": 1187,
-          "latencyMs": 6403
-        },
-        {
-          "intent": "Create a pull request in myuser/webapp from the 'feature/login' branch to 'main' with title 'Add login functionality'",
-          "expectedTool": "create_pull_request",
-          "calledTool": "create_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 759,
+          "tokensUsed": 267,
           "latencyMs": 6386
         },
         {
-          "intent": "Create a pull request in myuser/webapp from the 'feature/login' branch to 'main' with title 'Add login functionality'",
-          "expectedTool": "create_pull_request",
-          "calledTool": "create_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": false,
-          "tokensUsed": 244,
-          "latencyMs": 5863
-        },
-        {
-          "intent": "Create a pull request in myuser/webapp from the 'feature/login' branch to 'main' with title 'Add login functionality'",
-          "expectedTool": "create_pull_request",
-          "calledTool": "create_pull_request",
+          "intent": "List the last 10 commits on the 'main' branch of 'octocat/Spoon-Knife'.",
+          "expectedTool": "list_commits",
+          "calledTool": "list_commits",
           "paramsCorrect": true,
           "mockVariant": "error",
           "completed": true,
-          "tokensUsed": 273,
-          "latencyMs": 6149
+          "tokensUsed": 1021,
+          "latencyMs": 11462
         },
         {
-          "intent": "Can you deploy my repository to AWS and set up a CI/CD pipeline?",
+          "intent": "Can you tell me the total number of lines of code in 'my-org/my-repo'?",
           "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
+          "calledTool": "get_file_contents",
+          "paramsCorrect": false,
           "mockVariant": "success",
           "completed": true,
-          "tokensUsed": 782,
-          "latencyMs": 9102
+          "tokensUsed": 1397,
+          "latencyMs": 12805
         },
         {
-          "intent": "Can you deploy my repository to AWS and set up a CI/CD pipeline?",
+          "intent": "Can you tell me the total number of lines of code in 'my-org/my-repo'?",
           "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
+          "calledTool": "get_file_contents",
+          "paramsCorrect": false,
           "mockVariant": "empty",
           "completed": true,
-          "tokensUsed": 451,
-          "latencyMs": 9992
+          "tokensUsed": 380,
+          "latencyMs": 7374
         },
         {
-          "intent": "Can you deploy my repository to AWS and set up a CI/CD pipeline?",
+          "intent": "Can you tell me the total number of lines of code in 'my-org/my-repo'?",
           "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
+          "calledTool": "get_file_contents",
+          "paramsCorrect": false,
           "mockVariant": "partial",
           "completed": true,
-          "tokensUsed": 486,
-          "latencyMs": 10192
+          "tokensUsed": 739,
+          "latencyMs": 12363
         },
         {
-          "intent": "Can you deploy my repository to AWS and set up a CI/CD pipeline?",
+          "intent": "Can you tell me the total number of lines of code in 'my-org/my-repo'?",
           "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
+          "calledTool": "get_file_contents",
+          "paramsCorrect": false,
           "mockVariant": "error",
           "completed": true,
-          "tokensUsed": 459,
-          "latencyMs": 10261
+          "tokensUsed": 425,
+          "latencyMs": 7113
         },
         {
-          "intent": "Get the details of pull request #15 in the microsoft/vscode repository",
-          "expectedTool": "get_pull_request",
-          "calledTool": "get_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": false,
-          "tokensUsed": 1380,
-          "latencyMs": 9397
-        },
-        {
-          "intent": "Get the details of pull request #15 in the microsoft/vscode repository",
-          "expectedTool": "get_pull_request",
-          "calledTool": "get_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 640,
-          "latencyMs": 7781
-        },
-        {
-          "intent": "Get the details of pull request #15 in the microsoft/vscode repository",
-          "expectedTool": "get_pull_request",
-          "calledTool": "get_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 351,
-          "latencyMs": 6563
-        },
-        {
-          "intent": "Get the details of pull request #15 in the microsoft/vscode repository",
-          "expectedTool": "get_pull_request",
-          "calledTool": "get_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": false,
-          "tokensUsed": 315,
-          "latencyMs": 7363
-        },
-        {
-          "intent": "Close issue #7 in myuser/todo-app and add the label 'resolved'",
-          "expectedTool": "update_issue",
-          "calledTool": "update_issue",
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": false,
-          "tokensUsed": 1081,
-          "latencyMs": 6143
-        },
-        {
-          "intent": "Close issue #7 in myuser/todo-app and add the label 'resolved'",
-          "expectedTool": "update_issue",
-          "calledTool": "update_issue",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 720,
-          "latencyMs": 5776
-        },
-        {
-          "intent": "Close issue #7 in myuser/todo-app and add the label 'resolved'",
-          "expectedTool": "update_issue",
-          "calledTool": "update_issue",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": false,
-          "tokensUsed": 481,
-          "latencyMs": 6174
-        },
-        {
-          "intent": "Close issue #7 in myuser/todo-app and add the label 'resolved'",
-          "expectedTool": "update_issue",
-          "calledTool": "update_issue",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": false,
-          "tokensUsed": 366,
-          "latencyMs": 8536
-        },
-        {
-          "intent": "What files were changed in pull request #23 of the rails/rails repository?",
-          "expectedTool": "get_pull_request_files",
-          "calledTool": "get_pull_request_files",
+          "intent": "Show me all open issues in 'my-org/my-repo' that are labeled 'bug'.",
+          "expectedTool": "list_issues",
+          "calledTool": "list_issues",
           "paramsCorrect": true,
           "mockVariant": "success",
           "completed": true,
-          "tokensUsed": 1470,
-          "latencyMs": 7162
+          "tokensUsed": 1080,
+          "latencyMs": 6553
         },
         {
-          "intent": "What files were changed in pull request #23 of the rails/rails repository?",
-          "expectedTool": "get_pull_request_files",
-          "calledTool": "get_pull_request_files",
+          "intent": "Show me all open issues in 'my-org/my-repo' that are labeled 'bug'.",
+          "expectedTool": "list_issues",
+          "calledTool": "list_issues",
           "paramsCorrect": true,
           "mockVariant": "empty",
           "completed": true,
-          "tokensUsed": 577,
-          "latencyMs": 9140
+          "tokensUsed": 219,
+          "latencyMs": 5631
         },
         {
-          "intent": "What files were changed in pull request #23 of the rails/rails repository?",
-          "expectedTool": "get_pull_request_files",
-          "calledTool": "get_pull_request_files",
+          "intent": "Show me all open issues in 'my-org/my-repo' that are labeled 'bug'.",
+          "expectedTool": "list_issues",
+          "calledTool": "list_issues",
           "paramsCorrect": true,
           "mockVariant": "partial",
-          "completed": true,
+          "completed": false,
           "tokensUsed": 264,
+          "latencyMs": 7312
+        },
+        {
+          "intent": "Show me all open issues in 'my-org/my-repo' that are labeled 'bug'.",
+          "expectedTool": "list_issues",
+          "calledTool": "list_issues",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 256,
+          "latencyMs": 6963
+        },
+        {
+          "intent": "Update issue number 5 in 'my-org/my-repo'. Change its title to 'Fixed: Login button now works' and close it.",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 766,
+          "latencyMs": 6126
+        },
+        {
+          "intent": "Update issue number 5 in 'my-org/my-repo'. Change its title to 'Fixed: Login button now works' and close it.",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 374,
+          "latencyMs": 5529
+        },
+        {
+          "intent": "Update issue number 5 in 'my-org/my-repo'. Change its title to 'Fixed: Login button now works' and close it.",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 368,
+          "latencyMs": 5666
+        },
+        {
+          "intent": "Update issue number 5 in 'my-org/my-repo'. Change its title to 'Fixed: Login button now works' and close it.",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 519,
+          "latencyMs": 7633
+        },
+        {
+          "intent": "Add a comment to issue 12 in 'my-org/my-repo' saying 'Thanks for the report, I'm looking into it.'",
+          "expectedTool": "add_issue_comment",
+          "calledTool": "add_issue_comment",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 537,
+          "latencyMs": 3998
+        },
+        {
+          "intent": "Add a comment to issue 12 in 'my-org/my-repo' saying 'Thanks for the report, I'm looking into it.'",
+          "expectedTool": "add_issue_comment",
+          "calledTool": "add_issue_comment",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 182,
+          "latencyMs": 4166
+        },
+        {
+          "intent": "Add a comment to issue 12 in 'my-org/my-repo' saying 'Thanks for the report, I'm looking into it.'",
+          "expectedTool": "add_issue_comment",
+          "calledTool": "add_issue_comment",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 182,
+          "latencyMs": 4731
+        },
+        {
+          "intent": "Add a comment to issue 12 in 'my-org/my-repo' saying 'Thanks for the report, I'm looking into it.'",
+          "expectedTool": "add_issue_comment",
+          "calledTool": "add_issue_comment",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 268,
+          "latencyMs": 6229
+        },
+        {
+          "intent": "Search for all Python files containing 'def main(' across GitHub.",
+          "expectedTool": "search_code",
+          "calledTool": "search_code",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 974,
+          "latencyMs": 13413
+        },
+        {
+          "intent": "Search for all Python files containing 'def main(' across GitHub.",
+          "expectedTool": "search_code",
+          "calledTool": "search_code",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 730,
+          "latencyMs": 15476
+        },
+        {
+          "intent": "Search for all Python files containing 'def main(' across GitHub.",
+          "expectedTool": "search_code",
+          "calledTool": "search_code",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 597,
+          "latencyMs": 11368
+        },
+        {
+          "intent": "Search for all Python files containing 'def main(' across GitHub.",
+          "expectedTool": "search_code",
+          "calledTool": "search_code",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 990,
+          "latencyMs": 16619
+        },
+        {
+          "intent": "Find all open issues mentioning 'authentication' in their title or body.",
+          "expectedTool": "search_issues",
+          "calledTool": "search_issues",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 733,
+          "latencyMs": 8176
+        },
+        {
+          "intent": "Find all open issues mentioning 'authentication' in their title or body.",
+          "expectedTool": "search_issues",
+          "calledTool": "search_issues",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 724,
+          "latencyMs": 8399
+        },
+        {
+          "intent": "Find all open issues mentioning 'authentication' in their title or body.",
+          "expectedTool": "search_issues",
+          "calledTool": "search_issues",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 343,
+          "latencyMs": 8399
+        },
+        {
+          "intent": "Find all open issues mentioning 'authentication' in their title or body.",
+          "expectedTool": "search_issues",
+          "calledTool": "search_issues",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 534,
+          "latencyMs": 10663
+        },
+        {
+          "intent": "Who are the top 5 most followed users on GitHub?",
+          "expectedTool": null,
+          "calledTool": "search_users",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3185,
+          "latencyMs": 15586
+        },
+        {
+          "intent": "Who are the top 5 most followed users on GitHub?",
+          "expectedTool": null,
+          "calledTool": "search_users",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 1410,
+          "latencyMs": 19078
+        },
+        {
+          "intent": "Who are the top 5 most followed users on GitHub?",
+          "expectedTool": null,
+          "calledTool": "search_users",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 1939,
+          "latencyMs": 15052
+        },
+        {
+          "intent": "Who are the top 5 most followed users on GitHub?",
+          "expectedTool": null,
+          "calledTool": "search_users",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1665,
+          "latencyMs": 18532
+        },
+        {
+          "intent": "Tell me about the issue number 25 in 'octocat/Spoon-Knife'.",
+          "expectedTool": "get_issue",
+          "calledTool": "get_issue",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1569,
+          "latencyMs": 7356
+        },
+        {
+          "intent": "Tell me about the issue number 25 in 'octocat/Spoon-Knife'.",
+          "expectedTool": "get_issue",
+          "calledTool": "get_issue",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 654,
+          "latencyMs": 7269
+        },
+        {
+          "intent": "Tell me about the issue number 25 in 'octocat/Spoon-Knife'.",
+          "expectedTool": "get_issue",
+          "calledTool": "get_issue",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 236,
+          "latencyMs": 5964
+        },
+        {
+          "intent": "Tell me about the issue number 25 in 'octocat/Spoon-Knife'.",
+          "expectedTool": "get_issue",
+          "calledTool": "get_issue",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 214,
           "latencyMs": 6349
         },
         {
-          "intent": "What files were changed in pull request #23 of the rails/rails repository?",
+          "intent": "What are the details of pull request 10 in 'my-org/my-repo'?",
+          "expectedTool": "get_pull_request",
+          "calledTool": "get_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 610,
+          "latencyMs": 6727
+        },
+        {
+          "intent": "What are the details of pull request 10 in 'my-org/my-repo'?",
+          "expectedTool": "get_pull_request",
+          "calledTool": "get_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 262,
+          "latencyMs": 6182
+        },
+        {
+          "intent": "What are the details of pull request 10 in 'my-org/my-repo'?",
+          "expectedTool": "get_pull_request",
+          "calledTool": "get_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 263,
+          "latencyMs": 7372
+        },
+        {
+          "intent": "What are the details of pull request 10 in 'my-org/my-repo'?",
+          "expectedTool": "get_pull_request",
+          "calledTool": "get_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 279,
+          "latencyMs": 6550
+        },
+        {
+          "intent": "List all open pull requests in 'my-org/my-repo'.",
+          "expectedTool": "list_pull_requests",
+          "calledTool": "list_pull_requests",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1648,
+          "latencyMs": 7076
+        },
+        {
+          "intent": "List all open pull requests in 'my-org/my-repo'.",
+          "expectedTool": "list_pull_requests",
+          "calledTool": "list_pull_requests",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 178,
+          "latencyMs": 4545
+        },
+        {
+          "intent": "List all open pull requests in 'my-org/my-repo'.",
+          "expectedTool": "list_pull_requests",
+          "calledTool": "list_pull_requests",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 247,
+          "latencyMs": 5837
+        },
+        {
+          "intent": "List all open pull requests in 'my-org/my-repo'.",
+          "expectedTool": "list_pull_requests",
+          "calledTool": "list_pull_requests",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 216,
+          "latencyMs": 5844
+        },
+        {
+          "intent": "I need to create a review for pull request 15 in 'my-org/my-repo'. I want to approve it and add a comment: 'Looks good, ready to merge!'",
+          "expectedTool": "create_pull_request_review",
+          "calledTool": "create_pull_request_review",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 602,
+          "latencyMs": 5539
+        },
+        {
+          "intent": "I need to create a review for pull request 15 in 'my-org/my-repo'. I want to approve it and add a comment: 'Looks good, ready to merge!'",
+          "expectedTool": "create_pull_request_review",
+          "calledTool": "create_pull_request_review",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 403,
+          "latencyMs": 10650
+        },
+        {
+          "intent": "I need to create a review for pull request 15 in 'my-org/my-repo'. I want to approve it and add a comment: 'Looks good, ready to merge!'",
+          "expectedTool": "create_pull_request_review",
+          "calledTool": "create_pull_request_review",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 239,
+          "latencyMs": 7976
+        },
+        {
+          "intent": "I need to create a review for pull request 15 in 'my-org/my-repo'. I want to approve it and add a comment: 'Looks good, ready to merge!'",
+          "expectedTool": "create_pull_request_review",
+          "calledTool": "create_pull_request_review",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1032,
+          "latencyMs": 10547
+        },
+        {
+          "intent": "Merge pull request 20 in 'my-org/my-repo' using a squash merge. The commit title should be 'Feature: New Dashboard'.",
+          "expectedTool": "merge_pull_request",
+          "calledTool": "merge_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 790,
+          "latencyMs": 6551
+        },
+        {
+          "intent": "Merge pull request 20 in 'my-org/my-repo' using a squash merge. The commit title should be 'Feature: New Dashboard'.",
+          "expectedTool": "merge_pull_request",
+          "calledTool": "merge_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 760,
+          "latencyMs": 7676
+        },
+        {
+          "intent": "Merge pull request 20 in 'my-org/my-repo' using a squash merge. The commit title should be 'Feature: New Dashboard'.",
+          "expectedTool": "merge_pull_request",
+          "calledTool": "merge_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 760,
+          "latencyMs": 7680
+        },
+        {
+          "intent": "Merge pull request 20 in 'my-org/my-repo' using a squash merge. The commit title should be 'Feature: New Dashboard'.",
+          "expectedTool": "merge_pull_request",
+          "calledTool": "merge_pull_request",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 565,
+          "latencyMs": 8395
+        },
+        {
+          "intent": "What files were changed in pull request 30 of 'my-org/my-repo'?",
+          "expectedTool": "get_pull_request_files",
+          "calledTool": "get_pull_request_files",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1801,
+          "latencyMs": 6558
+        },
+        {
+          "intent": "What files were changed in pull request 30 of 'my-org/my-repo'?",
+          "expectedTool": "get_pull_request_files",
+          "calledTool": "get_pull_request_files",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 203,
+          "latencyMs": 5426
+        },
+        {
+          "intent": "What files were changed in pull request 30 of 'my-org/my-repo'?",
+          "expectedTool": "get_pull_request_files",
+          "calledTool": "get_pull_request_files",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 195,
+          "latencyMs": 4815
+        },
+        {
+          "intent": "What files were changed in pull request 30 of 'my-org/my-repo'?",
           "expectedTool": "get_pull_request_files",
           "calledTool": "get_pull_request_files",
           "paramsCorrect": true,
           "mockVariant": "error",
           "completed": true,
-          "tokensUsed": 244,
-          "latencyMs": 6838
+          "tokensUsed": 246,
+          "latencyMs": 6347
         },
         {
-          "intent": "Can you send an email notification to all contributors of my repository when a new issue is opened?",
+          "intent": "Can you generate a report on the code quality of my repository 'my-org/my-repo'?",
           "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": true,
-          "tokensUsed": 774,
-          "latencyMs": 10648
-        },
-        {
-          "intent": "Can you send an email notification to all contributors of my repository when a new issue is opened?",
-          "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 371,
-          "latencyMs": 8757
-        },
-        {
-          "intent": "Can you send an email notification to all contributors of my repository when a new issue is opened?",
-          "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 439,
-          "latencyMs": 10129
-        },
-        {
-          "intent": "Can you send an email notification to all contributors of my repository when a new issue is opened?",
-          "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 371,
-          "latencyMs": 8626
-        },
-        {
-          "intent": "Search for GitHub users with the name 'john' who are located in San Francisco",
-          "expectedTool": "search_users",
-          "calledTool": "search_users",
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": true,
-          "tokensUsed": 1016,
-          "latencyMs": 6283
-        },
-        {
-          "intent": "Search for GitHub users with the name 'john' who are located in San Francisco",
-          "expectedTool": "search_users",
-          "calledTool": "search_users",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 1106,
-          "latencyMs": 18021
-        },
-        {
-          "intent": "Search for GitHub users with the name 'john' who are located in San Francisco",
-          "expectedTool": "search_users",
-          "calledTool": "search_users",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 309,
-          "latencyMs": 7590
-        },
-        {
-          "intent": "Search for GitHub users with the name 'john' who are located in San Francisco",
-          "expectedTool": "search_users",
-          "calledTool": "search_users",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 326,
-          "latencyMs": 9675
-        },
-        {
-          "intent": "Merge pull request #8 in myuser/api-service using the squash method",
-          "expectedTool": "merge_pull_request",
-          "calledTool": "merge_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": true,
-          "tokensUsed": 878,
-          "latencyMs": 6287
-        },
-        {
-          "intent": "Merge pull request #8 in myuser/api-service using the squash method",
-          "expectedTool": "merge_pull_request",
-          "calledTool": "merge_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 677,
-          "latencyMs": 5323
-        },
-        {
-          "intent": "Merge pull request #8 in myuser/api-service using the squash method",
-          "expectedTool": "merge_pull_request",
-          "calledTool": "merge_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 287,
-          "latencyMs": 6142
-        },
-        {
-          "intent": "Merge pull request #8 in myuser/api-service using the squash method",
-          "expectedTool": "merge_pull_request",
-          "calledTool": "merge_pull_request",
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": true,
-          "tokensUsed": 363,
-          "latencyMs": 8492
-        },
-        {
-          "intent": "Please generate a visual graph showing the commit history and branching structure of my repository",
-          "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
+          "calledTool": "list_issues",
+          "paramsCorrect": false,
           "mockVariant": "success",
           "completed": false,
-          "tokensUsed": 433,
-          "latencyMs": 4621
+          "tokensUsed": 10024,
+          "latencyMs": 28021
         },
         {
-          "intent": "Please generate a visual graph showing the commit history and branching structure of my repository",
+          "intent": "Can you generate a report on the code quality of my repository 'my-org/my-repo'?",
           "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
+          "calledTool": "list_commits",
+          "paramsCorrect": false,
           "mockVariant": "empty",
           "completed": false,
-          "tokensUsed": 97,
-          "latencyMs": 2452
+          "tokensUsed": 2088,
+          "latencyMs": 22324
         },
         {
-          "intent": "Please generate a visual graph showing the commit history and branching structure of my repository",
+          "intent": "Can you generate a report on the code quality of my repository 'my-org/my-repo'?",
           "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
+          "calledTool": "list_issues",
+          "paramsCorrect": false,
           "mockVariant": "partial",
           "completed": false,
-          "tokensUsed": 97,
-          "latencyMs": 2665
+          "tokensUsed": 2793,
+          "latencyMs": 25981
         },
         {
-          "intent": "Please generate a visual graph showing the commit history and branching structure of my repository",
+          "intent": "Can you generate a report on the code quality of my repository 'my-org/my-repo'?",
           "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
-          "mockVariant": "error",
-          "completed": false,
-          "tokensUsed": 77,
-          "latencyMs": 2093
-        },
-        {
-          "intent": "Can you set up two-factor authentication for my GitHub account?",
-          "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
-          "mockVariant": "success",
-          "completed": true,
-          "tokensUsed": 664,
-          "latencyMs": 7531
-        },
-        {
-          "intent": "Can you set up two-factor authentication for my GitHub account?",
-          "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
-          "mockVariant": "empty",
-          "completed": true,
-          "tokensUsed": 342,
-          "latencyMs": 8873
-        },
-        {
-          "intent": "Can you set up two-factor authentication for my GitHub account?",
-          "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
-          "mockVariant": "partial",
-          "completed": true,
-          "tokensUsed": 325,
-          "latencyMs": 7188
-        },
-        {
-          "intent": "Can you set up two-factor authentication for my GitHub account?",
-          "expectedTool": null,
-          "calledTool": null,
-          "paramsCorrect": true,
+          "calledTool": "list_issues",
+          "paramsCorrect": false,
           "mockVariant": "error",
           "completed": true,
-          "tokensUsed": 338,
-          "latencyMs": 7266
+          "tokensUsed": 1040,
+          "latencyMs": 13412
         }
-      ]
+      ],
+      "repeats": 3,
+      "axScoreStd": 0.4714045207910317,
+      "unstable": false,
+      "subScoreStds": {
+        "intentInterpretation": 0,
+        "toolCallConstruction": 0,
+        "resultSynthesis": 0.03441531025934403,
+        "errorRecovery": 0.010274023338281594
+      },
+      "judgeFailures": 0
     }
   },
   "topFixes": [
@@ -2175,6 +2352,51 @@
         "inputSchemaDepth": 1,
         "consistentParamCasing": true
       }
+    }
+  },
+  "canary": {
+    "pass": true,
+    "cleanScore": 79,
+    "badScore": 20,
+    "failures": []
+  },
+  "coverage": {
+    "toolsTotal": 26,
+    "toolsCovered": 20,
+    "ratio": 0.7692307692307693,
+    "uncoveredTools": [
+      "push_files",
+      "search_users",
+      "get_pull_request_status",
+      "update_pull_request_branch",
+      "get_pull_request_comments",
+      "get_pull_request_reviews"
+    ],
+    "distractorCount": 4,
+    "distractorRatio": 0.16666666666666666
+  },
+  "synthesisTrust": {
+    "high": 0,
+    "medium": 19,
+    "low": 7,
+    "level": "medium",
+    "note": "Many tools lack output schemas; synthesis mocks are partly invented, so read the synthesis sub-score with some caution."
+  },
+  "runConfig": {
+    "scoredModel": "claude-sonnet-4-6",
+    "generationModel": "gemini-2.5-flash",
+    "judgeModel": "gemini-2.5-flash",
+    "scoredTemperature": 0.7,
+    "repeats": 3,
+    "intentCount": 24,
+    "maxRounds": 6,
+    "concurrency": 5,
+    "judgeRubricVersion": 1,
+    "weights": {
+      "intentInterpretation": 0.35,
+      "toolCallConstruction": 0.35,
+      "resultSynthesis": 0.2,
+      "errorRecovery": 0.1
     }
   }
 }

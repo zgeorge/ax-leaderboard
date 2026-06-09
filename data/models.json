@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-08T00:00:00Z",
+  "note": "Full 9-model target matrix. The current proof of concept scores ONLY anthropic.mid (claude-sonnet-4-6) end-to-end. Other cells document intent and activate when OpenAI/Google providers land. Verify every ID against provider docs before a real multi-model sweep; never use 'latest' aliases.",
+  "pocModel": "claude-sonnet-4-6",
+  "families": {
+    "anthropic": {
+      "cheap": { "id": "claude-haiku-4-5-20251001", "label": "Haiku 4.5" },
+      "mid": { "id": "claude-sonnet-4-6", "label": "Sonnet 4.6" },
+      "frontier": { "id": "claude-opus-4-8", "label": "Opus 4.8" }
+    },
+    "openai": {
+      "cheap": { "id": "gpt-4o-mini", "label": "GPT-4o mini" },
+      "mid": { "id": "gpt-4o", "label": "GPT-4o" },
+      "frontier": { "id": "o3", "label": "o3" }
+    },
+    "google": {
+      "cheap": { "id": "gemini-2.5-flash-lite", "label": "Gemini 2.5 Flash-Lite" },
+      "mid": { "id": "gemini-2.5-flash", "label": "Gemini 2.5 Flash" },
+      "frontier": { "id": "gemini-2.5-pro", "label": "Gemini 2.5 Pro" }
+    }
+  }
+}

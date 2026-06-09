@@ -1,0 +1,2205 @@
+{
+  "schemaVersion": 2,
+  "server": {
+    "name": "Playwright",
+    "registry": null,
+    "manifestSource": "file",
+    "executionMode": "mock",
+    "scoredAt": "2026-06-09T19:21:38.909Z",
+    "generationModel": "gemini-2.5-flash"
+  },
+  "tools": {
+    "browser_close": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_resize": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_console_messages": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_handle_dialog": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_evaluate": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_file_upload": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_drop": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_fill_form": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_press_key": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_type": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_navigate": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_navigate_back": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_network_requests": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_network_request": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_run_code_unsafe": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_take_screenshot": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_snapshot": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_click": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_drag": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_hover": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_select_option": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_tabs": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "browser_wait_for": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    }
+  },
+  "models": {
+    "claude-sonnet-4-6": {
+      "axScore": 67,
+      "subScores": {
+        "intentInterpretation": 0.6111111111111112,
+        "toolCallConstruction": 0.6376811594202899,
+        "resultSynthesis": 0.8916666666666666,
+        "errorRecovery": 0.573913043478261,
+        "tokensPerTask": 326.5416666666667,
+        "latencyMs": 5158.666666666667
+      },
+      "scoreWeights": {
+        "intentInterpretation": 0.35,
+        "toolCallConstruction": 0.35,
+        "resultSynthesis": 0.2,
+        "errorRecovery": 0.1
+      },
+      "lowProgrammaticSignal": false,
+      "tasks": [
+        {
+          "intent": "Can you close the current browser window for me?",
+          "expectedTool": "browser_close",
+          "calledTool": "browser_close",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 395,
+          "latencyMs": 4724
+        },
+        {
+          "intent": "Can you close the current browser window for me?",
+          "expectedTool": "browser_close",
+          "calledTool": "browser_close",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 410,
+          "latencyMs": 3775
+        },
+        {
+          "intent": "Can you close the current browser window for me?",
+          "expectedTool": "browser_close",
+          "calledTool": "browser_close",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 78,
+          "latencyMs": 4272
+        },
+        {
+          "intent": "Can you close the current browser window for me?",
+          "expectedTool": "browser_close",
+          "calledTool": "browser_close",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 88,
+          "latencyMs": 6465
+        },
+        {
+          "intent": "I need to make the browser window 1024 pixels wide and 768 pixels tall.",
+          "expectedTool": "browser_resize",
+          "calledTool": "browser_resize",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 451,
+          "latencyMs": 3397
+        },
+        {
+          "intent": "I need to make the browser window 1024 pixels wide and 768 pixels tall.",
+          "expectedTool": "browser_resize",
+          "calledTool": "browser_resize",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 451,
+          "latencyMs": 3376
+        },
+        {
+          "intent": "I need to make the browser window 1024 pixels wide and 768 pixels tall.",
+          "expectedTool": "browser_resize",
+          "calledTool": "browser_resize",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 99,
+          "latencyMs": 3932
+        },
+        {
+          "intent": "I need to make the browser window 1024 pixels wide and 768 pixels tall.",
+          "expectedTool": "browser_resize",
+          "calledTool": "browser_resize",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 433,
+          "latencyMs": 7545
+        },
+        {
+          "intent": "Show me all the console messages that are errors, and save them to a file called 'error_logs.txt'.",
+          "expectedTool": "browser_console_messages",
+          "calledTool": "browser_console_messages",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 572,
+          "latencyMs": 5766
+        },
+        {
+          "intent": "Show me all the console messages that are errors, and save them to a file called 'error_logs.txt'.",
+          "expectedTool": "browser_console_messages",
+          "calledTool": "browser_console_messages",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 180,
+          "latencyMs": 6448
+        },
+        {
+          "intent": "Show me all the console messages that are errors, and save them to a file called 'error_logs.txt'.",
+          "expectedTool": "browser_console_messages",
+          "calledTool": "browser_console_messages",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 299,
+          "latencyMs": 7171
+        },
+        {
+          "intent": "Show me all the console messages that are errors, and save them to a file called 'error_logs.txt'.",
+          "expectedTool": "browser_console_messages",
+          "calledTool": "browser_console_messages",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1017,
+          "latencyMs": 12998
+        },
+        {
+          "intent": "There's a popup asking for confirmation. Please accept it and type 'Yes, proceed' into the prompt.",
+          "expectedTool": "browser_handle_dialog",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1088,
+          "latencyMs": 7240
+        },
+        {
+          "intent": "There's a popup asking for confirmation. Please accept it and type 'Yes, proceed' into the prompt.",
+          "expectedTool": "browser_handle_dialog",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 631,
+          "latencyMs": 9252
+        },
+        {
+          "intent": "There's a popup asking for confirmation. Please accept it and type 'Yes, proceed' into the prompt.",
+          "expectedTool": "browser_handle_dialog",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 823,
+          "latencyMs": 7529
+        },
+        {
+          "intent": "There's a popup asking for confirmation. Please accept it and type 'Yes, proceed' into the prompt.",
+          "expectedTool": "browser_handle_dialog",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 897,
+          "latencyMs": 12857
+        },
+        {
+          "intent": "Can you run this JavaScript code on the page: `document.title = 'New Title';`?",
+          "expectedTool": "browser_evaluate",
+          "calledTool": "browser_evaluate",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 475,
+          "latencyMs": 4513
+        },
+        {
+          "intent": "Can you run this JavaScript code on the page: `document.title = 'New Title';`?",
+          "expectedTool": "browser_evaluate",
+          "calledTool": "browser_evaluate",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 475,
+          "latencyMs": 3783
+        },
+        {
+          "intent": "Can you run this JavaScript code on the page: `document.title = 'New Title';`?",
+          "expectedTool": "browser_evaluate",
+          "calledTool": "browser_evaluate",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 126,
+          "latencyMs": 4497
+        },
+        {
+          "intent": "Can you run this JavaScript code on the page: `document.title = 'New Title';`?",
+          "expectedTool": "browser_evaluate",
+          "calledTool": "browser_evaluate",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 170,
+          "latencyMs": 4851
+        },
+        {
+          "intent": "I need to upload a file named 'document.pdf' from my desktop.",
+          "expectedTool": "browser_file_upload",
+          "calledTool": "browser_file_upload",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 765,
+          "latencyMs": 8389
+        },
+        {
+          "intent": "I need to upload a file named 'document.pdf' from my desktop.",
+          "expectedTool": "browser_file_upload",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 84,
+          "latencyMs": 2500
+        },
+        {
+          "intent": "I need to upload a file named 'document.pdf' from my desktop.",
+          "expectedTool": "browser_file_upload",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 87,
+          "latencyMs": 2666
+        },
+        {
+          "intent": "I need to upload a file named 'document.pdf' from my desktop.",
+          "expectedTool": "browser_file_upload",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 176,
+          "latencyMs": 3995
+        },
+        {
+          "intent": "Drag 'image.png' and drop it onto the area labeled 'Drop files here'.",
+          "expectedTool": "browser_drop",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1201,
+          "latencyMs": 7695
+        },
+        {
+          "intent": "Drag 'image.png' and drop it onto the area labeled 'Drop files here'.",
+          "expectedTool": "browser_drop",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 586,
+          "latencyMs": 8103
+        },
+        {
+          "intent": "Drag 'image.png' and drop it onto the area labeled 'Drop files here'.",
+          "expectedTool": "browser_drop",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 1696,
+          "latencyMs": 13885
+        },
+        {
+          "intent": "Drag 'image.png' and drop it onto the area labeled 'Drop files here'.",
+          "expectedTool": "browser_drop",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1127,
+          "latencyMs": 10435
+        },
+        {
+          "intent": "Fill out the login form with username 'testuser' and password 'password123'.",
+          "expectedTool": "browser_fill_form",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 673,
+          "latencyMs": 4129
+        },
+        {
+          "intent": "Fill out the login form with username 'testuser' and password 'password123'.",
+          "expectedTool": "browser_fill_form",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 2081,
+          "latencyMs": 14254
+        },
+        {
+          "intent": "Fill out the login form with username 'testuser' and password 'password123'.",
+          "expectedTool": "browser_fill_form",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 1240,
+          "latencyMs": 10678
+        },
+        {
+          "intent": "Fill out the login form with username 'testuser' and password 'password123'.",
+          "expectedTool": "browser_fill_form",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 735,
+          "latencyMs": 8987
+        },
+        {
+          "intent": "Press the 'Enter' key on the keyboard.",
+          "expectedTool": "browser_press_key",
+          "calledTool": "browser_press_key",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 502,
+          "latencyMs": 4994
+        },
+        {
+          "intent": "Press the 'Enter' key on the keyboard.",
+          "expectedTool": "browser_press_key",
+          "calledTool": "browser_press_key",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 171,
+          "latencyMs": 3700
+        },
+        {
+          "intent": "Press the 'Enter' key on the keyboard.",
+          "expectedTool": "browser_press_key",
+          "calledTool": "browser_press_key",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 103,
+          "latencyMs": 3566
+        },
+        {
+          "intent": "Press the 'Enter' key on the keyboard.",
+          "expectedTool": "browser_press_key",
+          "calledTool": "browser_press_key",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 162,
+          "latencyMs": 8685
+        },
+        {
+          "intent": "Type 'hello world' into the search bar.",
+          "expectedTool": "browser_type",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 329,
+          "latencyMs": 4164
+        },
+        {
+          "intent": "Type 'hello world' into the search bar.",
+          "expectedTool": "browser_type",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 574,
+          "latencyMs": 4042
+        },
+        {
+          "intent": "Type 'hello world' into the search bar.",
+          "expectedTool": "browser_type",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 117,
+          "latencyMs": 3932
+        },
+        {
+          "intent": "Type 'hello world' into the search bar.",
+          "expectedTool": "browser_type",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 460,
+          "latencyMs": 6173
+        },
+        {
+          "intent": "Go to 'https://www.example.com'.",
+          "expectedTool": "browser_navigate",
+          "calledTool": "browser_navigate",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 528,
+          "latencyMs": 6103
+        },
+        {
+          "intent": "Go to 'https://www.example.com'.",
+          "expectedTool": "browser_navigate",
+          "calledTool": "browser_navigate",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 183,
+          "latencyMs": 4580
+        },
+        {
+          "intent": "Go to 'https://www.example.com'.",
+          "expectedTool": "browser_navigate",
+          "calledTool": "browser_navigate",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 111,
+          "latencyMs": 3820
+        },
+        {
+          "intent": "Go to 'https://www.example.com'.",
+          "expectedTool": "browser_navigate",
+          "calledTool": "browser_navigate",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 203,
+          "latencyMs": 5955
+        },
+        {
+          "intent": "Can you go back to the previous page I was on?",
+          "expectedTool": "browser_navigate_back",
+          "calledTool": "browser_navigate_back",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 417,
+          "latencyMs": 2964
+        },
+        {
+          "intent": "Can you go back to the previous page I was on?",
+          "expectedTool": "browser_navigate_back",
+          "calledTool": "browser_navigate_back",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 73,
+          "latencyMs": 6174
+        },
+        {
+          "intent": "Can you go back to the previous page I was on?",
+          "expectedTool": "browser_navigate_back",
+          "calledTool": "browser_navigate_back",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 74,
+          "latencyMs": 3327
+        },
+        {
+          "intent": "Can you go back to the previous page I was on?",
+          "expectedTool": "browser_navigate_back",
+          "calledTool": "browser_navigate_back",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 104,
+          "latencyMs": 4176
+        },
+        {
+          "intent": "List all network requests made since the page loaded, but only for static assets.",
+          "expectedTool": "browser_network_requests",
+          "calledTool": "browser_network_requests",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 620,
+          "latencyMs": 5325
+        },
+        {
+          "intent": "List all network requests made since the page loaded, but only for static assets.",
+          "expectedTool": "browser_network_requests",
+          "calledTool": "browser_network_requests",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 178,
+          "latencyMs": 5084
+        },
+        {
+          "intent": "List all network requests made since the page loaded, but only for static assets.",
+          "expectedTool": "browser_network_requests",
+          "calledTool": "browser_network_requests",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 203,
+          "latencyMs": 6035
+        },
+        {
+          "intent": "List all network requests made since the page loaded, but only for static assets.",
+          "expectedTool": "browser_network_requests",
+          "calledTool": "browser_network_requests",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 360,
+          "latencyMs": 7254
+        },
+        {
+          "intent": "What were the headers for the 5th network request?",
+          "expectedTool": "browser_network_request",
+          "calledTool": "browser_network_requests",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 671,
+          "latencyMs": 4978
+        },
+        {
+          "intent": "What were the headers for the 5th network request?",
+          "expectedTool": "browser_network_request",
+          "calledTool": "browser_network_requests",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 218,
+          "latencyMs": 4769
+        },
+        {
+          "intent": "What were the headers for the 5th network request?",
+          "expectedTool": "browser_network_request",
+          "calledTool": "browser_network_requests",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 266,
+          "latencyMs": 4916
+        },
+        {
+          "intent": "What were the headers for the 5th network request?",
+          "expectedTool": "browser_network_request",
+          "calledTool": "browser_network_requests",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1005,
+          "latencyMs": 11823
+        },
+        {
+          "intent": "Run this Playwright code: `await page.locator('#myButton').click();`",
+          "expectedTool": "browser_run_code_unsafe",
+          "calledTool": "browser_run_code_unsafe",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 506,
+          "latencyMs": 4828
+        },
+        {
+          "intent": "Run this Playwright code: `await page.locator('#myButton').click();`",
+          "expectedTool": "browser_run_code_unsafe",
+          "calledTool": "browser_run_code_unsafe",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 172,
+          "latencyMs": 6605
+        },
+        {
+          "intent": "Run this Playwright code: `await page.locator('#myButton').click();`",
+          "expectedTool": "browser_run_code_unsafe",
+          "calledTool": "browser_run_code_unsafe",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 342,
+          "latencyMs": 7145
+        },
+        {
+          "intent": "Run this Playwright code: `await page.locator('#myButton').click();`",
+          "expectedTool": "browser_run_code_unsafe",
+          "calledTool": "browser_run_code_unsafe",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 311,
+          "latencyMs": 8198
+        },
+        {
+          "intent": "Take a full-page screenshot and save it as 'homepage.png'.",
+          "expectedTool": "browser_take_screenshot",
+          "calledTool": "browser_take_screenshot",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 471,
+          "latencyMs": 3425
+        },
+        {
+          "intent": "Take a full-page screenshot and save it as 'homepage.png'.",
+          "expectedTool": "browser_take_screenshot",
+          "calledTool": "browser_take_screenshot",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 470,
+          "latencyMs": 4460
+        },
+        {
+          "intent": "Take a full-page screenshot and save it as 'homepage.png'.",
+          "expectedTool": "browser_take_screenshot",
+          "calledTool": "browser_take_screenshot",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 134,
+          "latencyMs": 3503
+        },
+        {
+          "intent": "Take a full-page screenshot and save it as 'homepage.png'.",
+          "expectedTool": "browser_take_screenshot",
+          "calledTool": "browser_take_screenshot",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 740,
+          "latencyMs": 10004
+        },
+        {
+          "intent": "Capture an accessibility snapshot of the current page.",
+          "expectedTool": "browser_snapshot",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 782,
+          "latencyMs": 6837
+        },
+        {
+          "intent": "Capture an accessibility snapshot of the current page.",
+          "expectedTool": "browser_snapshot",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 281,
+          "latencyMs": 5127
+        },
+        {
+          "intent": "Capture an accessibility snapshot of the current page.",
+          "expectedTool": "browser_snapshot",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 577,
+          "latencyMs": 8311
+        },
+        {
+          "intent": "Capture an accessibility snapshot of the current page.",
+          "expectedTool": "browser_snapshot",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1091,
+          "latencyMs": 17968
+        },
+        {
+          "intent": "Click on the button that says 'Submit'.",
+          "expectedTool": "browser_click",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 697,
+          "latencyMs": 5827
+        },
+        {
+          "intent": "Click on the button that says 'Submit'.",
+          "expectedTool": "browser_click",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 270,
+          "latencyMs": 5542
+        },
+        {
+          "intent": "Click on the button that says 'Submit'.",
+          "expectedTool": "browser_click",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 652,
+          "latencyMs": 12633
+        },
+        {
+          "intent": "Click on the button that says 'Submit'.",
+          "expectedTool": "browser_click",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 556,
+          "latencyMs": 7158
+        },
+        {
+          "intent": "Drag the item 'Draggable Element' to the 'Drop Zone'.",
+          "expectedTool": "browser_drag",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 702,
+          "latencyMs": 4751
+        },
+        {
+          "intent": "Drag the item 'Draggable Element' to the 'Drop Zone'.",
+          "expectedTool": "browser_drag",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 558,
+          "latencyMs": 6646
+        },
+        {
+          "intent": "Drag the item 'Draggable Element' to the 'Drop Zone'.",
+          "expectedTool": "browser_drag",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 2130,
+          "latencyMs": 16458
+        },
+        {
+          "intent": "Drag the item 'Draggable Element' to the 'Drop Zone'.",
+          "expectedTool": "browser_drag",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 954,
+          "latencyMs": 10036
+        },
+        {
+          "intent": "Hover over the 'Menu' item.",
+          "expectedTool": "browser_hover",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 686,
+          "latencyMs": 4552
+        },
+        {
+          "intent": "Hover over the 'Menu' item.",
+          "expectedTool": "browser_hover",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 105,
+          "latencyMs": 5904
+        },
+        {
+          "intent": "Hover over the 'Menu' item.",
+          "expectedTool": "browser_hover",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 643,
+          "latencyMs": 13165
+        },
+        {
+          "intent": "Hover over the 'Menu' item.",
+          "expectedTool": "browser_hover",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 271,
+          "latencyMs": 5759
+        },
+        {
+          "intent": "In the dropdown labeled 'Country', select the option 'Canada'.",
+          "expectedTool": "browser_select_option",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 669,
+          "latencyMs": 5189
+        },
+        {
+          "intent": "In the dropdown labeled 'Country', select the option 'Canada'.",
+          "expectedTool": "browser_select_option",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 230,
+          "latencyMs": 3547
+        },
+        {
+          "intent": "In the dropdown labeled 'Country', select the option 'Canada'.",
+          "expectedTool": "browser_select_option",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 1430,
+          "latencyMs": 24956
+        },
+        {
+          "intent": "In the dropdown labeled 'Country', select the option 'Canada'.",
+          "expectedTool": "browser_select_option",
+          "calledTool": "browser_snapshot",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 864,
+          "latencyMs": 10683
+        },
+        {
+          "intent": "Open a new tab and go to 'https://www.google.com'.",
+          "expectedTool": "browser_tabs",
+          "calledTool": "browser_tabs",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 537,
+          "latencyMs": 3705
+        },
+        {
+          "intent": "Open a new tab and go to 'https://www.google.com'.",
+          "expectedTool": "browser_tabs",
+          "calledTool": "browser_tabs",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 123,
+          "latencyMs": 5169
+        },
+        {
+          "intent": "Open a new tab and go to 'https://www.google.com'.",
+          "expectedTool": "browser_tabs",
+          "calledTool": "browser_tabs",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 495,
+          "latencyMs": 3532
+        },
+        {
+          "intent": "Open a new tab and go to 'https://www.google.com'.",
+          "expectedTool": "browser_tabs",
+          "calledTool": "browser_tabs",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 424,
+          "latencyMs": 13664
+        },
+        {
+          "intent": "Wait until the text 'Loading...' disappears from the page.",
+          "expectedTool": "browser_wait_for",
+          "calledTool": "browser_wait_for",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 517,
+          "latencyMs": 3945
+        },
+        {
+          "intent": "Wait until the text 'Loading...' disappears from the page.",
+          "expectedTool": "browser_wait_for",
+          "calledTool": "browser_wait_for",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 176,
+          "latencyMs": 3663
+        },
+        {
+          "intent": "Wait until the text 'Loading...' disappears from the page.",
+          "expectedTool": "browser_wait_for",
+          "calledTool": "browser_wait_for",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 112,
+          "latencyMs": 3809
+        },
+        {
+          "intent": "Wait until the text 'Loading...' disappears from the page.",
+          "expectedTool": "browser_wait_for",
+          "calledTool": "browser_wait_for",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 181,
+          "latencyMs": 5430
+        },
+        {
+          "intent": "Can you tell me what the weather is like in London right now?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 524,
+          "latencyMs": 4172
+        },
+        {
+          "intent": "Can you tell me what the weather is like in London right now?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 195,
+          "latencyMs": 3940
+        },
+        {
+          "intent": "Can you tell me what the weather is like in London right now?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 183,
+          "latencyMs": 4787
+        },
+        {
+          "intent": "Can you tell me what the weather is like in London right now?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 191,
+          "latencyMs": 4177
+        }
+      ],
+      "repeats": 3,
+      "axScoreStd": 1.4142135623730951,
+      "unstable": false,
+      "subScoreStds": {
+        "intentInterpretation": 0.019641855032959635,
+        "toolCallConstruction": 0.02049584873004484,
+        "resultSynthesis": 0.01178511301977575,
+        "errorRecovery": 0.010649955403405107
+      },
+      "judgeFailures": 0
+    }
+  },
+  "topFixes": [
+    {
+      "issue": "browser_close: Description is only 3 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_close: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_resize: Description is only 4 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_resize: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_console_messages: Description is only 4 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_console_messages: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_handle_dialog: Description is only 3 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_handle_dialog: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_evaluate: Description is only 7 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "browser_evaluate: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ],
+  "staticReport": {
+    "server": "Playwright",
+    "metrics": {
+      "toolCount": 23,
+      "estimatedListTokens": 4271,
+      "consistentToolNaming": true
+    },
+    "manifestFlags": [
+      {
+        "code": "high-token-cost",
+        "severity": "warning",
+        "message": "tools/list is ~4271 tokens; trim descriptions/schemas."
+      }
+    ],
+    "tools": [
+      {
+        "name": "browser_close",
+        "features": {
+          "descriptionWordCount": 3,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 3 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_resize",
+        "features": {
+          "descriptionWordCount": 4,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 2,
+          "requiredParamCount": 2,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 4 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_console_messages",
+        "features": {
+          "descriptionWordCount": 4,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 4 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_handle_dialog",
+        "features": {
+          "descriptionWordCount": 3,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 3 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "browser_evaluate",
+        "features": {
+          "descriptionWordCount": 7,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 7 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_file_upload",
+        "features": {
+          "descriptionWordCount": 5,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 0,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 5 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_drop",
+        "features": {
+          "descriptionWordCount": 25,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_fill_form",
+        "features": {
+          "descriptionWordCount": 4,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 3,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 4 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_press_key",
+        "features": {
+          "descriptionWordCount": 6,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 6 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_type",
+        "features": {
+          "descriptionWordCount": 5,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 2,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 5 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_navigate",
+        "features": {
+          "descriptionWordCount": 4,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 4 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_navigate_back",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_network_requests",
+        "features": {
+          "descriptionWordCount": 20,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_network_request",
+        "features": {
+          "descriptionWordCount": 24,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_run_code_unsafe",
+        "features": {
+          "descriptionWordCount": 17,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 2,
+          "requiredParamCount": 0,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_take_screenshot",
+        "features": {
+          "descriptionWordCount": 19,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 1,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "browser_snapshot",
+        "features": {
+          "descriptionWordCount": 12,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 0,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_click",
+        "features": {
+          "descriptionWordCount": 6,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 1,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 6 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "browser_drag",
+        "features": {
+          "descriptionWordCount": 7,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 2,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 7 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_hover",
+        "features": {
+          "descriptionWordCount": 5,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 5 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_select_option",
+        "features": {
+          "descriptionWordCount": 6,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 2,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 6 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_tabs",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "browser_wait_for",
+        "features": {
+          "descriptionWordCount": 13,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 0,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      }
+    ]
+  },
+  "featureSignals": {
+    "tools": {
+      "browser_close": {
+        "descriptionWordCount": 3,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      },
+      "browser_resize": {
+        "descriptionWordCount": 4,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 2,
+        "requiredParamCount": 2,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_console_messages": {
+        "descriptionWordCount": 4,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_handle_dialog": {
+        "descriptionWordCount": 3,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "browser_evaluate": {
+        "descriptionWordCount": 7,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_file_upload": {
+        "descriptionWordCount": 5,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 0,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "browser_drop": {
+        "descriptionWordCount": 25,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "browser_fill_form": {
+        "descriptionWordCount": 4,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 3,
+        "consistentParamCasing": true
+      },
+      "browser_press_key": {
+        "descriptionWordCount": 6,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_type": {
+        "descriptionWordCount": 5,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 2,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_navigate": {
+        "descriptionWordCount": 4,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_navigate_back": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      },
+      "browser_network_requests": {
+        "descriptionWordCount": 20,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_network_request": {
+        "descriptionWordCount": 24,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_run_code_unsafe": {
+        "descriptionWordCount": 17,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 2,
+        "requiredParamCount": 0,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_take_screenshot": {
+        "descriptionWordCount": 19,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 1,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "browser_snapshot": {
+        "descriptionWordCount": 12,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 0,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_click": {
+        "descriptionWordCount": 6,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 1,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "browser_drag": {
+        "descriptionWordCount": 7,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 2,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_hover": {
+        "descriptionWordCount": 5,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_select_option": {
+        "descriptionWordCount": 6,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 2,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "browser_tabs": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "browser_wait_for": {
+        "descriptionWordCount": 13,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 0,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      }
+    }
+  },
+  "canary": {
+    "pass": true,
+    "cleanScore": 79,
+    "badScore": 20,
+    "failures": []
+  },
+  "coverage": {
+    "toolsTotal": 23,
+    "toolsCovered": 23,
+    "ratio": 1,
+    "uncoveredTools": [],
+    "distractorCount": 1,
+    "distractorRatio": 0.041666666666666664
+  },
+  "synthesisTrust": {
+    "high": 0,
+    "medium": 23,
+    "low": 0,
+    "level": "medium",
+    "note": "Many tools lack output schemas; synthesis mocks are partly invented, so read the synthesis sub-score with some caution."
+  },
+  "runConfig": {
+    "scoredModel": "claude-sonnet-4-6",
+    "generationModel": "gemini-2.5-flash",
+    "judgeModel": "gemini-2.5-flash",
+    "scoredTemperature": 0.7,
+    "repeats": 3,
+    "intentCount": 24,
+    "maxRounds": 6,
+    "concurrency": 5,
+    "judgeRubricVersion": 1,
+    "weights": {
+      "intentInterpretation": 0.35,
+      "toolCallConstruction": 0.35,
+      "resultSynthesis": 0.2,
+      "errorRecovery": 0.1
+    }
+  }
+}

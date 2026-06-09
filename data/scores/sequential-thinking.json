@@ -1,0 +1,1118 @@
+{
+  "schemaVersion": 2,
+  "server": {
+    "name": "sequential-thinking-server",
+    "registry": null,
+    "manifestSource": "file",
+    "executionMode": "mock",
+    "scoredAt": "2026-06-09T19:41:34.965Z",
+    "generationModel": "gemini-2.5-flash"
+  },
+  "tools": {
+    "sequentialthinking": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    }
+  },
+  "models": {
+    "claude-sonnet-4-6": {
+      "axScore": 73,
+      "subScores": {
+        "intentInterpretation": 0.7916666666666666,
+        "toolCallConstruction": 1,
+        "resultSynthesis": 0.4263888888888889,
+        "errorRecovery": 0.12745098039215688,
+        "tokensPerTask": 3189.5,
+        "latencyMs": 29440.30555555555
+      },
+      "scoreWeights": {
+        "intentInterpretation": 0.35,
+        "toolCallConstruction": 0.35,
+        "resultSynthesis": 0.2,
+        "errorRecovery": 0.1
+      },
+      "lowProgrammaticSignal": false,
+      "tasks": [
+        {
+          "intent": "I need to figure out the best strategy for launching a new product. I want to break down the process, consider different market entry points, and plan for potential challenges. I anticipate needing to refine my approach as I go.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3575,
+          "latencyMs": 34613
+        },
+        {
+          "intent": "I need to figure out the best strategy for launching a new product. I want to break down the process, consider different market entry points, and plan for potential challenges. I anticipate needing to refine my approach as I go.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 3420,
+          "latencyMs": 32313
+        },
+        {
+          "intent": "I need to figure out the best strategy for launching a new product. I want to break down the process, consider different market entry points, and plan for potential challenges. I anticipate needing to refine my approach as I go.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 2939,
+          "latencyMs": 33377
+        },
+        {
+          "intent": "I need to figure out the best strategy for launching a new product. I want to break down the process, consider different market entry points, and plan for potential challenges. I anticipate needing to refine my approach as I go.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2015,
+          "latencyMs": 16279
+        },
+        {
+          "intent": "Can you help me draft a detailed business proposal for a new tech startup? I need to cover market analysis, financial projections, and team structure.",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3634,
+          "latencyMs": 33740
+        },
+        {
+          "intent": "Can you help me draft a detailed business proposal for a new tech startup? I need to cover market analysis, financial projections, and team structure.",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 4251,
+          "latencyMs": 36320
+        },
+        {
+          "intent": "Can you help me draft a detailed business proposal for a new tech startup? I need to cover market analysis, financial projections, and team structure.",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 3602,
+          "latencyMs": 32256
+        },
+        {
+          "intent": "Can you help me draft a detailed business proposal for a new tech startup? I need to cover market analysis, financial projections, and team structure.",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2728,
+          "latencyMs": 25182
+        },
+        {
+          "intent": "I'm trying to debug a complex software issue. I need to systematically go through possible causes, test hypotheses, and potentially backtrack if an approach doesn't work. I'm not sure how many steps it will take.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 3707,
+          "latencyMs": 42811
+        },
+        {
+          "intent": "I'm trying to debug a complex software issue. I need to systematically go through possible causes, test hypotheses, and potentially backtrack if an approach doesn't work. I'm not sure how many steps it will take.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 1298,
+          "latencyMs": 19077
+        },
+        {
+          "intent": "I'm trying to debug a complex software issue. I need to systematically go through possible causes, test hypotheses, and potentially backtrack if an approach doesn't work. I'm not sure how many steps it will take.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 2931,
+          "latencyMs": 33106
+        },
+        {
+          "intent": "I'm trying to debug a complex software issue. I need to systematically go through possible causes, test hypotheses, and potentially backtrack if an approach doesn't work. I'm not sure how many steps it will take.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2668,
+          "latencyMs": 29355
+        },
+        {
+          "intent": "I need to plan a multi-stage research project. I want to define objectives, methodology, and expected outcomes, but I also want to be able to adjust the plan based on initial findings. I'm looking for a flexible approach.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3517,
+          "latencyMs": 32757
+        },
+        {
+          "intent": "I need to plan a multi-stage research project. I want to define objectives, methodology, and expected outcomes, but I also want to be able to adjust the plan based on initial findings. I'm looking for a flexible approach.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 3704,
+          "latencyMs": 37658
+        },
+        {
+          "intent": "I need to plan a multi-stage research project. I want to define objectives, methodology, and expected outcomes, but I also want to be able to adjust the plan based on initial findings. I'm looking for a flexible approach.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 3550,
+          "latencyMs": 42644
+        },
+        {
+          "intent": "I need to plan a multi-stage research project. I want to define objectives, methodology, and expected outcomes, but I also want to be able to adjust the plan based on initial findings. I'm looking for a flexible approach.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2184,
+          "latencyMs": 19341
+        },
+        {
+          "intent": "I'm trying to understand the implications of a new regulatory change on our company's operations. I need to analyze the regulation, identify affected areas, and propose a compliance strategy. I might need to revise my understanding as I dig deeper.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 2947,
+          "latencyMs": 27266
+        },
+        {
+          "intent": "I'm trying to understand the implications of a new regulatory change on our company's operations. I need to analyze the regulation, identify affected areas, and propose a compliance strategy. I might need to revise my understanding as I dig deeper.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 3498,
+          "latencyMs": 31843
+        },
+        {
+          "intent": "I'm trying to understand the implications of a new regulatory change on our company's operations. I need to analyze the regulation, identify affected areas, and propose a compliance strategy. I might need to revise my understanding as I dig deeper.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 2731,
+          "latencyMs": 33254
+        },
+        {
+          "intent": "I'm trying to understand the implications of a new regulatory change on our company's operations. I need to analyze the regulation, identify affected areas, and propose a compliance strategy. I might need to revise my understanding as I dig deeper.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2156,
+          "latencyMs": 18916
+        },
+        {
+          "intent": "I need to design a new customer onboarding flow. I want to map out the user journey, identify potential pain points, and iterate on solutions. I expect to make several revisions.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 4685,
+          "latencyMs": 50731
+        },
+        {
+          "intent": "I need to design a new customer onboarding flow. I want to map out the user journey, identify potential pain points, and iterate on solutions. I expect to make several revisions.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 4684,
+          "latencyMs": 45195
+        },
+        {
+          "intent": "I need to design a new customer onboarding flow. I want to map out the user journey, identify potential pain points, and iterate on solutions. I expect to make several revisions.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 5088,
+          "latencyMs": 49945
+        },
+        {
+          "intent": "I need to design a new customer onboarding flow. I want to map out the user journey, identify potential pain points, and iterate on solutions. I expect to make several revisions.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2374,
+          "latencyMs": 30575
+        },
+        {
+          "intent": "Can you generate a list of popular dog names for me?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 868,
+          "latencyMs": 9590
+        },
+        {
+          "intent": "Can you generate a list of popular dog names for me?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 1183,
+          "latencyMs": 12609
+        },
+        {
+          "intent": "Can you generate a list of popular dog names for me?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 815,
+          "latencyMs": 11316
+        },
+        {
+          "intent": "Can you generate a list of popular dog names for me?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 530,
+          "latencyMs": 9213
+        },
+        {
+          "intent": "I'm facing a complex ethical dilemma at work. I need to systematically evaluate the different options, consider the consequences of each, and arrive at a justified decision. I anticipate needing to reflect and potentially re-evaluate my initial thoughts.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3407,
+          "latencyMs": 39763
+        },
+        {
+          "intent": "I'm facing a complex ethical dilemma at work. I need to systematically evaluate the different options, consider the consequences of each, and arrive at a justified decision. I anticipate needing to reflect and potentially re-evaluate my initial thoughts.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 3155,
+          "latencyMs": 32834
+        },
+        {
+          "intent": "I'm facing a complex ethical dilemma at work. I need to systematically evaluate the different options, consider the consequences of each, and arrive at a justified decision. I anticipate needing to reflect and potentially re-evaluate my initial thoughts.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 2600,
+          "latencyMs": 27795
+        },
+        {
+          "intent": "I'm facing a complex ethical dilemma at work. I need to systematically evaluate the different options, consider the consequences of each, and arrive at a justified decision. I anticipate needing to reflect and potentially re-evaluate my initial thoughts.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2837,
+          "latencyMs": 28800
+        },
+        {
+          "intent": "I need to develop a training program for new employees. I want to outline the curriculum, define learning objectives, and plan for assessment methods. I'll probably need to adjust the content based on feedback.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3771,
+          "latencyMs": 32742
+        },
+        {
+          "intent": "I need to develop a training program for new employees. I want to outline the curriculum, define learning objectives, and plan for assessment methods. I'll probably need to adjust the content based on feedback.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 4160,
+          "latencyMs": 39603
+        },
+        {
+          "intent": "I need to develop a training program for new employees. I want to outline the curriculum, define learning objectives, and plan for assessment methods. I'll probably need to adjust the content based on feedback.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 3910,
+          "latencyMs": 40850
+        },
+        {
+          "intent": "I need to develop a training program for new employees. I want to outline the curriculum, define learning objectives, and plan for assessment methods. I'll probably need to adjust the content based on feedback.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2227,
+          "latencyMs": 20274
+        },
+        {
+          "intent": "I'm trying to solve a tricky logic puzzle. I need to break it down into smaller parts, test different assumptions, and see where they lead. I might hit dead ends and need to try a different path.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 803,
+          "latencyMs": 9525
+        },
+        {
+          "intent": "I'm trying to solve a tricky logic puzzle. I need to break it down into smaller parts, test different assumptions, and see where they lead. I might hit dead ends and need to try a different path.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 433,
+          "latencyMs": 11696
+        },
+        {
+          "intent": "I'm trying to solve a tricky logic puzzle. I need to break it down into smaller parts, test different assumptions, and see where they lead. I might hit dead ends and need to try a different path.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 398,
+          "latencyMs": 7421
+        },
+        {
+          "intent": "I'm trying to solve a tricky logic puzzle. I need to break it down into smaller parts, test different assumptions, and see where they lead. I might hit dead ends and need to try a different path.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 459,
+          "latencyMs": 10204
+        },
+        {
+          "intent": "I need to analyze a large dataset to find correlations. Can you help me with that?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1001,
+          "latencyMs": 12123
+        },
+        {
+          "intent": "I need to analyze a large dataset to find correlations. Can you help me with that?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 2795,
+          "latencyMs": 35332
+        },
+        {
+          "intent": "I need to analyze a large dataset to find correlations. Can you help me with that?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 2701,
+          "latencyMs": 35724
+        },
+        {
+          "intent": "I need to analyze a large dataset to find correlations. Can you help me with that?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1954,
+          "latencyMs": 28118
+        },
+        {
+          "intent": "I'm planning a marketing campaign for a new product. I want to define the target audience, key messaging, and channels. I expect to refine these elements as I get more insights.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3576,
+          "latencyMs": 31755
+        },
+        {
+          "intent": "I'm planning a marketing campaign for a new product. I want to define the target audience, key messaging, and channels. I expect to refine these elements as I get more insights.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 3290,
+          "latencyMs": 32020
+        },
+        {
+          "intent": "I'm planning a marketing campaign for a new product. I want to define the target audience, key messaging, and channels. I expect to refine these elements as I get more insights.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 3056,
+          "latencyMs": 48499
+        },
+        {
+          "intent": "I'm planning a marketing campaign for a new product. I want to define the target audience, key messaging, and channels. I expect to refine these elements as I get more insights.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2505,
+          "latencyMs": 24886
+        },
+        {
+          "intent": "I need to write a script for a short video. Can you help me with the dialogue and scene descriptions?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 558,
+          "latencyMs": 4970
+        },
+        {
+          "intent": "I need to write a script for a short video. Can you help me with the dialogue and scene descriptions?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 588,
+          "latencyMs": 13144
+        },
+        {
+          "intent": "I need to write a script for a short video. Can you help me with the dialogue and scene descriptions?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 228,
+          "latencyMs": 5599
+        },
+        {
+          "intent": "I need to write a script for a short video. Can you help me with the dialogue and scene descriptions?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 217,
+          "latencyMs": 5504
+        },
+        {
+          "intent": "I'm trying to optimize our supply chain. I need to identify bottlenecks, explore alternative suppliers, and model different scenarios. This will definitely require a flexible, iterative approach.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3110,
+          "latencyMs": 30518
+        },
+        {
+          "intent": "I'm trying to optimize our supply chain. I need to identify bottlenecks, explore alternative suppliers, and model different scenarios. This will definitely require a flexible, iterative approach.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 3261,
+          "latencyMs": 35100
+        },
+        {
+          "intent": "I'm trying to optimize our supply chain. I need to identify bottlenecks, explore alternative suppliers, and model different scenarios. This will definitely require a flexible, iterative approach.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 3286,
+          "latencyMs": 36304
+        },
+        {
+          "intent": "I'm trying to optimize our supply chain. I need to identify bottlenecks, explore alternative suppliers, and model different scenarios. This will definitely require a flexible, iterative approach.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2215,
+          "latencyMs": 21399
+        },
+        {
+          "intent": "I need to evaluate several investment opportunities. I want to assess risks, potential returns, and alignment with my financial goals. I'll need to compare and contrast, and potentially adjust my criteria.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3045,
+          "latencyMs": 30208
+        },
+        {
+          "intent": "I need to evaluate several investment opportunities. I want to assess risks, potential returns, and alignment with my financial goals. I'll need to compare and contrast, and potentially adjust my criteria.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 4286,
+          "latencyMs": 43176
+        },
+        {
+          "intent": "I need to evaluate several investment opportunities. I want to assess risks, potential returns, and alignment with my financial goals. I'll need to compare and contrast, and potentially adjust my criteria.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 4460,
+          "latencyMs": 41254
+        },
+        {
+          "intent": "I need to evaluate several investment opportunities. I want to assess risks, potential returns, and alignment with my financial goals. I'll need to compare and contrast, and potentially adjust my criteria.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1997,
+          "latencyMs": 17853
+        },
+        {
+          "intent": "I'm trying to understand a complex scientific theory. I need to break it down into its core components, understand the relationships between them, and identify any areas of uncertainty. I might need to revisit earlier concepts.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 2816,
+          "latencyMs": 29431
+        },
+        {
+          "intent": "I'm trying to understand a complex scientific theory. I need to break it down into its core components, understand the relationships between them, and identify any areas of uncertainty. I might need to revisit earlier concepts.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 2761,
+          "latencyMs": 35094
+        },
+        {
+          "intent": "I'm trying to understand a complex scientific theory. I need to break it down into its core components, understand the relationships between them, and identify any areas of uncertainty. I might need to revisit earlier concepts.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 3241,
+          "latencyMs": 35940
+        },
+        {
+          "intent": "I'm trying to understand a complex scientific theory. I need to break it down into its core components, understand the relationships between them, and identify any areas of uncertainty. I might need to revisit earlier concepts.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2085,
+          "latencyMs": 17594
+        },
+        {
+          "intent": "I need to plan a complex event, like a conference. I want to cover venue selection, speaker invitations, agenda creation, and logistics. I know things will change, so I need a flexible plan.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3905,
+          "latencyMs": 38936
+        },
+        {
+          "intent": "I need to plan a complex event, like a conference. I want to cover venue selection, speaker invitations, agenda creation, and logistics. I know things will change, so I need a flexible plan.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 3639,
+          "latencyMs": 39734
+        },
+        {
+          "intent": "I need to plan a complex event, like a conference. I want to cover venue selection, speaker invitations, agenda creation, and logistics. I know things will change, so I need a flexible plan.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 3864,
+          "latencyMs": 42342
+        },
+        {
+          "intent": "I need to plan a complex event, like a conference. I want to cover venue selection, speaker invitations, agenda creation, and logistics. I know things will change, so I need a flexible plan.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2145,
+          "latencyMs": 20577
+        },
+        {
+          "intent": "Can you summarize this long article for me?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 369,
+          "latencyMs": 4811
+        },
+        {
+          "intent": "Can you summarize this long article for me?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 49,
+          "latencyMs": 1741
+        },
+        {
+          "intent": "Can you summarize this long article for me?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 39,
+          "latencyMs": 1679
+        },
+        {
+          "intent": "Can you summarize this long article for me?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 92,
+          "latencyMs": 6307
+        },
+        {
+          "intent": "I'm trying to write a novel. Can you help me develop the plot and characters?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1007,
+          "latencyMs": 16925
+        },
+        {
+          "intent": "I'm trying to write a novel. Can you help me develop the plot and characters?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 1572,
+          "latencyMs": 22117
+        },
+        {
+          "intent": "I'm trying to write a novel. Can you help me develop the plot and characters?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 1678,
+          "latencyMs": 23276
+        },
+        {
+          "intent": "I'm trying to write a novel. Can you help me develop the plot and characters?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1114,
+          "latencyMs": 16421
+        },
+        {
+          "intent": "I need to develop a strategy for improving employee engagement. I want to identify current issues, brainstorm solutions, and plan for implementation. I'll need to be able to refine my ideas as I go.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 4184,
+          "latencyMs": 41109
+        },
+        {
+          "intent": "I need to develop a strategy for improving employee engagement. I want to identify current issues, brainstorm solutions, and plan for implementation. I'll need to be able to refine my ideas as I go.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 4328,
+          "latencyMs": 40271
+        },
+        {
+          "intent": "I need to develop a strategy for improving employee engagement. I want to identify current issues, brainstorm solutions, and plan for implementation. I'll need to be able to refine my ideas as I go.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 3861,
+          "latencyMs": 43519
+        },
+        {
+          "intent": "I need to develop a strategy for improving employee engagement. I want to identify current issues, brainstorm solutions, and plan for implementation. I'll need to be able to refine my ideas as I go.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2265,
+          "latencyMs": 22504
+        },
+        {
+          "intent": "I'm trying to solve a difficult engineering problem. I need to analyze the constraints, propose different design approaches, and evaluate their feasibility. I expect to iterate on designs.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1571,
+          "latencyMs": 17464
+        },
+        {
+          "intent": "I'm trying to solve a difficult engineering problem. I need to analyze the constraints, propose different design approaches, and evaluate their feasibility. I expect to iterate on designs.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 2066,
+          "latencyMs": 23856
+        },
+        {
+          "intent": "I'm trying to solve a difficult engineering problem. I need to analyze the constraints, propose different design approaches, and evaluate their feasibility. I expect to iterate on designs.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 1644,
+          "latencyMs": 22759
+        },
+        {
+          "intent": "I'm trying to solve a difficult engineering problem. I need to analyze the constraints, propose different design approaches, and evaluate their feasibility. I expect to iterate on designs.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1471,
+          "latencyMs": 19399
+        },
+        {
+          "intent": "I need to create a detailed budget for my personal finances. Can you help me categorize expenses and track income?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 3049,
+          "latencyMs": 32862
+        },
+        {
+          "intent": "I need to create a detailed budget for my personal finances. Can you help me categorize expenses and track income?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 4636,
+          "latencyMs": 46904
+        },
+        {
+          "intent": "I need to create a detailed budget for my personal finances. Can you help me categorize expenses and track income?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 3870,
+          "latencyMs": 39566
+        },
+        {
+          "intent": "I need to create a detailed budget for my personal finances. Can you help me categorize expenses and track income?",
+          "expectedTool": null,
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2290,
+          "latencyMs": 29904
+        },
+        {
+          "intent": "I need to plan a complex negotiation. I want to identify my objectives, understand the other party's potential interests, and develop different negotiation tactics. I'll need to be ready to adapt my strategy.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 4701,
+          "latencyMs": 56280
+        },
+        {
+          "intent": "I need to plan a complex negotiation. I want to identify my objectives, understand the other party's potential interests, and develop different negotiation tactics. I'll need to be ready to adapt my strategy.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 3833,
+          "latencyMs": 39794
+        },
+        {
+          "intent": "I need to plan a complex negotiation. I want to identify my objectives, understand the other party's potential interests, and develop different negotiation tactics. I'll need to be ready to adapt my strategy.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 3067,
+          "latencyMs": 32356
+        },
+        {
+          "intent": "I need to plan a complex negotiation. I want to identify my objectives, understand the other party's potential interests, and develop different negotiation tactics. I'll need to be ready to adapt my strategy.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2127,
+          "latencyMs": 18387
+        },
+        {
+          "intent": "I'm trying to understand the historical context of a particular event. I need to break down the timeline, identify key figures, and analyze cause-and-effect relationships. I might need to revise my interpretations.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 2581,
+          "latencyMs": 32238
+        },
+        {
+          "intent": "I'm trying to understand the historical context of a particular event. I need to break down the timeline, identify key figures, and analyze cause-and-effect relationships. I might need to revise my interpretations.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 2099,
+          "latencyMs": 23025
+        },
+        {
+          "intent": "I'm trying to understand the historical context of a particular event. I need to break down the timeline, identify key figures, and analyze cause-and-effect relationships. I might need to revise my interpretations.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 2503,
+          "latencyMs": 29801
+        },
+        {
+          "intent": "I'm trying to understand the historical context of a particular event. I need to break down the timeline, identify key figures, and analyze cause-and-effect relationships. I might need to revise my interpretations.",
+          "expectedTool": "sequentialthinking",
+          "calledTool": "sequentialthinking",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 2222,
+          "latencyMs": 23188
+        }
+      ],
+      "repeats": 3,
+      "axScoreStd": 1.247219128924647,
+      "unstable": false,
+      "subScoreStds": {
+        "intentInterpretation": 0,
+        "toolCallConstruction": 0,
+        "resultSynthesis": 0.04058788665611795,
+        "errorRecovery": 0.046648538248511055
+      },
+      "judgeFailures": 0
+    }
+  },
+  "topFixes": [
+    {
+      "issue": "sequentialthinking: Tool exposes 9 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "sequentialthinking: Param names mix casing conventions (e.g. snake_case and camelCase).",
+      "impact": "low",
+      "effort": "low"
+    }
+  ],
+  "staticReport": {
+    "server": "sequential-thinking-server",
+    "metrics": {
+      "toolCount": 1,
+      "estimatedListTokens": 1109,
+      "consistentToolNaming": true
+    },
+    "manifestFlags": [],
+    "tools": [
+      {
+        "name": "sequentialthinking",
+        "features": {
+          "descriptionWordCount": 440,
+          "descriptionQuality": "rich",
+          "verbFirstName": false,
+          "nameCase": "flat",
+          "paramCount": 9,
+          "requiredParamCount": 4,
+          "optionalParamCount": 5,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 9 params; likely overloaded — split into focused tools."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      }
+    ]
+  },
+  "featureSignals": {
+    "tools": {
+      "sequentialthinking": {
+        "descriptionWordCount": 440,
+        "descriptionQuality": "rich",
+        "verbFirstName": false,
+        "nameCase": "flat",
+        "paramCount": 9,
+        "requiredParamCount": 4,
+        "optionalParamCount": 5,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      }
+    }
+  },
+  "canary": {
+    "pass": true,
+    "cleanScore": 91,
+    "badScore": 15,
+    "failures": []
+  },
+  "coverage": {
+    "toolsTotal": 1,
+    "toolsCovered": 1,
+    "ratio": 1,
+    "uncoveredTools": [],
+    "distractorCount": 7,
+    "distractorRatio": 0.2916666666666667
+  },
+  "synthesisTrust": {
+    "high": 1,
+    "medium": 0,
+    "low": 0,
+    "level": "high",
+    "note": "Most tools have output schemas + rich descriptions; synthesis mocks are well-grounded."
+  },
+  "runConfig": {
+    "scoredModel": "claude-sonnet-4-6",
+    "generationModel": "gemini-2.5-flash",
+    "judgeModel": "gemini-2.5-flash",
+    "scoredTemperature": 0.7,
+    "repeats": 3,
+    "intentCount": 24,
+    "maxRounds": 6,
+    "concurrency": 5,
+    "judgeRubricVersion": 1,
+    "weights": {
+      "intentInterpretation": 0.35,
+      "toolCallConstruction": 0.35,
+      "resultSynthesis": 0.2,
+      "errorRecovery": 0.1
+    }
+  }
+}

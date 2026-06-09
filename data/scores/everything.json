@@ -1,0 +1,1709 @@
+{
+  "schemaVersion": 2,
+  "server": {
+    "name": "mcp-servers/everything",
+    "registry": null,
+    "manifestSource": "file",
+    "executionMode": "mock",
+    "scoredAt": "2026-06-09T19:20:36.714Z",
+    "generationModel": "gemini-2.5-flash"
+  },
+  "tools": {
+    "echo": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get-annotated-message": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get-env": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get-resource-links": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get-resource-reference": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get-structured-content": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "get-sum": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "get-tiny-image": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "gzip-file-as-resource": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "toggle-simulated-logging": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "toggle-subscriber-updates": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "trigger-long-running-operation": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "simulate-research-query": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    }
+  },
+  "models": {
+    "claude-sonnet-4-6": {
+      "axScore": 68,
+      "subScores": {
+        "intentInterpretation": 0.75,
+        "toolCallConstruction": 0.6666666666666666,
+        "resultSynthesis": 0.6625000000000001,
+        "errorRecovery": 0.525925925925926,
+        "tokensPerTask": 293.34722222222223,
+        "latencyMs": 4915.138888888888
+      },
+      "scoreWeights": {
+        "intentInterpretation": 0.35,
+        "toolCallConstruction": 0.35,
+        "resultSynthesis": 0.2,
+        "errorRecovery": 0.1
+      },
+      "lowProgrammaticSignal": false,
+      "tasks": [
+        {
+          "intent": "Tell me about the latest news on quantum computing.",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 572,
+          "latencyMs": 4914
+        },
+        {
+          "intent": "Tell me about the latest news on quantum computing.",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 584,
+          "latencyMs": 6120
+        },
+        {
+          "intent": "Tell me about the latest news on quantum computing.",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 229,
+          "latencyMs": 5859
+        },
+        {
+          "intent": "Tell me about the latest news on quantum computing.",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 298,
+          "latencyMs": 5861
+        },
+        {
+          "intent": "Can you show me a tiny image of the MCP logo?",
+          "expectedTool": "get-tiny-image",
+          "calledTool": "get-tiny-image",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 700,
+          "latencyMs": 6388
+        },
+        {
+          "intent": "Can you show me a tiny image of the MCP logo?",
+          "expectedTool": "get-tiny-image",
+          "calledTool": "get-tiny-image",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 505,
+          "latencyMs": 5059
+        },
+        {
+          "intent": "Can you show me a tiny image of the MCP logo?",
+          "expectedTool": "get-tiny-image",
+          "calledTool": "get-tiny-image",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 307,
+          "latencyMs": 7578
+        },
+        {
+          "intent": "Can you show me a tiny image of the MCP logo?",
+          "expectedTool": "get-tiny-image",
+          "calledTool": "get-tiny-image",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 145,
+          "latencyMs": 4622
+        },
+        {
+          "intent": "What's the sum of 15 and 27?",
+          "expectedTool": "get-sum",
+          "calledTool": "get-sum",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 444,
+          "latencyMs": 3940
+        },
+        {
+          "intent": "What's the sum of 15 and 27?",
+          "expectedTool": "get-sum",
+          "calledTool": "get-sum",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 109,
+          "latencyMs": 3975
+        },
+        {
+          "intent": "What's the sum of 15 and 27?",
+          "expectedTool": "get-sum",
+          "calledTool": "get-sum",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 167,
+          "latencyMs": 7457
+        },
+        {
+          "intent": "What's the sum of 15 and 27?",
+          "expectedTool": "get-sum",
+          "calledTool": "get-sum",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 97,
+          "latencyMs": 4401
+        },
+        {
+          "intent": "Give me some resource links, maybe about 3 of them.",
+          "expectedTool": "get-resource-links",
+          "calledTool": "get-resource-links",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 918,
+          "latencyMs": 8497
+        },
+        {
+          "intent": "Give me some resource links, maybe about 3 of them.",
+          "expectedTool": "get-resource-links",
+          "calledTool": "get-resource-links",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 194,
+          "latencyMs": 4014
+        },
+        {
+          "intent": "Give me some resource links, maybe about 3 of them.",
+          "expectedTool": "get-resource-links",
+          "calledTool": "get-resource-links",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 368,
+          "latencyMs": 5471
+        },
+        {
+          "intent": "Give me some resource links, maybe about 3 of them.",
+          "expectedTool": "get-resource-links",
+          "calledTool": "get-resource-links",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 298,
+          "latencyMs": 7281
+        },
+        {
+          "intent": "I need to see some structured content from the 'homepage' location.",
+          "expectedTool": "get-structured-content",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 406,
+          "latencyMs": 2524
+        },
+        {
+          "intent": "I need to see some structured content from the 'homepage' location.",
+          "expectedTool": "get-structured-content",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 71,
+          "latencyMs": 2377
+        },
+        {
+          "intent": "I need to see some structured content from the 'homepage' location.",
+          "expectedTool": "get-structured-content",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 71,
+          "latencyMs": 2242
+        },
+        {
+          "intent": "I need to see some structured content from the 'homepage' location.",
+          "expectedTool": "get-structured-content",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 71,
+          "latencyMs": 2366
+        },
+        {
+          "intent": "Echo back 'Hello, MCP!' to me.",
+          "expectedTool": "echo",
+          "calledTool": "echo",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 526,
+          "latencyMs": 5189
+        },
+        {
+          "intent": "Echo back 'Hello, MCP!' to me.",
+          "expectedTool": "echo",
+          "calledTool": "echo",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 104,
+          "latencyMs": 3327
+        },
+        {
+          "intent": "Echo back 'Hello, MCP!' to me.",
+          "expectedTool": "echo",
+          "calledTool": "echo",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 113,
+          "latencyMs": 5029
+        },
+        {
+          "intent": "Echo back 'Hello, MCP!' to me.",
+          "expectedTool": "echo",
+          "calledTool": "echo",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 327,
+          "latencyMs": 6688
+        },
+        {
+          "intent": "Can you give me a reference to a user resource with ID 'user-123'?",
+          "expectedTool": "get-resource-reference",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 403,
+          "latencyMs": 3602
+        },
+        {
+          "intent": "Can you give me a reference to a user resource with ID 'user-123'?",
+          "expectedTool": "get-resource-reference",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 64,
+          "latencyMs": 2116
+        },
+        {
+          "intent": "Can you give me a reference to a user resource with ID 'user-123'?",
+          "expectedTool": "get-resource-reference",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 64,
+          "latencyMs": 2100
+        },
+        {
+          "intent": "Can you give me a reference to a user resource with ID 'user-123'?",
+          "expectedTool": "get-resource-reference",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 91,
+          "latencyMs": 3413
+        },
+        {
+          "intent": "Show me an annotated message about a 'status_update' and include an image.",
+          "expectedTool": "get-annotated-message",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 120,
+          "latencyMs": 11908
+        },
+        {
+          "intent": "Show me an annotated message about a 'status_update' and include an image.",
+          "expectedTool": "get-annotated-message",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 453,
+          "latencyMs": 3832
+        },
+        {
+          "intent": "Show me an annotated message about a 'status_update' and include an image.",
+          "expectedTool": "get-annotated-message",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 94,
+          "latencyMs": 2674
+        },
+        {
+          "intent": "Show me an annotated message about a 'status_update' and include an image.",
+          "expectedTool": "get-annotated-message",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 125,
+          "latencyMs": 3460
+        },
+        {
+          "intent": "Compress a file named 'report.txt' with the data 'This is a test report.' and give me a resource link.",
+          "expectedTool": "gzip-file-as-resource",
+          "calledTool": "gzip-file-as-resource",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 832,
+          "latencyMs": 6356
+        },
+        {
+          "intent": "Compress a file named 'report.txt' with the data 'This is a test report.' and give me a resource link.",
+          "expectedTool": "gzip-file-as-resource",
+          "calledTool": "gzip-file-as-resource",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 440,
+          "latencyMs": 7376
+        },
+        {
+          "intent": "Compress a file named 'report.txt' with the data 'This is a test report.' and give me a resource link.",
+          "expectedTool": "gzip-file-as-resource",
+          "calledTool": "gzip-file-as-resource",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 292,
+          "latencyMs": 7502
+        },
+        {
+          "intent": "Compress a file named 'report.txt' with the data 'This is a test report.' and give me a resource link.",
+          "expectedTool": "gzip-file-as-resource",
+          "calledTool": "gzip-file-as-resource",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 396,
+          "latencyMs": 9870
+        },
+        {
+          "intent": "Start a long operation that takes 10 seconds and has 5 steps.",
+          "expectedTool": "trigger-long-running-operation",
+          "calledTool": "trigger-long-running-operation",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 742,
+          "latencyMs": 5743
+        },
+        {
+          "intent": "Start a long operation that takes 10 seconds and has 5 steps.",
+          "expectedTool": "trigger-long-running-operation",
+          "calledTool": "trigger-long-running-operation",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 278,
+          "latencyMs": 5719
+        },
+        {
+          "intent": "Start a long operation that takes 10 seconds and has 5 steps.",
+          "expectedTool": "trigger-long-running-operation",
+          "calledTool": "trigger-long-running-operation",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 328,
+          "latencyMs": 5858
+        },
+        {
+          "intent": "Start a long operation that takes 10 seconds and has 5 steps.",
+          "expectedTool": "trigger-long-running-operation",
+          "calledTool": "trigger-long-running-operation",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 880,
+          "latencyMs": 10127
+        },
+        {
+          "intent": "Turn on the simulated logging.",
+          "expectedTool": "toggle-simulated-logging",
+          "calledTool": "toggle-simulated-logging",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 508,
+          "latencyMs": 3439
+        },
+        {
+          "intent": "Turn on the simulated logging.",
+          "expectedTool": "toggle-simulated-logging",
+          "calledTool": "toggle-simulated-logging",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 150,
+          "latencyMs": 4138
+        },
+        {
+          "intent": "Turn on the simulated logging.",
+          "expectedTool": "toggle-simulated-logging",
+          "calledTool": "toggle-simulated-logging",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 174,
+          "latencyMs": 3900
+        },
+        {
+          "intent": "Turn on the simulated logging.",
+          "expectedTool": "toggle-simulated-logging",
+          "calledTool": "toggle-simulated-logging",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 312,
+          "latencyMs": 9400
+        },
+        {
+          "intent": "Enable subscriber updates.",
+          "expectedTool": "toggle-subscriber-updates",
+          "calledTool": "toggle-subscriber-updates",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 545,
+          "latencyMs": 4031
+        },
+        {
+          "intent": "Enable subscriber updates.",
+          "expectedTool": "toggle-subscriber-updates",
+          "calledTool": "toggle-subscriber-updates",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 467,
+          "latencyMs": 4500
+        },
+        {
+          "intent": "Enable subscriber updates.",
+          "expectedTool": "toggle-subscriber-updates",
+          "calledTool": "toggle-subscriber-updates",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 233,
+          "latencyMs": 4501
+        },
+        {
+          "intent": "Enable subscriber updates.",
+          "expectedTool": "toggle-subscriber-updates",
+          "calledTool": "toggle-subscriber-updates",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 210,
+          "latencyMs": 5101
+        },
+        {
+          "intent": "What's the weather like in London tomorrow?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 524,
+          "latencyMs": 4595
+        },
+        {
+          "intent": "What's the weather like in London tomorrow?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 179,
+          "latencyMs": 4411
+        },
+        {
+          "intent": "What's the weather like in London tomorrow?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 197,
+          "latencyMs": 6047
+        },
+        {
+          "intent": "What's the weather like in London tomorrow?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 186,
+          "latencyMs": 4409
+        },
+        {
+          "intent": "Can you book me a flight to Paris next month?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 172,
+          "latencyMs": 5184
+        },
+        {
+          "intent": "Can you book me a flight to Paris next month?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 493,
+          "latencyMs": 3962
+        },
+        {
+          "intent": "Can you book me a flight to Paris next month?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 156,
+          "latencyMs": 3706
+        },
+        {
+          "intent": "Can you book me a flight to Paris next month?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 122,
+          "latencyMs": 3174
+        },
+        {
+          "intent": "Tell me about the current stock market trends.",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 570,
+          "latencyMs": 5069
+        },
+        {
+          "intent": "Tell me about the current stock market trends.",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 235,
+          "latencyMs": 5191
+        },
+        {
+          "intent": "Tell me about the current stock market trends.",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 283,
+          "latencyMs": 6122
+        },
+        {
+          "intent": "Tell me about the current stock market trends.",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 232,
+          "latencyMs": 5897
+        },
+        {
+          "intent": "Show me all the environment variables.",
+          "expectedTool": "get-env",
+          "calledTool": "get-env",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 826,
+          "latencyMs": 5806
+        },
+        {
+          "intent": "Show me all the environment variables.",
+          "expectedTool": "get-env",
+          "calledTool": "get-env",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 556,
+          "latencyMs": 6399
+        },
+        {
+          "intent": "Show me all the environment variables.",
+          "expectedTool": "get-env",
+          "calledTool": "get-env",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 270,
+          "latencyMs": 6600
+        },
+        {
+          "intent": "Show me all the environment variables.",
+          "expectedTool": "get-env",
+          "calledTool": "get-env",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 284,
+          "latencyMs": 10667
+        },
+        {
+          "intent": "What's the capital of France?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 394,
+          "latencyMs": 2203
+        },
+        {
+          "intent": "What's the capital of France?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 78,
+          "latencyMs": 2386
+        },
+        {
+          "intent": "What's the capital of France?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 78,
+          "latencyMs": 2209
+        },
+        {
+          "intent": "What's the capital of France?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 68,
+          "latencyMs": 1972
+        },
+        {
+          "intent": "Can you summarize this document for me?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 431,
+          "latencyMs": 2657
+        },
+        {
+          "intent": "Can you summarize this document for me?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 101,
+          "latencyMs": 2666
+        },
+        {
+          "intent": "Can you summarize this document for me?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 101,
+          "latencyMs": 2602
+        },
+        {
+          "intent": "Can you summarize this document for me?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 89,
+          "latencyMs": 2943
+        },
+        {
+          "intent": "I need to find a good restaurant nearby.",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 170,
+          "latencyMs": 5196
+        },
+        {
+          "intent": "I need to find a good restaurant nearby.",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 201,
+          "latencyMs": 5232
+        },
+        {
+          "intent": "I need to find a good restaurant nearby.",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 492,
+          "latencyMs": 3981
+        },
+        {
+          "intent": "I need to find a good restaurant nearby.",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 146,
+          "latencyMs": 3596
+        },
+        {
+          "intent": "What's 10 plus 5?",
+          "expectedTool": "get-sum",
+          "calledTool": "get-sum",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 433,
+          "latencyMs": 3504
+        },
+        {
+          "intent": "What's 10 plus 5?",
+          "expectedTool": "get-sum",
+          "calledTool": "get-sum",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 101,
+          "latencyMs": 4135
+        },
+        {
+          "intent": "What's 10 plus 5?",
+          "expectedTool": "get-sum",
+          "calledTool": "get-sum",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 93,
+          "latencyMs": 3017
+        },
+        {
+          "intent": "What's 10 plus 5?",
+          "expectedTool": "get-sum",
+          "calledTool": "get-sum",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 93,
+          "latencyMs": 3694
+        },
+        {
+          "intent": "Can you help me with my calendar?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 491,
+          "latencyMs": 3803
+        },
+        {
+          "intent": "Can you help me with my calendar?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 207,
+          "latencyMs": 16457
+        },
+        {
+          "intent": "Can you help me with my calendar?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 187,
+          "latencyMs": 5084
+        },
+        {
+          "intent": "Can you help me with my calendar?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 226,
+          "latencyMs": 8599
+        },
+        {
+          "intent": "I want to research something, but I'm not sure what. Can you help me clarify?",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 533,
+          "latencyMs": 4742
+        },
+        {
+          "intent": "I want to research something, but I'm not sure what. Can you help me clarify?",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 149,
+          "latencyMs": 3671
+        },
+        {
+          "intent": "I want to research something, but I'm not sure what. Can you help me clarify?",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 124,
+          "latencyMs": 4487
+        },
+        {
+          "intent": "I want to research something, but I'm not sure what. Can you help me clarify?",
+          "expectedTool": "simulate-research-query",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 131,
+          "latencyMs": 3857
+        },
+        {
+          "intent": "Give me 5 resource links.",
+          "expectedTool": "get-resource-links",
+          "calledTool": "get-resource-links",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 859,
+          "latencyMs": 7235
+        },
+        {
+          "intent": "Give me 5 resource links.",
+          "expectedTool": "get-resource-links",
+          "calledTool": "get-resource-links",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 461,
+          "latencyMs": 9882
+        },
+        {
+          "intent": "Give me 5 resource links.",
+          "expectedTool": "get-resource-links",
+          "calledTool": "get-resource-links",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 224,
+          "latencyMs": 6911
+        },
+        {
+          "intent": "Give me 5 resource links.",
+          "expectedTool": "get-resource-links",
+          "calledTool": "get-resource-links",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 798,
+          "latencyMs": 11778
+        },
+        {
+          "intent": "Echo 'Hello World' back to me.",
+          "expectedTool": "echo",
+          "calledTool": "echo",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 428,
+          "latencyMs": 3607
+        },
+        {
+          "intent": "Echo 'Hello World' back to me.",
+          "expectedTool": "echo",
+          "calledTool": "echo",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 90,
+          "latencyMs": 3266
+        },
+        {
+          "intent": "Echo 'Hello World' back to me.",
+          "expectedTool": "echo",
+          "calledTool": "echo",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 76,
+          "latencyMs": 5260
+        },
+        {
+          "intent": "Echo 'Hello World' back to me.",
+          "expectedTool": "echo",
+          "calledTool": "echo",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 134,
+          "latencyMs": 4888
+        }
+      ],
+      "repeats": 3,
+      "axScoreStd": 0.816496580927726,
+      "unstable": false,
+      "subScoreStds": {
+        "intentInterpretation": 0,
+        "toolCallConstruction": 0,
+        "resultSynthesis": 0.02453266907313287,
+        "errorRecovery": 0.017173367584251295
+      },
+      "judgeFailures": 0
+    }
+  },
+  "topFixes": [
+    {
+      "issue": "echo: Description is only 5 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "echo: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get-annotated-message: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get-env: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get-resource-links: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get-resource-reference: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get-resource-reference: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get-sum: Description is only 6 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get-sum: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get-tiny-image: Description is only 6 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ],
+  "staticReport": {
+    "server": "mcp-servers/everything",
+    "metrics": {
+      "toolCount": 13,
+      "estimatedListTokens": 1399,
+      "consistentToolNaming": false
+    },
+    "manifestFlags": [
+      {
+        "code": "inconsistent-tool-naming",
+        "severity": "warning",
+        "message": "Tool names mix casing conventions."
+      }
+    ],
+    "tools": [
+      {
+        "name": "echo",
+        "features": {
+          "descriptionWordCount": 5,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "flat",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 5 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get-annotated-message",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get-env",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "kebab",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get-resource-links",
+        "features": {
+          "descriptionWordCount": 12,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "kebab",
+          "paramCount": 1,
+          "requiredParamCount": 0,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get-resource-reference",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 0,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "get-structured-content",
+        "features": {
+          "descriptionWordCount": 12,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "kebab",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": []
+      },
+      {
+        "name": "get-sum",
+        "features": {
+          "descriptionWordCount": 6,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 2,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 6 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get-tiny-image",
+        "features": {
+          "descriptionWordCount": 6,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "kebab",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 6 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "gzip-file-as-resource",
+        "features": {
+          "descriptionWordCount": 39,
+          "descriptionQuality": "rich",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 3,
+          "requiredParamCount": 0,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "toggle-simulated-logging",
+        "features": {
+          "descriptionWordCount": 7,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 7 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "toggle-subscriber-updates",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "trigger-long-running-operation",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 0,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "simulate-research-query",
+        "features": {
+          "descriptionWordCount": 34,
+          "descriptionQuality": "rich",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      }
+    ]
+  },
+  "featureSignals": {
+    "tools": {
+      "echo": {
+        "descriptionWordCount": 5,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "flat",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get-annotated-message": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get-env": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "kebab",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      },
+      "get-resource-links": {
+        "descriptionWordCount": 12,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "kebab",
+        "paramCount": 1,
+        "requiredParamCount": 0,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get-resource-reference": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 0,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get-structured-content": {
+        "descriptionWordCount": 12,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "kebab",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get-sum": {
+        "descriptionWordCount": 6,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 2,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get-tiny-image": {
+        "descriptionWordCount": 6,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "kebab",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      },
+      "gzip-file-as-resource": {
+        "descriptionWordCount": 39,
+        "descriptionQuality": "rich",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 3,
+        "requiredParamCount": 0,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "toggle-simulated-logging": {
+        "descriptionWordCount": 7,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      },
+      "toggle-subscriber-updates": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      },
+      "trigger-long-running-operation": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 0,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "simulate-research-query": {
+        "descriptionWordCount": 34,
+        "descriptionQuality": "rich",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      }
+    }
+  },
+  "canary": {
+    "pass": true,
+    "cleanScore": 92,
+    "badScore": 25,
+    "failures": []
+  },
+  "coverage": {
+    "toolsTotal": 13,
+    "toolsCovered": 13,
+    "ratio": 1,
+    "uncoveredTools": [],
+    "distractorCount": 6,
+    "distractorRatio": 0.25
+  },
+  "synthesisTrust": {
+    "high": 0,
+    "medium": 13,
+    "low": 0,
+    "level": "medium",
+    "note": "Many tools lack output schemas; synthesis mocks are partly invented, so read the synthesis sub-score with some caution."
+  },
+  "runConfig": {
+    "scoredModel": "claude-sonnet-4-6",
+    "generationModel": "gemini-2.5-flash",
+    "judgeModel": "gemini-2.5-flash",
+    "scoredTemperature": 0.7,
+    "repeats": 3,
+    "intentCount": 24,
+    "maxRounds": 6,
+    "concurrency": 5,
+    "judgeRubricVersion": 1,
+    "weights": {
+      "intentInterpretation": 0.35,
+      "toolCallConstruction": 0.35,
+      "resultSynthesis": 0.2,
+      "errorRecovery": 0.1
+    }
+  }
+}

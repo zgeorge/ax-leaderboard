@@ -1,0 +1,2158 @@
+{
+  "schemaVersion": 2,
+  "server": {
+    "name": "Sentry MCP",
+    "registry": null,
+    "manifestSource": "file",
+    "executionMode": "mock",
+    "scoredAt": "2026-06-09T21:00:46.452Z",
+    "generationModel": "gemini-2.5-flash"
+  },
+  "tools": {
+    "whoami": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "find_organizations": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "find_teams": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "find_projects": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "find_releases": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "get_issue_tag_values": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "get_replay_details": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "get_event_attachment": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "update_issue": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "search_events": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "create_team": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "create_project": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "update_project": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "create_dsn": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "find_dsns": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "analyze_issue_with_seer": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "search_docs": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "get_doc": {
+      "mockConfidence": "low",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich",
+        "mock generation failed; using synthetic fallback"
+      ]
+    },
+    "search_issues": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "search_issue_events": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "get_profile_details": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    },
+    "get_sentry_resource": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: rich"
+      ]
+    }
+  },
+  "models": {
+    "claude-sonnet-4-6": {
+      "axScore": 92,
+      "subScores": {
+        "intentInterpretation": 0.9583333333333334,
+        "toolCallConstruction": 1,
+        "resultSynthesis": 0.8069444444444445,
+        "errorRecovery": 0.7590909090909091,
+        "tokensPerTask": 690.4166666666666,
+        "latencyMs": 8736.388888888889
+      },
+      "scoreWeights": {
+        "intentInterpretation": 0.35,
+        "toolCallConstruction": 0.35,
+        "resultSynthesis": 0.2,
+        "errorRecovery": 0.1
+      },
+      "lowProgrammaticSignal": false,
+      "tasks": [
+        {
+          "intent": "Who am I logged in as?",
+          "expectedTool": "whoami",
+          "calledTool": "whoami",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 74,
+          "latencyMs": 4012
+        },
+        {
+          "intent": "Who am I logged in as?",
+          "expectedTool": "whoami",
+          "calledTool": "whoami",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 420,
+          "latencyMs": 4398
+        },
+        {
+          "intent": "Who am I logged in as?",
+          "expectedTool": "whoami",
+          "calledTool": "whoami",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 65,
+          "latencyMs": 6591
+        },
+        {
+          "intent": "Who am I logged in as?",
+          "expectedTool": "whoami",
+          "calledTool": "whoami",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 169,
+          "latencyMs": 5309
+        },
+        {
+          "intent": "Find organizations I have access to.",
+          "expectedTool": "find_organizations",
+          "calledTool": "find_organizations",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 725,
+          "latencyMs": 5226
+        },
+        {
+          "intent": "Find organizations I have access to.",
+          "expectedTool": "find_organizations",
+          "calledTool": "find_organizations",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 471,
+          "latencyMs": 6312
+        },
+        {
+          "intent": "Find organizations I have access to.",
+          "expectedTool": "find_organizations",
+          "calledTool": "find_organizations",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 173,
+          "latencyMs": 4063
+        },
+        {
+          "intent": "Find organizations I have access to.",
+          "expectedTool": "find_organizations",
+          "calledTool": "find_organizations",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 168,
+          "latencyMs": 5555
+        },
+        {
+          "intent": "Show me teams in the 'my-org' organization.",
+          "expectedTool": "find_teams",
+          "calledTool": "find_teams",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 808,
+          "latencyMs": 7215
+        },
+        {
+          "intent": "Show me teams in the 'my-org' organization.",
+          "expectedTool": "find_teams",
+          "calledTool": "find_teams",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 154,
+          "latencyMs": 6444
+        },
+        {
+          "intent": "Show me teams in the 'my-org' organization.",
+          "expectedTool": "find_teams",
+          "calledTool": "find_teams",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 171,
+          "latencyMs": 4066
+        },
+        {
+          "intent": "Show me teams in the 'my-org' organization.",
+          "expectedTool": "find_teams",
+          "calledTool": "find_teams",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 172,
+          "latencyMs": 5278
+        },
+        {
+          "intent": "List all projects in 'my-org'.",
+          "expectedTool": "find_projects",
+          "calledTool": "find_projects",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 743,
+          "latencyMs": 4813
+        },
+        {
+          "intent": "List all projects in 'my-org'.",
+          "expectedTool": "find_projects",
+          "calledTool": "find_projects",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 181,
+          "latencyMs": 5426
+        },
+        {
+          "intent": "List all projects in 'my-org'.",
+          "expectedTool": "find_projects",
+          "calledTool": "find_projects",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 217,
+          "latencyMs": 4456
+        },
+        {
+          "intent": "List all projects in 'my-org'.",
+          "expectedTool": "find_projects",
+          "calledTool": "find_projects",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 190,
+          "latencyMs": 5315
+        },
+        {
+          "intent": "What are the latest releases for the 'web-app' project in 'my-org'?",
+          "expectedTool": "find_releases",
+          "calledTool": "find_releases",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 691,
+          "latencyMs": 7578
+        },
+        {
+          "intent": "What are the latest releases for the 'web-app' project in 'my-org'?",
+          "expectedTool": "find_releases",
+          "calledTool": "find_releases",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 624,
+          "latencyMs": 8085
+        },
+        {
+          "intent": "What are the latest releases for the 'web-app' project in 'my-org'?",
+          "expectedTool": "find_releases",
+          "calledTool": "find_releases",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 248,
+          "latencyMs": 6235
+        },
+        {
+          "intent": "What are the latest releases for the 'web-app' project in 'my-org'?",
+          "expectedTool": "find_releases",
+          "calledTool": "find_releases",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 225,
+          "latencyMs": 6658
+        },
+        {
+          "intent": "What browsers are affected by issue PROJECT-123 in my-organization?",
+          "expectedTool": "get_issue_tag_values",
+          "calledTool": "get_issue_tag_values",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1783,
+          "latencyMs": 13602
+        },
+        {
+          "intent": "What browsers are affected by issue PROJECT-123 in my-organization?",
+          "expectedTool": "get_issue_tag_values",
+          "calledTool": "get_issue_tag_values",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 504,
+          "latencyMs": 10289
+        },
+        {
+          "intent": "What browsers are affected by issue PROJECT-123 in my-organization?",
+          "expectedTool": "get_issue_tag_values",
+          "calledTool": "get_issue_tag_values",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 617,
+          "latencyMs": 6917
+        },
+        {
+          "intent": "What browsers are affected by issue PROJECT-123 in my-organization?",
+          "expectedTool": "get_issue_tag_values",
+          "calledTool": "get_issue_tag_values",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 259,
+          "latencyMs": 7577
+        },
+        {
+          "intent": "Tell me about this replay: https://my-organization.sentry.io/explore/replays/7e07485f-12f9-416b-8b14-26260799b51f/",
+          "expectedTool": "get_replay_details",
+          "calledTool": "get_replay_details",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1521,
+          "latencyMs": 10779
+        },
+        {
+          "intent": "Tell me about this replay: https://my-organization.sentry.io/explore/replays/7e07485f-12f9-416b-8b14-26260799b51f/",
+          "expectedTool": "get_replay_details",
+          "calledTool": "get_replay_details",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 726,
+          "latencyMs": 8401
+        },
+        {
+          "intent": "Tell me about this replay: https://my-organization.sentry.io/explore/replays/7e07485f-12f9-416b-8b14-26260799b51f/",
+          "expectedTool": "get_replay_details",
+          "calledTool": "get_replay_details",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 264,
+          "latencyMs": 6244
+        },
+        {
+          "intent": "Tell me about this replay: https://my-organization.sentry.io/explore/replays/7e07485f-12f9-416b-8b14-26260799b51f/",
+          "expectedTool": "get_replay_details",
+          "calledTool": "get_replay_details",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 308,
+          "latencyMs": 7402
+        },
+        {
+          "intent": "Download attachment 12345 from event c49541c747cb4d8aa3efb70ca5aba243 in my-org/my-project.",
+          "expectedTool": "get_event_attachment",
+          "calledTool": "get_event_attachment",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 782,
+          "latencyMs": 6185
+        },
+        {
+          "intent": "Download attachment 12345 from event c49541c747cb4d8aa3efb70ca5aba243 in my-org/my-project.",
+          "expectedTool": "get_event_attachment",
+          "calledTool": "get_event_attachment",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 329,
+          "latencyMs": 7126
+        },
+        {
+          "intent": "Download attachment 12345 from event c49541c747cb4d8aa3efb70ca5aba243 in my-org/my-project.",
+          "expectedTool": "get_event_attachment",
+          "calledTool": "get_event_attachment",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 279,
+          "latencyMs": 5694
+        },
+        {
+          "intent": "Download attachment 12345 from event c49541c747cb4d8aa3efb70ca5aba243 in my-org/my-project.",
+          "expectedTool": "get_event_attachment",
+          "calledTool": "get_event_attachment",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 345,
+          "latencyMs": 8892
+        },
+        {
+          "intent": "Resolve issue PROJECT-123 in my-org.",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 499,
+          "latencyMs": 4384
+        },
+        {
+          "intent": "Resolve issue PROJECT-123 in my-org.",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 140,
+          "latencyMs": 5218
+        },
+        {
+          "intent": "Resolve issue PROJECT-123 in my-org.",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 124,
+          "latencyMs": 4702
+        },
+        {
+          "intent": "Resolve issue PROJECT-123 in my-org.",
+          "expectedTool": "update_issue",
+          "calledTool": "update_issue",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 217,
+          "latencyMs": 6206
+        },
+        {
+          "intent": "How many errors occurred in 'my-org' today?",
+          "expectedTool": "search_events",
+          "calledTool": "search_events",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 778,
+          "latencyMs": 4772
+        },
+        {
+          "intent": "How many errors occurred in 'my-org' today?",
+          "expectedTool": "search_events",
+          "calledTool": "search_events",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 273,
+          "latencyMs": 5276
+        },
+        {
+          "intent": "How many errors occurred in 'my-org' today?",
+          "expectedTool": "search_events",
+          "calledTool": "search_events",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 429,
+          "latencyMs": 6998
+        },
+        {
+          "intent": "How many errors occurred in 'my-org' today?",
+          "expectedTool": "search_events",
+          "calledTool": "search_events",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 1026,
+          "latencyMs": 12914
+        },
+        {
+          "intent": "Create a new team called 'frontend-devs' in 'my-organization'.",
+          "expectedTool": "create_team",
+          "calledTool": "create_team",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 494,
+          "latencyMs": 4195
+        },
+        {
+          "intent": "Create a new team called 'frontend-devs' in 'my-organization'.",
+          "expectedTool": "create_team",
+          "calledTool": "create_team",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 155,
+          "latencyMs": 5157
+        },
+        {
+          "intent": "Create a new team called 'frontend-devs' in 'my-organization'.",
+          "expectedTool": "create_team",
+          "calledTool": "create_team",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 143,
+          "latencyMs": 4893
+        },
+        {
+          "intent": "Create a new team called 'frontend-devs' in 'my-organization'.",
+          "expectedTool": "create_team",
+          "calledTool": "create_team",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 223,
+          "latencyMs": 9185
+        },
+        {
+          "intent": "Set up a new project for my 'backend-team' in 'my-organization' called 'api-service' using Python.",
+          "expectedTool": "create_project",
+          "calledTool": "create_project",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1028,
+          "latencyMs": 8889
+        },
+        {
+          "intent": "Set up a new project for my 'backend-team' in 'my-organization' called 'api-service' using Python.",
+          "expectedTool": "create_project",
+          "calledTool": "create_project",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 725,
+          "latencyMs": 6022
+        },
+        {
+          "intent": "Set up a new project for my 'backend-team' in 'my-organization' called 'api-service' using Python.",
+          "expectedTool": "create_project",
+          "calledTool": "create_project",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 526,
+          "latencyMs": 7461
+        },
+        {
+          "intent": "Set up a new project for my 'backend-team' in 'my-organization' called 'api-service' using Python.",
+          "expectedTool": "create_project",
+          "calledTool": "create_project",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 446,
+          "latencyMs": 6352
+        },
+        {
+          "intent": "Rename 'old-project-slug' to 'new-project-name' in 'my-organization'.",
+          "expectedTool": "update_project",
+          "calledTool": "update_project",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 624,
+          "latencyMs": 5652
+        },
+        {
+          "intent": "Rename 'old-project-slug' to 'new-project-name' in 'my-organization'.",
+          "expectedTool": "update_project",
+          "calledTool": "update_project",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 240,
+          "latencyMs": 5520
+        },
+        {
+          "intent": "Rename 'old-project-slug' to 'new-project-name' in 'my-organization'.",
+          "expectedTool": "update_project",
+          "calledTool": "update_project",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 216,
+          "latencyMs": 5588
+        },
+        {
+          "intent": "Rename 'old-project-slug' to 'new-project-name' in 'my-organization'.",
+          "expectedTool": "update_project",
+          "calledTool": "update_project",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 252,
+          "latencyMs": 5943
+        },
+        {
+          "intent": "I need another DSN for my 'production-app' project in 'my-organization'.",
+          "expectedTool": "create_dsn",
+          "calledTool": "create_dsn",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 531,
+          "latencyMs": 6598
+        },
+        {
+          "intent": "I need another DSN for my 'production-app' project in 'my-organization'.",
+          "expectedTool": "create_dsn",
+          "calledTool": "create_dsn",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 529,
+          "latencyMs": 5092
+        },
+        {
+          "intent": "I need another DSN for my 'production-app' project in 'my-organization'.",
+          "expectedTool": "create_dsn",
+          "calledTool": "create_dsn",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 248,
+          "latencyMs": 5268
+        },
+        {
+          "intent": "I need another DSN for my 'production-app' project in 'my-organization'.",
+          "expectedTool": "create_dsn",
+          "calledTool": "create_dsn",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 863,
+          "latencyMs": 12365
+        },
+        {
+          "intent": "List all DSNs for 'my-org/my-project'.",
+          "expectedTool": "find_dsns",
+          "calledTool": "find_dsns",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 558,
+          "latencyMs": 5118
+        },
+        {
+          "intent": "List all DSNs for 'my-org/my-project'.",
+          "expectedTool": "find_dsns",
+          "calledTool": "find_dsns",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 557,
+          "latencyMs": 9346
+        },
+        {
+          "intent": "List all DSNs for 'my-org/my-project'.",
+          "expectedTool": "find_dsns",
+          "calledTool": "find_dsns",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 528,
+          "latencyMs": 4348
+        },
+        {
+          "intent": "List all DSNs for 'my-org/my-project'.",
+          "expectedTool": "find_dsns",
+          "calledTool": "find_dsns",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 266,
+          "latencyMs": 6248
+        },
+        {
+          "intent": "Run Seer analysis on issue https://my-org.sentry.io/issues/PROJECT-1Z43.",
+          "expectedTool": "analyze_issue_with_seer",
+          "calledTool": "analyze_issue_with_seer",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1231,
+          "latencyMs": 9066
+        },
+        {
+          "intent": "Run Seer analysis on issue https://my-org.sentry.io/issues/PROJECT-1Z43.",
+          "expectedTool": "analyze_issue_with_seer",
+          "calledTool": "analyze_issue_with_seer",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 740,
+          "latencyMs": 8188
+        },
+        {
+          "intent": "Run Seer analysis on issue https://my-org.sentry.io/issues/PROJECT-1Z43.",
+          "expectedTool": "analyze_issue_with_seer",
+          "calledTool": "analyze_issue_with_seer",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 245,
+          "latencyMs": 7217
+        },
+        {
+          "intent": "Run Seer analysis on issue https://my-org.sentry.io/issues/PROJECT-1Z43.",
+          "expectedTool": "analyze_issue_with_seer",
+          "calledTool": "analyze_issue_with_seer",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 255,
+          "latencyMs": 6139
+        },
+        {
+          "intent": "How do I set up Sentry for my Django application?",
+          "expectedTool": "search_docs",
+          "calledTool": "search_docs",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 2094,
+          "latencyMs": 20480
+        },
+        {
+          "intent": "How do I set up Sentry for my Django application?",
+          "expectedTool": "search_docs",
+          "calledTool": "search_docs",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 1437,
+          "latencyMs": 23603
+        },
+        {
+          "intent": "How do I set up Sentry for my Django application?",
+          "expectedTool": "search_docs",
+          "calledTool": "search_docs",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 1917,
+          "latencyMs": 25081
+        },
+        {
+          "intent": "How do I set up Sentry for my Django application?",
+          "expectedTool": "search_docs",
+          "calledTool": "search_docs",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1839,
+          "latencyMs": 26712
+        },
+        {
+          "intent": "Show me the full documentation for '/platforms/javascript/guides/nextjs.md'.",
+          "expectedTool": "get_doc",
+          "calledTool": "get_doc",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 2015,
+          "latencyMs": 21168
+        },
+        {
+          "intent": "Show me the full documentation for '/platforms/javascript/guides/nextjs.md'.",
+          "expectedTool": "get_doc",
+          "calledTool": "get_doc",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 929,
+          "latencyMs": 11710
+        },
+        {
+          "intent": "Show me the full documentation for '/platforms/javascript/guides/nextjs.md'.",
+          "expectedTool": "get_doc",
+          "calledTool": "get_doc",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 1027,
+          "latencyMs": 15361
+        },
+        {
+          "intent": "Show me the full documentation for '/platforms/javascript/guides/nextjs.md'.",
+          "expectedTool": "get_doc",
+          "calledTool": "get_doc",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 1337,
+          "latencyMs": 16315
+        },
+        {
+          "intent": "Find unresolved critical bugs from last week in 'my-org'.",
+          "expectedTool": "search_issues",
+          "calledTool": "search_issues",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1256,
+          "latencyMs": 9447
+        },
+        {
+          "intent": "Find unresolved critical bugs from last week in 'my-org'.",
+          "expectedTool": "search_issues",
+          "calledTool": "search_issues",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 630,
+          "latencyMs": 7030
+        },
+        {
+          "intent": "Find unresolved critical bugs from last week in 'my-org'.",
+          "expectedTool": "search_issues",
+          "calledTool": "search_issues",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 338,
+          "latencyMs": 7137
+        },
+        {
+          "intent": "Find unresolved critical bugs from last week in 'my-org'.",
+          "expectedTool": "search_issues",
+          "calledTool": "search_issues",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 458,
+          "latencyMs": 9621
+        },
+        {
+          "intent": "Show me events for issue MCP-41 in 'my-org' from the last hour.",
+          "expectedTool": "search_issue_events",
+          "calledTool": "search_issue_events",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1420,
+          "latencyMs": 9862
+        },
+        {
+          "intent": "Show me events for issue MCP-41 in 'my-org' from the last hour.",
+          "expectedTool": "search_issue_events",
+          "calledTool": "search_issue_events",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 324,
+          "latencyMs": 6949
+        },
+        {
+          "intent": "Show me events for issue MCP-41 in 'my-org' from the last hour.",
+          "expectedTool": "search_issue_events",
+          "calledTool": "search_issue_events",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 536,
+          "latencyMs": 10299
+        },
+        {
+          "intent": "Show me events for issue MCP-41 in 'my-org' from the last hour.",
+          "expectedTool": "search_issue_events",
+          "calledTool": "search_issue_events",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 180,
+          "latencyMs": 4783
+        },
+        {
+          "intent": "What are the details of this profile: https://my-org.sentry.io/explore/profiling/profile/backend/cfe78a5c892d4a64a962d837673398d2/flamegraph/",
+          "expectedTool": "get_profile_details",
+          "calledTool": "get_profile_details",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1469,
+          "latencyMs": 11254
+        },
+        {
+          "intent": "What are the details of this profile: https://my-org.sentry.io/explore/profiling/profile/backend/cfe78a5c892d4a64a962d837673398d2/flamegraph/",
+          "expectedTool": "get_profile_details",
+          "calledTool": "get_profile_details",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 346,
+          "latencyMs": 6384
+        },
+        {
+          "intent": "What are the details of this profile: https://my-org.sentry.io/explore/profiling/profile/backend/cfe78a5c892d4a64a962d837673398d2/flamegraph/",
+          "expectedTool": "get_profile_details",
+          "calledTool": "get_profile_details",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 430,
+          "latencyMs": 7682
+        },
+        {
+          "intent": "What are the details of this profile: https://my-org.sentry.io/explore/profiling/profile/backend/cfe78a5c892d4a64a962d837673398d2/flamegraph/",
+          "expectedTool": "get_profile_details",
+          "calledTool": "get_profile_details",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 312,
+          "latencyMs": 7241
+        },
+        {
+          "intent": "Get details for issue https://sentry.io/issues/PROJECT-123/",
+          "expectedTool": "get_sentry_resource",
+          "calledTool": "get_sentry_resource",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 880,
+          "latencyMs": 7730
+        },
+        {
+          "intent": "Get details for issue https://sentry.io/issues/PROJECT-123/",
+          "expectedTool": "get_sentry_resource",
+          "calledTool": "get_sentry_resource",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 685,
+          "latencyMs": 8202
+        },
+        {
+          "intent": "Get details for issue https://sentry.io/issues/PROJECT-123/",
+          "expectedTool": "get_sentry_resource",
+          "calledTool": "get_sentry_resource",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 335,
+          "latencyMs": 8153
+        },
+        {
+          "intent": "Get details for issue https://sentry.io/issues/PROJECT-123/",
+          "expectedTool": "get_sentry_resource",
+          "calledTool": "get_sentry_resource",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 257,
+          "latencyMs": 6232
+        },
+        {
+          "intent": "Can you book me a flight to London next Tuesday?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 414,
+          "latencyMs": 3197
+        },
+        {
+          "intent": "Can you book me a flight to London next Tuesday?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 84,
+          "latencyMs": 3082
+        },
+        {
+          "intent": "Can you book me a flight to London next Tuesday?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 139,
+          "latencyMs": 6654
+        },
+        {
+          "intent": "Can you book me a flight to London next Tuesday?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 158,
+          "latencyMs": 4090
+        },
+        {
+          "intent": "Generate a report of all user activity across all organizations for the last month.",
+          "expectedTool": null,
+          "calledTool": "find_organizations",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3199,
+          "latencyMs": 17116
+        },
+        {
+          "intent": "Generate a report of all user activity across all organizations for the last month.",
+          "expectedTool": null,
+          "calledTool": "find_organizations",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 296,
+          "latencyMs": 6822
+        },
+        {
+          "intent": "Generate a report of all user activity across all organizations for the last month.",
+          "expectedTool": null,
+          "calledTool": "find_organizations",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 1834,
+          "latencyMs": 18526
+        },
+        {
+          "intent": "Generate a report of all user activity across all organizations for the last month.",
+          "expectedTool": null,
+          "calledTool": "find_organizations",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 284,
+          "latencyMs": 11223
+        }
+      ],
+      "repeats": 3,
+      "axScoreStd": 0.4714045207910317,
+      "unstable": false,
+      "subScoreStds": {
+        "intentInterpretation": 0,
+        "toolCallConstruction": 0,
+        "resultSynthesis": 0.023895347964007305,
+        "errorRecovery": 0.023177361425421854
+      },
+      "judgeFailures": 0
+    }
+  },
+  "topFixes": [
+    {
+      "issue": "update_issue: Tool exposes 13 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "search_events: Tool exposes 11 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "search_issue_events: Tool exposes 10 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "get_profile_details: Tool exposes 9 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "whoami: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "find_organizations: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "find_teams: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "find_projects: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "find_releases: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "get_issue_tag_values: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ],
+  "staticReport": {
+    "server": "Sentry MCP",
+    "metrics": {
+      "toolCount": 22,
+      "estimatedListTokens": 15150,
+      "consistentToolNaming": true
+    },
+    "manifestFlags": [
+      {
+        "code": "high-token-cost",
+        "severity": "warning",
+        "message": "tools/list is ~15150 tokens; trim descriptions/schemas."
+      }
+    ],
+    "tools": [
+      {
+        "name": "whoami",
+        "features": {
+          "descriptionWordCount": 21,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "flat",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "find_organizations",
+        "features": {
+          "descriptionWordCount": 59,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 0,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "find_teams",
+        "features": {
+          "descriptionWordCount": 61,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "find_projects",
+        "features": {
+          "descriptionWordCount": 55,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "find_releases",
+        "features": {
+          "descriptionWordCount": 89,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "get_issue_tag_values",
+        "features": {
+          "descriptionWordCount": 176,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 1,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get_replay_details",
+        "features": {
+          "descriptionWordCount": 65,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 0,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "get_event_attachment",
+        "features": {
+          "descriptionWordCount": 114,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 3,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "update_issue",
+        "features": {
+          "descriptionWordCount": 172,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 13,
+          "requiredParamCount": 0,
+          "optionalParamCount": 13,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 13 params; likely overloaded — split into focused tools."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "search_events",
+        "features": {
+          "descriptionWordCount": 236,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 11,
+          "requiredParamCount": 1,
+          "optionalParamCount": 10,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 11 params; likely overloaded — split into focused tools."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "create_team",
+        "features": {
+          "descriptionWordCount": 67,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 2,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "create_project",
+        "features": {
+          "descriptionWordCount": 159,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 6,
+          "requiredParamCount": 3,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "update_project",
+        "features": {
+          "descriptionWordCount": 153,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 7,
+          "requiredParamCount": 2,
+          "optionalParamCount": 5,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "create_dsn",
+        "features": {
+          "descriptionWordCount": 101,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 3,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "find_dsns",
+        "features": {
+          "descriptionWordCount": 74,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 2,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "analyze_issue_with_seer",
+        "features": {
+          "descriptionWordCount": 202,
+          "descriptionQuality": "rich",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 5,
+          "requiredParamCount": 0,
+          "optionalParamCount": 5,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "search_docs",
+        "features": {
+          "descriptionWordCount": 105,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "get_doc",
+        "features": {
+          "descriptionWordCount": 79,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "search_issues",
+        "features": {
+          "descriptionWordCount": 188,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 7,
+          "requiredParamCount": 1,
+          "optionalParamCount": 6,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "search_issue_events",
+        "features": {
+          "descriptionWordCount": 98,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 10,
+          "requiredParamCount": 0,
+          "optionalParamCount": 10,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 10 params; likely overloaded — split into focused tools."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "get_profile_details",
+        "features": {
+          "descriptionWordCount": 160,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 9,
+          "requiredParamCount": 0,
+          "optionalParamCount": 9,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 9 params; likely overloaded — split into focused tools."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "get_sentry_resource",
+        "features": {
+          "descriptionWordCount": 157,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 4,
+          "requiredParamCount": 0,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      }
+    ]
+  },
+  "featureSignals": {
+    "tools": {
+      "whoami": {
+        "descriptionWordCount": 21,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "flat",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      },
+      "find_organizations": {
+        "descriptionWordCount": 59,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 0,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "find_teams": {
+        "descriptionWordCount": 61,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "find_projects": {
+        "descriptionWordCount": 55,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "find_releases": {
+        "descriptionWordCount": 89,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "get_issue_tag_values": {
+        "descriptionWordCount": 176,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 1,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get_replay_details": {
+        "descriptionWordCount": 65,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 0,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "get_event_attachment": {
+        "descriptionWordCount": 114,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 3,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "update_issue": {
+        "descriptionWordCount": 172,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 13,
+        "requiredParamCount": 0,
+        "optionalParamCount": 13,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "search_events": {
+        "descriptionWordCount": 236,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 11,
+        "requiredParamCount": 1,
+        "optionalParamCount": 10,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "create_team": {
+        "descriptionWordCount": 67,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 2,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "create_project": {
+        "descriptionWordCount": 159,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 6,
+        "requiredParamCount": 3,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "update_project": {
+        "descriptionWordCount": 153,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 7,
+        "requiredParamCount": 2,
+        "optionalParamCount": 5,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "create_dsn": {
+        "descriptionWordCount": 101,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 3,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "find_dsns": {
+        "descriptionWordCount": 74,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 2,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "analyze_issue_with_seer": {
+        "descriptionWordCount": 202,
+        "descriptionQuality": "rich",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 5,
+        "requiredParamCount": 0,
+        "optionalParamCount": 5,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "search_docs": {
+        "descriptionWordCount": 105,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "get_doc": {
+        "descriptionWordCount": 79,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "search_issues": {
+        "descriptionWordCount": 188,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 7,
+        "requiredParamCount": 1,
+        "optionalParamCount": 6,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "search_issue_events": {
+        "descriptionWordCount": 98,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 10,
+        "requiredParamCount": 0,
+        "optionalParamCount": 10,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "get_profile_details": {
+        "descriptionWordCount": 160,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 9,
+        "requiredParamCount": 0,
+        "optionalParamCount": 9,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "get_sentry_resource": {
+        "descriptionWordCount": 157,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 4,
+        "requiredParamCount": 0,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      }
+    }
+  },
+  "canary": {
+    "pass": true,
+    "cleanScore": 81,
+    "badScore": 19,
+    "failures": []
+  },
+  "coverage": {
+    "toolsTotal": 22,
+    "toolsCovered": 22,
+    "ratio": 1,
+    "uncoveredTools": [],
+    "distractorCount": 2,
+    "distractorRatio": 0.08333333333333333
+  },
+  "synthesisTrust": {
+    "high": 0,
+    "medium": 21,
+    "low": 1,
+    "level": "medium",
+    "note": "Many tools lack output schemas; synthesis mocks are partly invented, so read the synthesis sub-score with some caution."
+  },
+  "runConfig": {
+    "scoredModel": "claude-sonnet-4-6",
+    "generationModel": "gemini-2.5-flash",
+    "judgeModel": "gemini-2.5-flash",
+    "scoredTemperature": 0.7,
+    "repeats": 3,
+    "intentCount": 24,
+    "maxRounds": 6,
+    "concurrency": 5,
+    "judgeRubricVersion": 1,
+    "weights": {
+      "intentInterpretation": 0.35,
+      "toolCallConstruction": 0.35,
+      "resultSynthesis": 0.2,
+      "errorRecovery": 0.1
+    }
+  }
+}

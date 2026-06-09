@@ -1,0 +1,2232 @@
+{
+  "schemaVersion": 2,
+  "server": {
+    "name": "Notion API",
+    "registry": null,
+    "manifestSource": "file",
+    "executionMode": "mock",
+    "scoredAt": "2026-06-09T20:59:41.467Z",
+    "generationModel": "gemini-2.5-flash"
+  },
+  "tools": {
+    "API-get-user": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-get-users": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-get-self": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-post-search": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-get-block-children": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-patch-block-children": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-retrieve-a-block": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-update-a-block": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-delete-a-block": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-retrieve-a-page": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-patch-page": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-post-page": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-retrieve-a-page-property": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-retrieve-a-comment": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-create-a-comment": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-query-data-source": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-retrieve-a-data-source": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-update-a-data-source": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-create-a-data-source": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-list-data-source-templates": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-retrieve-a-database": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    },
+    "API-move-page": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema absent",
+        "description quality: thin"
+      ]
+    }
+  },
+  "models": {
+    "claude-sonnet-4-6": {
+      "axScore": 82,
+      "subScores": {
+        "intentInterpretation": 0.7777777777777777,
+        "toolCallConstruction": 0.8939393939393939,
+        "resultSynthesis": 0.8027777777777779,
+        "errorRecovery": 0.753030303030303,
+        "tokensPerTask": 966.2222222222223,
+        "latencyMs": 7255.472222222223
+      },
+      "scoreWeights": {
+        "intentInterpretation": 0.35,
+        "toolCallConstruction": 0.35,
+        "resultSynthesis": 0.2,
+        "errorRecovery": 0.1
+      },
+      "lowProgrammaticSignal": false,
+      "tasks": [
+        {
+          "intent": "Who is the user with ID 'user123'?",
+          "expectedTool": "API-get-user",
+          "calledTool": "API-get-user",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 576,
+          "latencyMs": 4151
+        },
+        {
+          "intent": "Who is the user with ID 'user123'?",
+          "expectedTool": "API-get-user",
+          "calledTool": "API-get-user",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 538,
+          "latencyMs": 6658
+        },
+        {
+          "intent": "Who is the user with ID 'user123'?",
+          "expectedTool": "API-get-user",
+          "calledTool": "API-get-user",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 179,
+          "latencyMs": 5015
+        },
+        {
+          "intent": "Who is the user with ID 'user123'?",
+          "expectedTool": "API-get-user",
+          "calledTool": "API-get-user",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 185,
+          "latencyMs": 5732
+        },
+        {
+          "intent": "Can you give me a list of all the users?",
+          "expectedTool": "API-get-users",
+          "calledTool": "API-get-users",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 740,
+          "latencyMs": 5394
+        },
+        {
+          "intent": "Can you give me a list of all the users?",
+          "expectedTool": "API-get-users",
+          "calledTool": "API-get-users",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 471,
+          "latencyMs": 4785
+        },
+        {
+          "intent": "Can you give me a list of all the users?",
+          "expectedTool": "API-get-users",
+          "calledTool": "API-get-users",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 455,
+          "latencyMs": 9115
+        },
+        {
+          "intent": "Can you give me a list of all the users?",
+          "expectedTool": "API-get-users",
+          "calledTool": "API-get-users",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 831,
+          "latencyMs": 15595
+        },
+        {
+          "intent": "What's my bot user ID?",
+          "expectedTool": "API-get-self",
+          "calledTool": "API-get-self",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 633,
+          "latencyMs": 3583
+        },
+        {
+          "intent": "What's my bot user ID?",
+          "expectedTool": "API-get-self",
+          "calledTool": "API-get-self",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 157,
+          "latencyMs": 4495
+        },
+        {
+          "intent": "What's my bot user ID?",
+          "expectedTool": "API-get-self",
+          "calledTool": "API-get-self",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 147,
+          "latencyMs": 3758
+        },
+        {
+          "intent": "What's my bot user ID?",
+          "expectedTool": "API-get-self",
+          "calledTool": "API-get-self",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 349,
+          "latencyMs": 8704
+        },
+        {
+          "intent": "Find all pages containing 'meeting notes'.",
+          "expectedTool": "API-post-search",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 2429,
+          "latencyMs": 10558
+        },
+        {
+          "intent": "Find all pages containing 'meeting notes'.",
+          "expectedTool": "API-post-search",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 371,
+          "latencyMs": 6499
+        },
+        {
+          "intent": "Find all pages containing 'meeting notes'.",
+          "expectedTool": "API-post-search",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 289,
+          "latencyMs": 7579
+        },
+        {
+          "intent": "Find all pages containing 'meeting notes'.",
+          "expectedTool": "API-post-search",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 888,
+          "latencyMs": 13450
+        },
+        {
+          "intent": "List the children of block 'block456'.",
+          "expectedTool": "API-get-block-children",
+          "calledTool": "API-get-block-children",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1200,
+          "latencyMs": 7633
+        },
+        {
+          "intent": "List the children of block 'block456'.",
+          "expectedTool": "API-get-block-children",
+          "calledTool": "API-get-block-children",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 101,
+          "latencyMs": 5325
+        },
+        {
+          "intent": "List the children of block 'block456'.",
+          "expectedTool": "API-get-block-children",
+          "calledTool": "API-get-block-children",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 551,
+          "latencyMs": 6343
+        },
+        {
+          "intent": "List the children of block 'block456'.",
+          "expectedTool": "API-get-block-children",
+          "calledTool": "API-get-block-children",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 194,
+          "latencyMs": 5413
+        },
+        {
+          "intent": "Add a new paragraph to block 'block789' saying 'This is a new paragraph.'.",
+          "expectedTool": "API-patch-block-children",
+          "calledTool": "API-patch-block-children",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1000,
+          "latencyMs": 5788
+        },
+        {
+          "intent": "Add a new paragraph to block 'block789' saying 'This is a new paragraph.'.",
+          "expectedTool": "API-patch-block-children",
+          "calledTool": "API-patch-block-children",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 192,
+          "latencyMs": 5072
+        },
+        {
+          "intent": "Add a new paragraph to block 'block789' saying 'This is a new paragraph.'.",
+          "expectedTool": "API-patch-block-children",
+          "calledTool": "API-patch-block-children",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 251,
+          "latencyMs": 5681
+        },
+        {
+          "intent": "Add a new paragraph to block 'block789' saying 'This is a new paragraph.'.",
+          "expectedTool": "API-patch-block-children",
+          "calledTool": "API-patch-block-children",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 228,
+          "latencyMs": 4953
+        },
+        {
+          "intent": "Tell me about block 'block101'.",
+          "expectedTool": "API-retrieve-a-block",
+          "calledTool": "API-retrieve-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 308,
+          "latencyMs": 7646
+        },
+        {
+          "intent": "Tell me about block 'block101'.",
+          "expectedTool": "API-retrieve-a-block",
+          "calledTool": "API-retrieve-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 877,
+          "latencyMs": 6540
+        },
+        {
+          "intent": "Tell me about block 'block101'.",
+          "expectedTool": "API-retrieve-a-block",
+          "calledTool": "API-retrieve-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 612,
+          "latencyMs": 7064
+        },
+        {
+          "intent": "Tell me about block 'block101'.",
+          "expectedTool": "API-retrieve-a-block",
+          "calledTool": "API-retrieve-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 206,
+          "latencyMs": 7334
+        },
+        {
+          "intent": "Archive block 'block202'.",
+          "expectedTool": "API-update-a-block",
+          "calledTool": "API-update-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 740,
+          "latencyMs": 3701
+        },
+        {
+          "intent": "Archive block 'block202'.",
+          "expectedTool": "API-update-a-block",
+          "calledTool": "API-update-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 460,
+          "latencyMs": 4719
+        },
+        {
+          "intent": "Archive block 'block202'.",
+          "expectedTool": "API-update-a-block",
+          "calledTool": "API-update-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 196,
+          "latencyMs": 8267
+        },
+        {
+          "intent": "Archive block 'block202'.",
+          "expectedTool": "API-update-a-block",
+          "calledTool": "API-update-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 140,
+          "latencyMs": 4910
+        },
+        {
+          "intent": "Delete block 'block303'.",
+          "expectedTool": "API-delete-a-block",
+          "calledTool": "API-delete-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 434,
+          "latencyMs": 4491
+        },
+        {
+          "intent": "Delete block 'block303'.",
+          "expectedTool": "API-delete-a-block",
+          "calledTool": "API-delete-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 107,
+          "latencyMs": 3751
+        },
+        {
+          "intent": "Delete block 'block303'.",
+          "expectedTool": "API-delete-a-block",
+          "calledTool": "API-delete-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 95,
+          "latencyMs": 3910
+        },
+        {
+          "intent": "Delete block 'block303'.",
+          "expectedTool": "API-delete-a-block",
+          "calledTool": "API-delete-a-block",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 216,
+          "latencyMs": 5853
+        },
+        {
+          "intent": "Get the details of page 'page404'.",
+          "expectedTool": "API-retrieve-a-page",
+          "calledTool": "API-retrieve-a-page",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 794,
+          "latencyMs": 7304
+        },
+        {
+          "intent": "Get the details of page 'page404'.",
+          "expectedTool": "API-retrieve-a-page",
+          "calledTool": "API-retrieve-a-page",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 1019,
+          "latencyMs": 7566
+        },
+        {
+          "intent": "Get the details of page 'page404'.",
+          "expectedTool": "API-retrieve-a-page",
+          "calledTool": "API-retrieve-a-page",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 301,
+          "latencyMs": 6046
+        },
+        {
+          "intent": "Get the details of page 'page404'.",
+          "expectedTool": "API-retrieve-a-page",
+          "calledTool": "API-retrieve-a-page",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 186,
+          "latencyMs": 5535
+        },
+        {
+          "intent": "Change the title of page 'page505' to 'Updated Title'.",
+          "expectedTool": "API-patch-page",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 3558,
+          "latencyMs": 10646
+        },
+        {
+          "intent": "Change the title of page 'page505' to 'Updated Title'.",
+          "expectedTool": "API-patch-page",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 348,
+          "latencyMs": 5838
+        },
+        {
+          "intent": "Change the title of page 'page505' to 'Updated Title'.",
+          "expectedTool": "API-patch-page",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 2061,
+          "latencyMs": 9874
+        },
+        {
+          "intent": "Change the title of page 'page505' to 'Updated Title'.",
+          "expectedTool": "API-patch-page",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 1317,
+          "latencyMs": 15688
+        },
+        {
+          "intent": "Create a new page under parent 'parent606' with the title 'New Project Plan'.",
+          "expectedTool": "API-post-page",
+          "calledTool": "API-post-page",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 974,
+          "latencyMs": 6738
+        },
+        {
+          "intent": "Create a new page under parent 'parent606' with the title 'New Project Plan'.",
+          "expectedTool": "API-post-page",
+          "calledTool": "API-post-page",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 696,
+          "latencyMs": 5721
+        },
+        {
+          "intent": "Create a new page under parent 'parent606' with the title 'New Project Plan'.",
+          "expectedTool": "API-post-page",
+          "calledTool": "API-post-page",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 594,
+          "latencyMs": 6293
+        },
+        {
+          "intent": "Create a new page under parent 'parent606' with the title 'New Project Plan'.",
+          "expectedTool": "API-post-page",
+          "calledTool": "API-post-page",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1833,
+          "latencyMs": 24188
+        },
+        {
+          "intent": "What's the value of property 'property707' on page 'page808'?",
+          "expectedTool": "API-retrieve-a-page-property",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 2904,
+          "latencyMs": 10345
+        },
+        {
+          "intent": "What's the value of property 'property707' on page 'page808'?",
+          "expectedTool": "API-retrieve-a-page-property",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 382,
+          "latencyMs": 7108
+        },
+        {
+          "intent": "What's the value of property 'property707' on page 'page808'?",
+          "expectedTool": "API-retrieve-a-page-property",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 707,
+          "latencyMs": 9121
+        },
+        {
+          "intent": "What's the value of property 'property707' on page 'page808'?",
+          "expectedTool": "API-retrieve-a-page-property",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 1475,
+          "latencyMs": 13683
+        },
+        {
+          "intent": "Show me the comments on block 'block909'.",
+          "expectedTool": "API-retrieve-a-comment",
+          "calledTool": "API-retrieve-a-comment",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1190,
+          "latencyMs": 5170
+        },
+        {
+          "intent": "Show me the comments on block 'block909'.",
+          "expectedTool": "API-retrieve-a-comment",
+          "calledTool": "API-retrieve-a-comment",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 129,
+          "latencyMs": 3563
+        },
+        {
+          "intent": "Show me the comments on block 'block909'.",
+          "expectedTool": "API-retrieve-a-comment",
+          "calledTool": "API-retrieve-a-comment",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 264,
+          "latencyMs": 6358
+        },
+        {
+          "intent": "Show me the comments on block 'block909'.",
+          "expectedTool": "API-retrieve-a-comment",
+          "calledTool": "API-retrieve-a-comment",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 172,
+          "latencyMs": 5248
+        },
+        {
+          "intent": "Add a comment to page 'page111' saying 'Great work!'.",
+          "expectedTool": "API-create-a-comment",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 4083,
+          "latencyMs": 10749
+        },
+        {
+          "intent": "Add a comment to page 'page111' saying 'Great work!'.",
+          "expectedTool": "API-create-a-comment",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 557,
+          "latencyMs": 5799
+        },
+        {
+          "intent": "Add a comment to page 'page111' saying 'Great work!'.",
+          "expectedTool": "API-create-a-comment",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 1437,
+          "latencyMs": 10985
+        },
+        {
+          "intent": "Add a comment to page 'page111' saying 'Great work!'.",
+          "expectedTool": "API-create-a-comment",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1393,
+          "latencyMs": 15391
+        },
+        {
+          "intent": "Query data source 'ds121' for items where status is 'Done'.",
+          "expectedTool": "API-query-data-source",
+          "calledTool": "API-query-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1234,
+          "latencyMs": 6915
+        },
+        {
+          "intent": "Query data source 'ds121' for items where status is 'Done'.",
+          "expectedTool": "API-query-data-source",
+          "calledTool": "API-query-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 290,
+          "latencyMs": 6448
+        },
+        {
+          "intent": "Query data source 'ds121' for items where status is 'Done'.",
+          "expectedTool": "API-query-data-source",
+          "calledTool": "API-query-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 249,
+          "latencyMs": 6049
+        },
+        {
+          "intent": "Query data source 'ds121' for items where status is 'Done'.",
+          "expectedTool": "API-query-data-source",
+          "calledTool": "API-query-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 225,
+          "latencyMs": 6428
+        },
+        {
+          "intent": "Get information about data source 'ds131'.",
+          "expectedTool": "API-retrieve-a-data-source",
+          "calledTool": "API-retrieve-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1212,
+          "latencyMs": 8089
+        },
+        {
+          "intent": "Get information about data source 'ds131'.",
+          "expectedTool": "API-retrieve-a-data-source",
+          "calledTool": "API-retrieve-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 223,
+          "latencyMs": 5975
+        },
+        {
+          "intent": "Get information about data source 'ds131'.",
+          "expectedTool": "API-retrieve-a-data-source",
+          "calledTool": "API-retrieve-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 224,
+          "latencyMs": 5745
+        },
+        {
+          "intent": "Get information about data source 'ds131'.",
+          "expectedTool": "API-retrieve-a-data-source",
+          "calledTool": "API-retrieve-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 176,
+          "latencyMs": 5122
+        },
+        {
+          "intent": "Update the title of data source 'ds141' to 'Project Tasks'.",
+          "expectedTool": "API-update-a-data-source",
+          "calledTool": "API-update-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 811,
+          "latencyMs": 4039
+        },
+        {
+          "intent": "Update the title of data source 'ds141' to 'Project Tasks'.",
+          "expectedTool": "API-update-a-data-source",
+          "calledTool": "API-retrieve-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 538,
+          "latencyMs": 8494
+        },
+        {
+          "intent": "Update the title of data source 'ds141' to 'Project Tasks'.",
+          "expectedTool": "API-update-a-data-source",
+          "calledTool": "API-retrieve-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 952,
+          "latencyMs": 6753
+        },
+        {
+          "intent": "Update the title of data source 'ds141' to 'Project Tasks'.",
+          "expectedTool": "API-update-a-data-source",
+          "calledTool": "API-update-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 254,
+          "latencyMs": 5353
+        },
+        {
+          "intent": "Create a new data source named 'Team Wiki' under parent 'parent151'.",
+          "expectedTool": "API-create-a-data-source",
+          "calledTool": null,
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 416,
+          "latencyMs": 2604
+        },
+        {
+          "intent": "Create a new data source named 'Team Wiki' under parent 'parent151'.",
+          "expectedTool": "API-create-a-data-source",
+          "calledTool": "API-create-a-data-source",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 404,
+          "latencyMs": 6415
+        },
+        {
+          "intent": "Create a new data source named 'Team Wiki' under parent 'parent151'.",
+          "expectedTool": "API-create-a-data-source",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 2297,
+          "latencyMs": 12063
+        },
+        {
+          "intent": "Create a new data source named 'Team Wiki' under parent 'parent151'.",
+          "expectedTool": "API-create-a-data-source",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 1810,
+          "latencyMs": 23756
+        },
+        {
+          "intent": "List all templates in data source 'ds161'.",
+          "expectedTool": "API-list-data-source-templates",
+          "calledTool": "API-list-data-source-templates",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1066,
+          "latencyMs": 7122
+        },
+        {
+          "intent": "List all templates in data source 'ds161'.",
+          "expectedTool": "API-list-data-source-templates",
+          "calledTool": "API-list-data-source-templates",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 249,
+          "latencyMs": 4447
+        },
+        {
+          "intent": "List all templates in data source 'ds161'.",
+          "expectedTool": "API-list-data-source-templates",
+          "calledTool": "API-list-data-source-templates",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 931,
+          "latencyMs": 10001
+        },
+        {
+          "intent": "List all templates in data source 'ds161'.",
+          "expectedTool": "API-list-data-source-templates",
+          "calledTool": "API-list-data-source-templates",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 327,
+          "latencyMs": 5483
+        },
+        {
+          "intent": "Retrieve details for database 'db171'.",
+          "expectedTool": "API-retrieve-a-database",
+          "calledTool": "API-retrieve-a-database",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1069,
+          "latencyMs": 8268
+        },
+        {
+          "intent": "Retrieve details for database 'db171'.",
+          "expectedTool": "API-retrieve-a-database",
+          "calledTool": "API-retrieve-a-database",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 845,
+          "latencyMs": 5724
+        },
+        {
+          "intent": "Retrieve details for database 'db171'.",
+          "expectedTool": "API-retrieve-a-database",
+          "calledTool": "API-retrieve-a-database",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 648,
+          "latencyMs": 8501
+        },
+        {
+          "intent": "Retrieve details for database 'db171'.",
+          "expectedTool": "API-retrieve-a-database",
+          "calledTool": "API-retrieve-a-database",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 336,
+          "latencyMs": 5672
+        },
+        {
+          "intent": "Move page 'page181' to be a child of 'parent191'.",
+          "expectedTool": "API-move-page",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 5218,
+          "latencyMs": 11424
+        },
+        {
+          "intent": "Move page 'page181' to be a child of 'parent191'.",
+          "expectedTool": "API-move-page",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 538,
+          "latencyMs": 7710
+        },
+        {
+          "intent": "Move page 'page181' to be a child of 'parent191'.",
+          "expectedTool": "API-move-page",
+          "calledTool": "API-post-search",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 2111,
+          "latencyMs": 8759
+        },
+        {
+          "intent": "Move page 'page181' to be a child of 'parent191'.",
+          "expectedTool": "API-move-page",
+          "calledTool": "API-post-search",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 2799,
+          "latencyMs": 24427
+        },
+        {
+          "intent": "Can you send an email to John Doe?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 467,
+          "latencyMs": 3514
+        },
+        {
+          "intent": "Can you send an email to John Doe?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 141,
+          "latencyMs": 3717
+        },
+        {
+          "intent": "Can you send an email to John Doe?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 169,
+          "latencyMs": 3905
+        },
+        {
+          "intent": "Can you send an email to John Doe?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 140,
+          "latencyMs": 4168
+        },
+        {
+          "intent": "Set a reminder for me next Tuesday at 3 PM.",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 518,
+          "latencyMs": 4975
+        },
+        {
+          "intent": "Set a reminder for me next Tuesday at 3 PM.",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 182,
+          "latencyMs": 4943
+        },
+        {
+          "intent": "Set a reminder for me next Tuesday at 3 PM.",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 190,
+          "latencyMs": 5412
+        },
+        {
+          "intent": "Set a reminder for me next Tuesday at 3 PM.",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 189,
+          "latencyMs": 4854
+        }
+      ],
+      "repeats": 3,
+      "axScoreStd": 0.4714045207910317,
+      "unstable": false,
+      "subScoreStds": {
+        "intentInterpretation": 0.019641855032959635,
+        "toolCallConstruction": 0.02142747821777415,
+        "resultSynthesis": 0.007081971546656606,
+        "errorRecovery": 0.014050937114387381
+      },
+      "judgeFailures": 0
+    }
+  },
+  "topFixes": [
+    {
+      "issue": "API-query-data-source: Tool exposes 9 params; likely overloaded — split into focused tools.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "issue": "API-get-user: Description is only 9 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "API-get-user: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "API-get-user: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "API-get-users: Description is only 9 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "API-get-users: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "API-get-self: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "API-post-search: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "API-get-block-children: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "API-patch-block-children: No output schema; mock generation and result synthesis are less reliable.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ],
+  "staticReport": {
+    "server": "Notion API",
+    "metrics": {
+      "toolCount": 22,
+      "estimatedListTokens": 17064,
+      "consistentToolNaming": true
+    },
+    "manifestFlags": [
+      {
+        "code": "high-token-cost",
+        "severity": "warning",
+        "message": "tools/list is ~17064 tokens; trim descriptions/schemas."
+      }
+    ],
+    "tools": [
+      {
+        "name": "API-get-user",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-get-users",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 3,
+          "requiredParamCount": 0,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-get-self",
+        "features": {
+          "descriptionWordCount": 12,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 1,
+          "requiredParamCount": 0,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          }
+        ]
+      },
+      {
+        "name": "API-post-search",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 6,
+          "requiredParamCount": 0,
+          "optionalParamCount": 6,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-get-block-children",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-patch-block-children",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 4,
+          "requiredParamCount": 2,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-retrieve-a-block",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-update-a-block",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-delete-a-block",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-retrieve-a-page",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-patch-page",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 7,
+          "requiredParamCount": 1,
+          "optionalParamCount": 6,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 3,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-post-page",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 6,
+          "requiredParamCount": 2,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-retrieve-a-page-property",
+        "features": {
+          "descriptionWordCount": 12,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 5,
+          "requiredParamCount": 2,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-retrieve-a-comment",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-create-a-comment",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 2,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 4,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "API-query-data-source",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 9,
+          "requiredParamCount": 1,
+          "optionalParamCount": 8,
+          "undocumentedParamCount": 5,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "god-tool",
+            "severity": "error",
+            "message": "Tool exposes 9 params; likely overloaded — split into focused tools."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "5 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-retrieve-a-data-source",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-update-a-data-source",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 5,
+          "requiredParamCount": 1,
+          "optionalParamCount": 4,
+          "undocumentedParamCount": 2,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "2 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-create-a-data-source",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 4,
+          "requiredParamCount": 2,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 2,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "2 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-list-data-source-templates",
+        "features": {
+          "descriptionWordCount": 13,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 4,
+          "requiredParamCount": 1,
+          "optionalParamCount": 3,
+          "undocumentedParamCount": 2,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "2 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-retrieve-a-database",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "API-move-page",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "kebab",
+          "paramCount": 3,
+          "requiredParamCount": 2,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": false,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "missing-output-schema",
+            "severity": "warning",
+            "message": "No output schema; mock generation and result synthesis are less reliable."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      }
+    ]
+  },
+  "featureSignals": {
+    "tools": {
+      "API-get-user": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-get-users": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 3,
+        "requiredParamCount": 0,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-get-self": {
+        "descriptionWordCount": 12,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 1,
+        "requiredParamCount": 0,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "API-post-search": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 6,
+        "requiredParamCount": 0,
+        "optionalParamCount": 6,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "API-get-block-children": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-patch-block-children": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 4,
+        "requiredParamCount": 2,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "API-retrieve-a-block": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-update-a-block": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-delete-a-block": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-retrieve-a-page": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-patch-page": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 7,
+        "requiredParamCount": 1,
+        "optionalParamCount": 6,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 3,
+        "consistentParamCasing": false
+      },
+      "API-post-page": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 6,
+        "requiredParamCount": 2,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "API-retrieve-a-page-property": {
+        "descriptionWordCount": 12,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 5,
+        "requiredParamCount": 2,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-retrieve-a-comment": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-create-a-comment": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 2,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 4,
+        "consistentParamCasing": true
+      },
+      "API-query-data-source": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 9,
+        "requiredParamCount": 1,
+        "optionalParamCount": 8,
+        "undocumentedParamCount": 5,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "API-retrieve-a-data-source": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-update-a-data-source": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 5,
+        "requiredParamCount": 1,
+        "optionalParamCount": 4,
+        "undocumentedParamCount": 2,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "API-create-a-data-source": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 4,
+        "requiredParamCount": 2,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 2,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "API-list-data-source-templates": {
+        "descriptionWordCount": 13,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 4,
+        "requiredParamCount": 1,
+        "optionalParamCount": 3,
+        "undocumentedParamCount": 2,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-retrieve-a-database": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "API-move-page": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "kebab",
+        "paramCount": 3,
+        "requiredParamCount": 2,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": false,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      }
+    }
+  },
+  "canary": {
+    "pass": true,
+    "cleanScore": 90,
+    "badScore": 20,
+    "failures": []
+  },
+  "coverage": {
+    "toolsTotal": 22,
+    "toolsCovered": 22,
+    "ratio": 1,
+    "uncoveredTools": [],
+    "distractorCount": 2,
+    "distractorRatio": 0.08333333333333333
+  },
+  "synthesisTrust": {
+    "high": 0,
+    "medium": 22,
+    "low": 0,
+    "level": "medium",
+    "note": "Many tools lack output schemas; synthesis mocks are partly invented, so read the synthesis sub-score with some caution."
+  },
+  "runConfig": {
+    "scoredModel": "claude-sonnet-4-6",
+    "generationModel": "gemini-2.5-flash",
+    "judgeModel": "gemini-2.5-flash",
+    "scoredTemperature": 0.7,
+    "repeats": 3,
+    "intentCount": 24,
+    "maxRounds": 6,
+    "concurrency": 5,
+    "judgeRubricVersion": 1,
+    "weights": {
+      "intentInterpretation": 0.35,
+      "toolCallConstruction": 0.35,
+      "resultSynthesis": 0.2,
+      "errorRecovery": 0.1
+    }
+  }
+}

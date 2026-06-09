@@ -1,0 +1,1479 @@
+{
+  "schemaVersion": 2,
+  "server": {
+    "name": "memory-server",
+    "registry": null,
+    "manifestSource": "file",
+    "executionMode": "mock",
+    "scoredAt": "2026-06-09T18:45:46.698Z",
+    "generationModel": "gemini-2.5-flash"
+  },
+  "tools": {
+    "create_entities": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "create_relations": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "add_observations": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "delete_entities": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "delete_observations": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "delete_relations": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "read_graph": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "search_nodes": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "open_nodes": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    }
+  },
+  "models": {
+    "claude-sonnet-4-6": {
+      "axScore": 74,
+      "subScores": {
+        "intentInterpretation": 0.6527777777777777,
+        "toolCallConstruction": 0.9824561403508771,
+        "resultSynthesis": 0.4625000000000001,
+        "errorRecovery": 0.6894736842105263,
+        "tokensPerTask": 559.5416666666666,
+        "latencyMs": 6522.805555555556
+      },
+      "scoreWeights": {
+        "intentInterpretation": 0.35,
+        "toolCallConstruction": 0.35,
+        "resultSynthesis": 0.2,
+        "errorRecovery": 0.1
+      },
+      "lowProgrammaticSignal": false,
+      "tasks": [
+        {
+          "intent": "I need to record that 'Alice' is a 'Software Engineer' and 'Bob' is a 'Project Manager'. Also, 'Charlie' is a 'Data Scientist'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 678,
+          "latencyMs": 5004
+        },
+        {
+          "intent": "I need to record that 'Alice' is a 'Software Engineer' and 'Bob' is a 'Project Manager'. Also, 'Charlie' is a 'Data Scientist'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 620,
+          "latencyMs": 7191
+        },
+        {
+          "intent": "I need to record that 'Alice' is a 'Software Engineer' and 'Bob' is a 'Project Manager'. Also, 'Charlie' is a 'Data Scientist'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 765,
+          "latencyMs": 5052
+        },
+        {
+          "intent": "I need to record that 'Alice' is a 'Software Engineer' and 'Bob' is a 'Project Manager'. Also, 'Charlie' is a 'Data Scientist'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 802,
+          "latencyMs": 5025
+        },
+        {
+          "intent": "Can you show me everything you know about the current state of the system?",
+          "expectedTool": "read_graph",
+          "calledTool": "read_graph",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 906,
+          "latencyMs": 8577
+        },
+        {
+          "intent": "Can you show me everything you know about the current state of the system?",
+          "expectedTool": "read_graph",
+          "calledTool": "read_graph",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 275,
+          "latencyMs": 5781
+        },
+        {
+          "intent": "Can you show me everything you know about the current state of the system?",
+          "expectedTool": "read_graph",
+          "calledTool": "read_graph",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 663,
+          "latencyMs": 6021
+        },
+        {
+          "intent": "Can you show me everything you know about the current state of the system?",
+          "expectedTool": "read_graph",
+          "calledTool": "read_graph",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 324,
+          "latencyMs": 6030
+        },
+        {
+          "intent": "Record that 'Alice' reports to 'Bob' and 'Charlie' collaborates with 'Alice'.",
+          "expectedTool": "create_relations",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1174,
+          "latencyMs": 8562
+        },
+        {
+          "intent": "Record that 'Alice' reports to 'Bob' and 'Charlie' collaborates with 'Alice'.",
+          "expectedTool": "create_relations",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 619,
+          "latencyMs": 7761
+        },
+        {
+          "intent": "Record that 'Alice' reports to 'Bob' and 'Charlie' collaborates with 'Alice'.",
+          "expectedTool": "create_relations",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 503,
+          "latencyMs": 8045
+        },
+        {
+          "intent": "Record that 'Alice' reports to 'Bob' and 'Charlie' collaborates with 'Alice'.",
+          "expectedTool": "create_relations",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 574,
+          "latencyMs": 8553
+        },
+        {
+          "intent": "Add a note to 'Alice' saying 'Started on Project X in Q1 2023'.",
+          "expectedTool": "add_observations",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1128,
+          "latencyMs": 7747
+        },
+        {
+          "intent": "Add a note to 'Alice' saying 'Started on Project X in Q1 2023'.",
+          "expectedTool": "add_observations",
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 888,
+          "latencyMs": 6762
+        },
+        {
+          "intent": "Add a note to 'Alice' saying 'Started on Project X in Q1 2023'.",
+          "expectedTool": "add_observations",
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 589,
+          "latencyMs": 8126
+        },
+        {
+          "intent": "Add a note to 'Alice' saying 'Started on Project X in Q1 2023'.",
+          "expectedTool": "add_observations",
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 836,
+          "latencyMs": 9467
+        },
+        {
+          "intent": "Find all entities related to 'Project X'.",
+          "expectedTool": "search_nodes",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 855,
+          "latencyMs": 7372
+        },
+        {
+          "intent": "Find all entities related to 'Project X'.",
+          "expectedTool": "search_nodes",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 186,
+          "latencyMs": 4863
+        },
+        {
+          "intent": "Find all entities related to 'Project X'.",
+          "expectedTool": "search_nodes",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 291,
+          "latencyMs": 7011
+        },
+        {
+          "intent": "Find all entities related to 'Project X'.",
+          "expectedTool": "search_nodes",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 501,
+          "latencyMs": 9930
+        },
+        {
+          "intent": "Remove the entity 'Old Server' from the graph.",
+          "expectedTool": "delete_entities",
+          "calledTool": "delete_entities",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 476,
+          "latencyMs": 3767
+        },
+        {
+          "intent": "Remove the entity 'Old Server' from the graph.",
+          "expectedTool": "delete_entities",
+          "calledTool": "delete_entities",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 135,
+          "latencyMs": 4523
+        },
+        {
+          "intent": "Remove the entity 'Old Server' from the graph.",
+          "expectedTool": "delete_entities",
+          "calledTool": "delete_entities",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 108,
+          "latencyMs": 6879
+        },
+        {
+          "intent": "Remove the entity 'Old Server' from the graph.",
+          "expectedTool": "delete_entities",
+          "calledTool": "delete_entities",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 222,
+          "latencyMs": 5483
+        },
+        {
+          "intent": "Delete the observation 'Started on Project X in Q1 2023' from 'Alice'.",
+          "expectedTool": "delete_observations",
+          "calledTool": "delete_observations",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 510,
+          "latencyMs": 4455
+        },
+        {
+          "intent": "Delete the observation 'Started on Project X in Q1 2023' from 'Alice'.",
+          "expectedTool": "delete_observations",
+          "calledTool": "delete_observations",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 237,
+          "latencyMs": 6031
+        },
+        {
+          "intent": "Delete the observation 'Started on Project X in Q1 2023' from 'Alice'.",
+          "expectedTool": "delete_observations",
+          "calledTool": "delete_observations",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 117,
+          "latencyMs": 3939
+        },
+        {
+          "intent": "Delete the observation 'Started on Project X in Q1 2023' from 'Alice'.",
+          "expectedTool": "delete_observations",
+          "calledTool": "delete_observations",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 244,
+          "latencyMs": 7067
+        },
+        {
+          "intent": "Remove the relation where 'Alice' reports to 'Bob'.",
+          "expectedTool": "delete_relations",
+          "calledTool": "delete_relations",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 565,
+          "latencyMs": 4198
+        },
+        {
+          "intent": "Remove the relation where 'Alice' reports to 'Bob'.",
+          "expectedTool": "delete_relations",
+          "calledTool": "delete_relations",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 230,
+          "latencyMs": 4199
+        },
+        {
+          "intent": "Remove the relation where 'Alice' reports to 'Bob'.",
+          "expectedTool": "delete_relations",
+          "calledTool": "delete_relations",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 208,
+          "latencyMs": 6446
+        },
+        {
+          "intent": "Remove the relation where 'Alice' reports to 'Bob'.",
+          "expectedTool": "delete_relations",
+          "calledTool": "delete_relations",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 231,
+          "latencyMs": 5485
+        },
+        {
+          "intent": "Show me the details for 'Bob' and 'Charlie'.",
+          "expectedTool": "open_nodes",
+          "calledTool": "open_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 712,
+          "latencyMs": 5455
+        },
+        {
+          "intent": "Show me the details for 'Bob' and 'Charlie'.",
+          "expectedTool": "open_nodes",
+          "calledTool": "open_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 261,
+          "latencyMs": 7585
+        },
+        {
+          "intent": "Show me the details for 'Bob' and 'Charlie'.",
+          "expectedTool": "open_nodes",
+          "calledTool": "open_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 300,
+          "latencyMs": 5834
+        },
+        {
+          "intent": "Show me the details for 'Bob' and 'Charlie'.",
+          "expectedTool": "open_nodes",
+          "calledTool": "open_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 202,
+          "latencyMs": 5097
+        },
+        {
+          "intent": "Can you generate a report summarizing the team's productivity last quarter?",
+          "expectedTool": null,
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1818,
+          "latencyMs": 13103
+        },
+        {
+          "intent": "Can you generate a report summarizing the team's productivity last quarter?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 461,
+          "latencyMs": 9084
+        },
+        {
+          "intent": "Can you generate a report summarizing the team's productivity last quarter?",
+          "expectedTool": null,
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 514,
+          "latencyMs": 11576
+        },
+        {
+          "intent": "Can you generate a report summarizing the team's productivity last quarter?",
+          "expectedTool": null,
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 705,
+          "latencyMs": 11155
+        },
+        {
+          "intent": "Create a new entity called 'Database Service' of type 'Infrastructure Component'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 602,
+          "latencyMs": 4422
+        },
+        {
+          "intent": "Create a new entity called 'Database Service' of type 'Infrastructure Component'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 527,
+          "latencyMs": 4661
+        },
+        {
+          "intent": "Create a new entity called 'Database Service' of type 'Infrastructure Component'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 160,
+          "latencyMs": 4201
+        },
+        {
+          "intent": "Create a new entity called 'Database Service' of type 'Infrastructure Component'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 177,
+          "latencyMs": 4984
+        },
+        {
+          "intent": "What's the current memory usage of the server?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 508,
+          "latencyMs": 3928
+        },
+        {
+          "intent": "What's the current memory usage of the server?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 157,
+          "latencyMs": 6912
+        },
+        {
+          "intent": "What's the current memory usage of the server?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 184,
+          "latencyMs": 4300
+        },
+        {
+          "intent": "What's the current memory usage of the server?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 159,
+          "latencyMs": 4197
+        },
+        {
+          "intent": "Record that 'Database Service' supports 'Project X'.",
+          "expectedTool": "create_relations",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1937,
+          "latencyMs": 10832
+        },
+        {
+          "intent": "Record that 'Database Service' supports 'Project X'.",
+          "expectedTool": "create_relations",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 1102,
+          "latencyMs": 10763
+        },
+        {
+          "intent": "Record that 'Database Service' supports 'Project X'.",
+          "expectedTool": "create_relations",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 1124,
+          "latencyMs": 9626
+        },
+        {
+          "intent": "Record that 'Database Service' supports 'Project X'.",
+          "expectedTool": "create_relations",
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 1911,
+          "latencyMs": 16060
+        },
+        {
+          "intent": "Add an observation to 'Database Service' that says 'Running on AWS RDS'.",
+          "expectedTool": "add_observations",
+          "calledTool": "add_observations",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 590,
+          "latencyMs": 4086
+        },
+        {
+          "intent": "Add an observation to 'Database Service' that says 'Running on AWS RDS'.",
+          "expectedTool": "add_observations",
+          "calledTool": "add_observations",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 478,
+          "latencyMs": 3881
+        },
+        {
+          "intent": "Add an observation to 'Database Service' that says 'Running on AWS RDS'.",
+          "expectedTool": "add_observations",
+          "calledTool": "add_observations",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 124,
+          "latencyMs": 3686
+        },
+        {
+          "intent": "Add an observation to 'Database Service' that says 'Running on AWS RDS'.",
+          "expectedTool": "add_observations",
+          "calledTool": "add_observations",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 175,
+          "latencyMs": 4938
+        },
+        {
+          "intent": "I need to find all entities that are 'Infrastructure Component' type.",
+          "expectedTool": "search_nodes",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 779,
+          "latencyMs": 5408
+        },
+        {
+          "intent": "I need to find all entities that are 'Infrastructure Component' type.",
+          "expectedTool": "search_nodes",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 225,
+          "latencyMs": 5245
+        },
+        {
+          "intent": "I need to find all entities that are 'Infrastructure Component' type.",
+          "expectedTool": "search_nodes",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 310,
+          "latencyMs": 5236
+        },
+        {
+          "intent": "I need to find all entities that are 'Infrastructure Component' type.",
+          "expectedTool": "search_nodes",
+          "calledTool": "search_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 613,
+          "latencyMs": 11685
+        },
+        {
+          "intent": "Delete 'Project X' from the knowledge graph.",
+          "expectedTool": "delete_entities",
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 447,
+          "latencyMs": 6660
+        },
+        {
+          "intent": "Delete 'Project X' from the knowledge graph.",
+          "expectedTool": "delete_entities",
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 606,
+          "latencyMs": 5835
+        },
+        {
+          "intent": "Delete 'Project X' from the knowledge graph.",
+          "expectedTool": "delete_entities",
+          "calledTool": "search_nodes",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 335,
+          "latencyMs": 11344
+        },
+        {
+          "intent": "Delete 'Project X' from the knowledge graph.",
+          "expectedTool": "delete_entities",
+          "calledTool": "delete_entities",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 250,
+          "latencyMs": 5003
+        },
+        {
+          "intent": "Can you predict future trends based on the current data?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 779,
+          "latencyMs": 14335
+        },
+        {
+          "intent": "Can you predict future trends based on the current data?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 757,
+          "latencyMs": 9015
+        },
+        {
+          "intent": "Can you predict future trends based on the current data?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 635,
+          "latencyMs": 14347
+        },
+        {
+          "intent": "Can you predict future trends based on the current data?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 550,
+          "latencyMs": 15248
+        },
+        {
+          "intent": "Remove the observation 'Running on AWS RDS' from 'Database Service'.",
+          "expectedTool": "delete_observations",
+          "calledTool": "delete_observations",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 492,
+          "latencyMs": 3117
+        },
+        {
+          "intent": "Remove the observation 'Running on AWS RDS' from 'Database Service'.",
+          "expectedTool": "delete_observations",
+          "calledTool": "delete_observations",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 692,
+          "latencyMs": 6960
+        },
+        {
+          "intent": "Remove the observation 'Running on AWS RDS' from 'Database Service'.",
+          "expectedTool": "delete_observations",
+          "calledTool": "delete_observations",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 167,
+          "latencyMs": 3578
+        },
+        {
+          "intent": "Remove the observation 'Running on AWS RDS' from 'Database Service'.",
+          "expectedTool": "delete_observations",
+          "calledTool": "delete_observations",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 467,
+          "latencyMs": 11368
+        },
+        {
+          "intent": "Delete the relation where 'Charlie' collaborates with 'Alice'.",
+          "expectedTool": "delete_relations",
+          "calledTool": "delete_relations",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 481,
+          "latencyMs": 3484
+        },
+        {
+          "intent": "Delete the relation where 'Charlie' collaborates with 'Alice'.",
+          "expectedTool": "delete_relations",
+          "calledTool": "delete_relations",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 494,
+          "latencyMs": 4254
+        },
+        {
+          "intent": "Delete the relation where 'Charlie' collaborates with 'Alice'.",
+          "expectedTool": "delete_relations",
+          "calledTool": "delete_relations",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 126,
+          "latencyMs": 4146
+        },
+        {
+          "intent": "Delete the relation where 'Charlie' collaborates with 'Alice'.",
+          "expectedTool": "delete_relations",
+          "calledTool": "delete_relations",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 206,
+          "latencyMs": 5272
+        },
+        {
+          "intent": "What are the names of all the entities in the graph?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 592,
+          "latencyMs": 3276
+        },
+        {
+          "intent": "What are the names of all the entities in the graph?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 76,
+          "latencyMs": 7212
+        },
+        {
+          "intent": "What are the names of all the entities in the graph?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 150,
+          "latencyMs": 3849
+        },
+        {
+          "intent": "What are the names of all the entities in the graph?",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 243,
+          "latencyMs": 4371
+        },
+        {
+          "intent": "Show me the full details for 'Database Service'.",
+          "expectedTool": "open_nodes",
+          "calledTool": "open_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 787,
+          "latencyMs": 5933
+        },
+        {
+          "intent": "Show me the full details for 'Database Service'.",
+          "expectedTool": "open_nodes",
+          "calledTool": "open_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 242,
+          "latencyMs": 6659
+        },
+        {
+          "intent": "Show me the full details for 'Database Service'.",
+          "expectedTool": "open_nodes",
+          "calledTool": "open_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 405,
+          "latencyMs": 7561
+        },
+        {
+          "intent": "Show me the full details for 'Database Service'.",
+          "expectedTool": "open_nodes",
+          "calledTool": "open_nodes",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 487,
+          "latencyMs": 9095
+        },
+        {
+          "intent": "Add a new person named 'David' who is a 'QA Engineer'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 553,
+          "latencyMs": 4609
+        },
+        {
+          "intent": "Add a new person named 'David' who is a 'QA Engineer'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 156,
+          "latencyMs": 4090
+        },
+        {
+          "intent": "Add a new person named 'David' who is a 'QA Engineer'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 138,
+          "latencyMs": 3848
+        },
+        {
+          "intent": "Add a new person named 'David' who is a 'QA Engineer'.",
+          "expectedTool": "create_entities",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 189,
+          "latencyMs": 4815
+        },
+        {
+          "intent": "I want to see a visual representation of the graph.",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1090,
+          "latencyMs": 9850
+        },
+        {
+          "intent": "I want to see a visual representation of the graph.",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 232,
+          "latencyMs": 4927
+        },
+        {
+          "intent": "I want to see a visual representation of the graph.",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 403,
+          "latencyMs": 8234
+        },
+        {
+          "intent": "I want to see a visual representation of the graph.",
+          "expectedTool": null,
+          "calledTool": "read_graph",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 188,
+          "latencyMs": 5527
+        },
+        {
+          "intent": "Record that 'David' tests 'Project X'.",
+          "expectedTool": "create_relations",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 824,
+          "latencyMs": 6362
+        },
+        {
+          "intent": "Record that 'David' tests 'Project X'.",
+          "expectedTool": "create_relations",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 340,
+          "latencyMs": 5649
+        },
+        {
+          "intent": "Record that 'David' tests 'Project X'.",
+          "expectedTool": "create_relations",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 372,
+          "latencyMs": 6369
+        },
+        {
+          "intent": "Record that 'David' tests 'Project X'.",
+          "expectedTool": "create_relations",
+          "calledTool": "create_entities",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 403,
+          "latencyMs": 6487
+        }
+      ],
+      "repeats": 3,
+      "axScoreStd": 1.247219128924647,
+      "unstable": false,
+      "subScoreStds": {
+        "intentInterpretation": 0.019641855032959635,
+        "toolCallConstruction": 0.024810764252159587,
+        "resultSynthesis": 0.02041241452319317,
+        "errorRecovery": 0.018731716231633874
+      },
+      "judgeFailures": 0
+    }
+  },
+  "topFixes": [
+    {
+      "issue": "create_entities: Description is only 8 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "create_entities: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "create_relations: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "add_observations: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "delete_observations: Description is only 9 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "delete_observations: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "delete_relations: Description is only 7 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "read_graph: Description is only 5 words; expand to clarify intent.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ],
+  "staticReport": {
+    "server": "memory-server",
+    "metrics": {
+      "toolCount": 9,
+      "estimatedListTokens": 2305,
+      "consistentToolNaming": true
+    },
+    "manifestFlags": [],
+    "tools": [
+      {
+        "name": "create_entities",
+        "features": {
+          "descriptionWordCount": 8,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 4,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 8 words; expand to clarify intent."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "create_relations",
+        "features": {
+          "descriptionWordCount": 16,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 3,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "add_observations",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 4,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "delete_entities",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": []
+      },
+      {
+        "name": "delete_observations",
+        "features": {
+          "descriptionWordCount": 9,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 4,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 9 words; expand to clarify intent."
+          },
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "delete_relations",
+        "features": {
+          "descriptionWordCount": 7,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 3,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 7 words; expand to clarify intent."
+          }
+        ]
+      },
+      {
+        "name": "read_graph",
+        "features": {
+          "descriptionWordCount": 5,
+          "descriptionQuality": "thin",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "thin-description",
+            "severity": "warning",
+            "message": "Description is only 5 words; expand to clarify intent."
+          }
+        ]
+      },
+      {
+        "name": "search_nodes",
+        "features": {
+          "descriptionWordCount": 11,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": []
+      },
+      {
+        "name": "open_nodes",
+        "features": {
+          "descriptionWordCount": 10,
+          "descriptionQuality": "sparse",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": []
+      }
+    ]
+  },
+  "featureSignals": {
+    "tools": {
+      "create_entities": {
+        "descriptionWordCount": 8,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 4,
+        "consistentParamCasing": true
+      },
+      "create_relations": {
+        "descriptionWordCount": 16,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 3,
+        "consistentParamCasing": true
+      },
+      "add_observations": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 4,
+        "consistentParamCasing": true
+      },
+      "delete_entities": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "delete_observations": {
+        "descriptionWordCount": 9,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 4,
+        "consistentParamCasing": true
+      },
+      "delete_relations": {
+        "descriptionWordCount": 7,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 3,
+        "consistentParamCasing": true
+      },
+      "read_graph": {
+        "descriptionWordCount": 5,
+        "descriptionQuality": "thin",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      },
+      "search_nodes": {
+        "descriptionWordCount": 11,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "open_nodes": {
+        "descriptionWordCount": 10,
+        "descriptionQuality": "sparse",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      }
+    }
+  },
+  "canary": {
+    "pass": true,
+    "cleanScore": 78,
+    "badScore": 17,
+    "failures": []
+  },
+  "coverage": {
+    "toolsTotal": 9,
+    "toolsCovered": 9,
+    "ratio": 1,
+    "uncoveredTools": [],
+    "distractorCount": 5,
+    "distractorRatio": 0.20833333333333334
+  },
+  "synthesisTrust": {
+    "high": 0,
+    "medium": 9,
+    "low": 0,
+    "level": "medium",
+    "note": "Many tools lack output schemas; synthesis mocks are partly invented, so read the synthesis sub-score with some caution."
+  },
+  "runConfig": {
+    "scoredModel": "claude-sonnet-4-6",
+    "generationModel": "gemini-2.5-flash",
+    "judgeModel": "gemini-2.5-flash",
+    "scoredTemperature": 0.7,
+    "repeats": 3,
+    "intentCount": 24,
+    "maxRounds": 6,
+    "concurrency": 5,
+    "judgeRubricVersion": 1,
+    "weights": {
+      "intentInterpretation": 0.35,
+      "toolCallConstruction": 0.35,
+      "resultSynthesis": 0.2,
+      "errorRecovery": 0.1
+    }
+  }
+}

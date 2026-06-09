@@ -1,0 +1,1722 @@
+{
+  "schemaVersion": 2,
+  "server": {
+    "name": "secure-filesystem-server",
+    "registry": null,
+    "manifestSource": "file",
+    "executionMode": "mock",
+    "scoredAt": "2026-06-09T16:57:00.585Z",
+    "generationModel": "gemini-2.5-flash"
+  },
+  "tools": {
+    "read_file": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "read_text_file": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "read_media_file": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "read_multiple_files": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "write_file": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "edit_file": {
+      "mockConfidence": "medium",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: thin"
+      ]
+    },
+    "create_directory": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "list_directory": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "list_directory_with_sizes": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "directory_tree": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "move_file": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "search_files": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "get_file_info": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    },
+    "list_allowed_directories": {
+      "mockConfidence": "high",
+      "mockConfidenceReasons": [
+        "output schema present",
+        "description quality: rich"
+      ]
+    }
+  },
+  "models": {
+    "claude-sonnet-4-6": {
+      "axScore": 72,
+      "subScores": {
+        "intentInterpretation": 0.5555555555555555,
+        "toolCallConstruction": 0.8596491228070176,
+        "resultSynthesis": 0.7027777777777778,
+        "errorRecovery": 0.8070175438596493,
+        "tokensPerTask": 687.5833333333334,
+        "latencyMs": 8140.416666666667
+      },
+      "scoreWeights": {
+        "intentInterpretation": 0.35,
+        "toolCallConstruction": 0.35,
+        "resultSynthesis": 0.2,
+        "errorRecovery": 0.1
+      },
+      "lowProgrammaticSignal": false,
+      "tasks": [
+        {
+          "intent": "What files are in the current directory?",
+          "expectedTool": "list_directory",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1091,
+          "latencyMs": 7370
+        },
+        {
+          "intent": "What files are in the current directory?",
+          "expectedTool": "list_directory",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 590,
+          "latencyMs": 7986
+        },
+        {
+          "intent": "What files are in the current directory?",
+          "expectedTool": "list_directory",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 617,
+          "latencyMs": 7063
+        },
+        {
+          "intent": "What files are in the current directory?",
+          "expectedTool": "list_directory",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 611,
+          "latencyMs": 6140
+        },
+        {
+          "intent": "Can you show me the contents of 'config.txt'?",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 502,
+          "latencyMs": 4182
+        },
+        {
+          "intent": "Can you show me the contents of 'config.txt'?",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 457,
+          "latencyMs": 4419
+        },
+        {
+          "intent": "Can you show me the contents of 'config.txt'?",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 131,
+          "latencyMs": 4305
+        },
+        {
+          "intent": "Can you show me the contents of 'config.txt'?",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 234,
+          "latencyMs": 6659
+        },
+        {
+          "intent": "Create a new directory called 'my_project' in the current location.",
+          "expectedTool": "create_directory",
+          "calledTool": "create_directory",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 486,
+          "latencyMs": 5076
+        },
+        {
+          "intent": "Create a new directory called 'my_project' in the current location.",
+          "expectedTool": "create_directory",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 255,
+          "latencyMs": 6269
+        },
+        {
+          "intent": "Create a new directory called 'my_project' in the current location.",
+          "expectedTool": "create_directory",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 297,
+          "latencyMs": 6553
+        },
+        {
+          "intent": "Create a new directory called 'my_project' in the current location.",
+          "expectedTool": "create_directory",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 404,
+          "latencyMs": 7890
+        },
+        {
+          "intent": "I need to put some text into a new file named 'notes.md'. The content should be 'Meeting notes: Discuss project secure-filesystem-server features.'",
+          "expectedTool": "write_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 708,
+          "latencyMs": 7217
+        },
+        {
+          "intent": "I need to put some text into a new file named 'notes.md'. The content should be 'Meeting notes: Discuss project secure-filesystem-server features.'",
+          "expectedTool": "write_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 372,
+          "latencyMs": 6965
+        },
+        {
+          "intent": "I need to put some text into a new file named 'notes.md'. The content should be 'Meeting notes: Discuss project secure-filesystem-server features.'",
+          "expectedTool": "write_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 318,
+          "latencyMs": 6739
+        },
+        {
+          "intent": "I need to put some text into a new file named 'notes.md'. The content should be 'Meeting notes: Discuss project secure-filesystem-server features.'",
+          "expectedTool": "write_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 357,
+          "latencyMs": 7374
+        },
+        {
+          "intent": "What are the allowed directories I can access?",
+          "expectedTool": "list_allowed_directories",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 521,
+          "latencyMs": 4913
+        },
+        {
+          "intent": "What are the allowed directories I can access?",
+          "expectedTool": "list_allowed_directories",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 208,
+          "latencyMs": 5940
+        },
+        {
+          "intent": "What are the allowed directories I can access?",
+          "expectedTool": "list_allowed_directories",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 94,
+          "latencyMs": 7269
+        },
+        {
+          "intent": "What are the allowed directories I can access?",
+          "expectedTool": "list_allowed_directories",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 165,
+          "latencyMs": 5073
+        },
+        {
+          "intent": "Find all Python files in the 'src' directory and its subdirectories.",
+          "expectedTool": "search_files",
+          "calledTool": "search_files",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 658,
+          "latencyMs": 5837
+        },
+        {
+          "intent": "Find all Python files in the 'src' directory and its subdirectories.",
+          "expectedTool": "search_files",
+          "calledTool": "search_files",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 259,
+          "latencyMs": 5839
+        },
+        {
+          "intent": "Find all Python files in the 'src' directory and its subdirectories.",
+          "expectedTool": "search_files",
+          "calledTool": "search_files",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 236,
+          "latencyMs": 7066
+        },
+        {
+          "intent": "Find all Python files in the 'src' directory and its subdirectories.",
+          "expectedTool": "search_files",
+          "calledTool": "search_files",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 429,
+          "latencyMs": 9154
+        },
+        {
+          "intent": "Rename 'old_report.pdf' to 'final_report.pdf'.",
+          "expectedTool": "move_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 2048,
+          "latencyMs": 10240
+        },
+        {
+          "intent": "Rename 'old_report.pdf' to 'final_report.pdf'.",
+          "expectedTool": "move_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 452,
+          "latencyMs": 8504
+        },
+        {
+          "intent": "Rename 'old_report.pdf' to 'final_report.pdf'.",
+          "expectedTool": "move_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 381,
+          "latencyMs": 10216
+        },
+        {
+          "intent": "Rename 'old_report.pdf' to 'final_report.pdf'.",
+          "expectedTool": "move_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 362,
+          "latencyMs": 7386
+        },
+        {
+          "intent": "Show me the first 10 lines of 'README.md'.",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 528,
+          "latencyMs": 4126
+        },
+        {
+          "intent": "Show me the first 10 lines of 'README.md'.",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 150,
+          "latencyMs": 4786
+        },
+        {
+          "intent": "Show me the first 10 lines of 'README.md'.",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 179,
+          "latencyMs": 4737
+        },
+        {
+          "intent": "Show me the first 10 lines of 'README.md'.",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 189,
+          "latencyMs": 5498
+        },
+        {
+          "intent": "What's the size and last modified date of 'data.csv'?",
+          "expectedTool": "get_file_info",
+          "calledTool": "get_file_info",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 578,
+          "latencyMs": 4351
+        },
+        {
+          "intent": "What's the size and last modified date of 'data.csv'?",
+          "expectedTool": "get_file_info",
+          "calledTool": "get_file_info",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 208,
+          "latencyMs": 6130
+        },
+        {
+          "intent": "What's the size and last modified date of 'data.csv'?",
+          "expectedTool": "get_file_info",
+          "calledTool": "get_file_info",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 143,
+          "latencyMs": 4646
+        },
+        {
+          "intent": "What's the size and last modified date of 'data.csv'?",
+          "expectedTool": "get_file_info",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 511,
+          "latencyMs": 8419
+        },
+        {
+          "intent": "Can you generate a summary of the project's progress based on the files?",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 4660,
+          "latencyMs": 22765
+        },
+        {
+          "intent": "Can you generate a summary of the project's progress based on the files?",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 630,
+          "latencyMs": 11523
+        },
+        {
+          "intent": "Can you generate a summary of the project's progress based on the files?",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 1184,
+          "latencyMs": 18322
+        },
+        {
+          "intent": "Can you generate a summary of the project's progress based on the files?",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 646,
+          "latencyMs": 10330
+        },
+        {
+          "intent": "I need to see the directory structure of the 'docs' folder, including all subfolders and files.",
+          "expectedTool": "directory_tree",
+          "calledTool": "directory_tree",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 971,
+          "latencyMs": 6806
+        },
+        {
+          "intent": "I need to see the directory structure of the 'docs' folder, including all subfolders and files.",
+          "expectedTool": "directory_tree",
+          "calledTool": "directory_tree",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 527,
+          "latencyMs": 4737
+        },
+        {
+          "intent": "I need to see the directory structure of the 'docs' folder, including all subfolders and files.",
+          "expectedTool": "directory_tree",
+          "calledTool": "directory_tree",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 420,
+          "latencyMs": 5835
+        },
+        {
+          "intent": "I need to see the directory structure of the 'docs' folder, including all subfolders and files.",
+          "expectedTool": "directory_tree",
+          "calledTool": "directory_tree",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 651,
+          "latencyMs": 10454
+        },
+        {
+          "intent": "Read 'file1.txt', 'file2.txt', and 'file3.log' all at once.",
+          "expectedTool": "read_multiple_files",
+          "calledTool": "read_multiple_files",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 911,
+          "latencyMs": 7038
+        },
+        {
+          "intent": "Read 'file1.txt', 'file2.txt', and 'file3.log' all at once.",
+          "expectedTool": "read_multiple_files",
+          "calledTool": "read_multiple_files",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 375,
+          "latencyMs": 7086
+        },
+        {
+          "intent": "Read 'file1.txt', 'file2.txt', and 'file3.log' all at once.",
+          "expectedTool": "read_multiple_files",
+          "calledTool": "read_multiple_files",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 473,
+          "latencyMs": 6565
+        },
+        {
+          "intent": "Read 'file1.txt', 'file2.txt', and 'file3.log' all at once.",
+          "expectedTool": "read_multiple_files",
+          "calledTool": "read_multiple_files",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 267,
+          "latencyMs": 7190
+        },
+        {
+          "intent": "Update line 5 of 'settings.ini' to 'debug_mode = false'.",
+          "expectedTool": "edit_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1239,
+          "latencyMs": 7381
+        },
+        {
+          "intent": "Update line 5 of 'settings.ini' to 'debug_mode = false'.",
+          "expectedTool": "edit_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 315,
+          "latencyMs": 6246
+        },
+        {
+          "intent": "Update line 5 of 'settings.ini' to 'debug_mode = false'.",
+          "expectedTool": "edit_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 1446,
+          "latencyMs": 16780
+        },
+        {
+          "intent": "Update line 5 of 'settings.ini' to 'debug_mode = false'.",
+          "expectedTool": "edit_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 735,
+          "latencyMs": 11681
+        },
+        {
+          "intent": "List all files and directories in 'logs' and sort them by size.",
+          "expectedTool": "list_directory_with_sizes",
+          "calledTool": "list_directory_with_sizes",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 1000,
+          "latencyMs": 7728
+        },
+        {
+          "intent": "List all files and directories in 'logs' and sort them by size.",
+          "expectedTool": "list_directory_with_sizes",
+          "calledTool": "list_directory_with_sizes",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 125,
+          "latencyMs": 3953
+        },
+        {
+          "intent": "List all files and directories in 'logs' and sort them by size.",
+          "expectedTool": "list_directory_with_sizes",
+          "calledTool": "list_directory_with_sizes",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 253,
+          "latencyMs": 5626
+        },
+        {
+          "intent": "List all files and directories in 'logs' and sort them by size.",
+          "expectedTool": "list_directory_with_sizes",
+          "calledTool": "list_directory_with_sizes",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 518,
+          "latencyMs": 10284
+        },
+        {
+          "intent": "Can you compress the 'temp' directory into a zip file?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 548,
+          "latencyMs": 4299
+        },
+        {
+          "intent": "Can you compress the 'temp' directory into a zip file?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 222,
+          "latencyMs": 4955
+        },
+        {
+          "intent": "Can you compress the 'temp' directory into a zip file?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 208,
+          "latencyMs": 4180
+        },
+        {
+          "intent": "Can you compress the 'temp' directory into a zip file?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 211,
+          "latencyMs": 5530
+        },
+        {
+          "intent": "Show me the last 20 lines of the 'server.log' file.",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 514,
+          "latencyMs": 6545
+        },
+        {
+          "intent": "Show me the last 20 lines of the 'server.log' file.",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 192,
+          "latencyMs": 6030
+        },
+        {
+          "intent": "Show me the last 20 lines of the 'server.log' file.",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 261,
+          "latencyMs": 7584
+        },
+        {
+          "intent": "Show me the last 20 lines of the 'server.log' file.",
+          "expectedTool": "read_text_file",
+          "calledTool": "read_text_file",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 238,
+          "latencyMs": 10747
+        },
+        {
+          "intent": "I need to view the image 'profile.png'.",
+          "expectedTool": "read_media_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1307,
+          "latencyMs": 9775
+        },
+        {
+          "intent": "I need to view the image 'profile.png'.",
+          "expectedTool": "read_media_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 179,
+          "latencyMs": 4796
+        },
+        {
+          "intent": "I need to view the image 'profile.png'.",
+          "expectedTool": "read_media_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 780,
+          "latencyMs": 13031
+        },
+        {
+          "intent": "I need to view the image 'profile.png'.",
+          "expectedTool": "read_media_file",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 336,
+          "latencyMs": 7681
+        },
+        {
+          "intent": "Delete the file 'temp_data.json'.",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1458,
+          "latencyMs": 10773
+        },
+        {
+          "intent": "Delete the file 'temp_data.json'.",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 319,
+          "latencyMs": 7617
+        },
+        {
+          "intent": "Delete the file 'temp_data.json'.",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 608,
+          "latencyMs": 10606
+        },
+        {
+          "intent": "Delete the file 'temp_data.json'.",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 363,
+          "latencyMs": 7472
+        },
+        {
+          "intent": "Move 'source/file.txt' to 'destination/new_file.txt'.",
+          "expectedTool": "move_file",
+          "calledTool": "move_file",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 554,
+          "latencyMs": 4481
+        },
+        {
+          "intent": "Move 'source/file.txt' to 'destination/new_file.txt'.",
+          "expectedTool": "move_file",
+          "calledTool": "move_file",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 183,
+          "latencyMs": 4775
+        },
+        {
+          "intent": "Move 'source/file.txt' to 'destination/new_file.txt'.",
+          "expectedTool": "move_file",
+          "calledTool": "move_file",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 170,
+          "latencyMs": 4917
+        },
+        {
+          "intent": "Move 'source/file.txt' to 'destination/new_file.txt'.",
+          "expectedTool": "move_file",
+          "calledTool": "move_file",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 226,
+          "latencyMs": 5420
+        },
+        {
+          "intent": "What's in that file?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 378,
+          "latencyMs": 2588
+        },
+        {
+          "intent": "What's in that file?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 52,
+          "latencyMs": 2046
+        },
+        {
+          "intent": "What's in that file?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 99,
+          "latencyMs": 3007
+        },
+        {
+          "intent": "What's in that file?",
+          "expectedTool": null,
+          "calledTool": null,
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 52,
+          "latencyMs": 2188
+        },
+        {
+          "intent": "Find all files with a '.conf' extension anywhere in the current directory or its subdirectories.",
+          "expectedTool": "search_files",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1276,
+          "latencyMs": 9245
+        },
+        {
+          "intent": "Find all files with a '.conf' extension anywhere in the current directory or its subdirectories.",
+          "expectedTool": "search_files",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 425,
+          "latencyMs": 8702
+        },
+        {
+          "intent": "Find all files with a '.conf' extension anywhere in the current directory or its subdirectories.",
+          "expectedTool": "search_files",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 749,
+          "latencyMs": 12233
+        },
+        {
+          "intent": "Find all files with a '.conf' extension anywhere in the current directory or its subdirectories.",
+          "expectedTool": "search_files",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 584,
+          "latencyMs": 10966
+        },
+        {
+          "intent": "I want to change the permissions of 'script.sh' to be executable.",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 1484,
+          "latencyMs": 11416
+        },
+        {
+          "intent": "I want to change the permissions of 'script.sh' to be executable.",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 763,
+          "latencyMs": 8502
+        },
+        {
+          "intent": "I want to change the permissions of 'script.sh' to be executable.",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 608,
+          "latencyMs": 10654
+        },
+        {
+          "intent": "I want to change the permissions of 'script.sh' to be executable.",
+          "expectedTool": null,
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": false,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 632,
+          "latencyMs": 9432
+        },
+        {
+          "intent": "Create a new file named 'report.txt' and add the line 'Initial report draft.' to it.",
+          "expectedTool": "write_file",
+          "calledTool": "write_file",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": false,
+          "tokensUsed": 508,
+          "latencyMs": 4316
+        },
+        {
+          "intent": "Create a new file named 'report.txt' and add the line 'Initial report draft.' to it.",
+          "expectedTool": "write_file",
+          "calledTool": "write_file",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": false,
+          "tokensUsed": 164,
+          "latencyMs": 4870
+        },
+        {
+          "intent": "Create a new file named 'report.txt' and add the line 'Initial report draft.' to it.",
+          "expectedTool": "write_file",
+          "calledTool": "write_file",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": false,
+          "tokensUsed": 135,
+          "latencyMs": 4811
+        },
+        {
+          "intent": "Create a new file named 'report.txt' and add the line 'Initial report draft.' to it.",
+          "expectedTool": "write_file",
+          "calledTool": "write_file",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": true,
+          "tokensUsed": 490,
+          "latencyMs": 11017
+        },
+        {
+          "intent": "List the contents of the 'assets' directory.",
+          "expectedTool": "list_directory",
+          "calledTool": "list_directory",
+          "paramsCorrect": true,
+          "mockVariant": "success",
+          "completed": true,
+          "tokensUsed": 620,
+          "latencyMs": 5619
+        },
+        {
+          "intent": "List the contents of the 'assets' directory.",
+          "expectedTool": "list_directory",
+          "calledTool": "list_directory",
+          "paramsCorrect": true,
+          "mockVariant": "empty",
+          "completed": true,
+          "tokensUsed": 124,
+          "latencyMs": 4647
+        },
+        {
+          "intent": "List the contents of the 'assets' directory.",
+          "expectedTool": "list_directory",
+          "calledTool": "list_allowed_directories",
+          "paramsCorrect": true,
+          "mockVariant": "partial",
+          "completed": true,
+          "tokensUsed": 351,
+          "latencyMs": 6249
+        },
+        {
+          "intent": "List the contents of the 'assets' directory.",
+          "expectedTool": "list_directory",
+          "calledTool": "list_directory",
+          "paramsCorrect": true,
+          "mockVariant": "error",
+          "completed": false,
+          "tokensUsed": 167,
+          "latencyMs": 5464
+        }
+      ],
+      "repeats": 3,
+      "axScoreStd": 3.2998316455372216,
+      "unstable": false,
+      "subScoreStds": {
+        "intentInterpretation": 0.05196746370519363,
+        "toolCallConstruction": 0.024810764252159587,
+        "resultSynthesis": 0.0391361188989038,
+        "errorRecovery": 0.006564311204866535
+      },
+      "judgeFailures": 0
+    }
+  },
+  "topFixes": [
+    {
+      "issue": "read_file: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "read_text_file: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "read_media_file: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "write_file: 2 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "edit_file: 2 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "create_directory: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "list_directory: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "list_directory_with_sizes: 1 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "directory_tree: 2 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "issue": "move_file: 2 param(s) lack a description or schema.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ],
+  "staticReport": {
+    "server": "secure-filesystem-server",
+    "metrics": {
+      "toolCount": 14,
+      "estimatedListTokens": 2825,
+      "consistentToolNaming": true
+    },
+    "manifestFlags": [],
+    "tools": [
+      {
+        "name": "read_file",
+        "features": {
+          "descriptionWordCount": 13,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "read_text_file",
+        "features": {
+          "descriptionWordCount": 84,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 1,
+          "optionalParamCount": 2,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "read_media_file",
+        "features": {
+          "descriptionWordCount": 19,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "read_multiple_files",
+        "features": {
+          "descriptionWordCount": 52,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": true
+        },
+        "flags": []
+      },
+      {
+        "name": "write_file",
+        "features": {
+          "descriptionWordCount": 35,
+          "descriptionQuality": "rich",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 2,
+          "requiredParamCount": 2,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 2,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "2 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "edit_file",
+        "features": {
+          "descriptionWordCount": 29,
+          "descriptionQuality": "sparse",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 2,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 2,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 3,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "2 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "create_directory",
+        "features": {
+          "descriptionWordCount": 45,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "list_directory",
+        "features": {
+          "descriptionWordCount": 45,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "list_directory_with_sizes",
+        "features": {
+          "descriptionWordCount": 47,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "directory_tree",
+        "features": {
+          "descriptionWordCount": 53,
+          "descriptionQuality": "rich",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 2,
+          "requiredParamCount": 1,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 2,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "2 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "move_file",
+        "features": {
+          "descriptionWordCount": 50,
+          "descriptionQuality": "rich",
+          "verbFirstName": false,
+          "nameCase": "snake",
+          "paramCount": 2,
+          "requiredParamCount": 2,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 2,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "2 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "search_files",
+        "features": {
+          "descriptionWordCount": 64,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 3,
+          "requiredParamCount": 2,
+          "optionalParamCount": 1,
+          "undocumentedParamCount": 3,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 2,
+          "consistentParamCasing": false
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "3 param(s) lack a description or schema."
+          },
+          {
+            "code": "inconsistent-param-casing",
+            "severity": "warning",
+            "message": "Param names mix casing conventions (e.g. snake_case and camelCase)."
+          }
+        ]
+      },
+      {
+        "name": "get_file_info",
+        "features": {
+          "descriptionWordCount": 39,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 1,
+          "requiredParamCount": 1,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 1,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 1,
+          "consistentParamCasing": true
+        },
+        "flags": [
+          {
+            "code": "undocumented-params",
+            "severity": "warning",
+            "message": "1 param(s) lack a description or schema."
+          }
+        ]
+      },
+      {
+        "name": "list_allowed_directories",
+        "features": {
+          "descriptionWordCount": 37,
+          "descriptionQuality": "rich",
+          "verbFirstName": true,
+          "nameCase": "snake",
+          "paramCount": 0,
+          "requiredParamCount": 0,
+          "optionalParamCount": 0,
+          "undocumentedParamCount": 0,
+          "hasOutputSchema": true,
+          "inputSchemaDepth": 0,
+          "consistentParamCasing": true
+        },
+        "flags": []
+      }
+    ]
+  },
+  "featureSignals": {
+    "tools": {
+      "read_file": {
+        "descriptionWordCount": 13,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "read_text_file": {
+        "descriptionWordCount": 84,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 1,
+        "optionalParamCount": 2,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "read_media_file": {
+        "descriptionWordCount": 19,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "read_multiple_files": {
+        "descriptionWordCount": 52,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": true
+      },
+      "write_file": {
+        "descriptionWordCount": 35,
+        "descriptionQuality": "rich",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 2,
+        "requiredParamCount": 2,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 2,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "edit_file": {
+        "descriptionWordCount": 29,
+        "descriptionQuality": "sparse",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 2,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 2,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 3,
+        "consistentParamCasing": false
+      },
+      "create_directory": {
+        "descriptionWordCount": 45,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "list_directory": {
+        "descriptionWordCount": 45,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "list_directory_with_sizes": {
+        "descriptionWordCount": 47,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": false
+      },
+      "directory_tree": {
+        "descriptionWordCount": 53,
+        "descriptionQuality": "rich",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 2,
+        "requiredParamCount": 1,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 2,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "move_file": {
+        "descriptionWordCount": 50,
+        "descriptionQuality": "rich",
+        "verbFirstName": false,
+        "nameCase": "snake",
+        "paramCount": 2,
+        "requiredParamCount": 2,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 2,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "search_files": {
+        "descriptionWordCount": 64,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 3,
+        "requiredParamCount": 2,
+        "optionalParamCount": 1,
+        "undocumentedParamCount": 3,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 2,
+        "consistentParamCasing": false
+      },
+      "get_file_info": {
+        "descriptionWordCount": 39,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 1,
+        "requiredParamCount": 1,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 1,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 1,
+        "consistentParamCasing": true
+      },
+      "list_allowed_directories": {
+        "descriptionWordCount": 37,
+        "descriptionQuality": "rich",
+        "verbFirstName": true,
+        "nameCase": "snake",
+        "paramCount": 0,
+        "requiredParamCount": 0,
+        "optionalParamCount": 0,
+        "undocumentedParamCount": 0,
+        "hasOutputSchema": true,
+        "inputSchemaDepth": 0,
+        "consistentParamCasing": true
+      }
+    }
+  },
+  "canary": {
+    "pass": true,
+    "cleanScore": 76,
+    "badScore": 20,
+    "failures": []
+  },
+  "coverage": {
+    "toolsTotal": 14,
+    "toolsCovered": 13,
+    "ratio": 0.9285714285714286,
+    "uncoveredTools": [
+      "read_file"
+    ],
+    "distractorCount": 5,
+    "distractorRatio": 0.20833333333333334
+  },
+  "synthesisTrust": {
+    "high": 11,
+    "medium": 3,
+    "low": 0,
+    "level": "high",
+    "note": "Most tools have output schemas + rich descriptions; synthesis mocks are well-grounded."
+  },
+  "runConfig": {
+    "scoredModel": "claude-sonnet-4-6",
+    "generationModel": "gemini-2.5-flash",
+    "judgeModel": "gemini-2.5-flash",
+    "scoredTemperature": 0.7,
+    "repeats": 3,
+    "intentCount": 24,
+    "maxRounds": 6,
+    "concurrency": 5,
+    "judgeRubricVersion": 1,
+    "weights": {
+      "intentInterpretation": 0.35,
+      "toolCallConstruction": 0.35,
+      "resultSynthesis": 0.2,
+      "errorRecovery": 0.1
+    }
+  }
+}

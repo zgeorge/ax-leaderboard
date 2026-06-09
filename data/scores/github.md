@@ -1,42 +1,55 @@
 # AX Score — github-mcp-server
 
 - Manifest source: `file`
-- Scored at: 2026-06-09T15:56:19.670Z
+- Scored at: 2026-06-09T23:06:07.833Z
 - Generation model: `gemini-2.5-flash`
-- Canary: ✅ pass (clean 79, broken 20)
-- Tool coverage: 20/26 (77%); distractors: 17%
-- Not evaluated (no intent): `push_files`, `search_users`, `get_pull_request_status`, `update_pull_request_branch`, `get_pull_request_comments`, `get_pull_request_reviews`
+- Canary: ✅ pass (clean 86, broken 20)
+- Tool coverage: 24/26 (92%); distractors: 20%
+- Not evaluated (no intent): `get_pull_request_comments`, `get_pull_request_reviews`
 
 ## Scores by model
 
-| Model | AX | n | Intent | Tool calls | Synthesis | Error recovery | Low signal | Stable |
-|---|---|---|---|---|---|---|---|---|
-| `claude-sonnet-4-6` | **88** ± 0.5 | 3 | 88% | 100% | 76% | 71% | no | yes |
+| Model | AX | n | Intent | Tool calls | Static | Synthesis | Error recovery | Low signal | Stable |
+|---|---|---|---|---|---|---|---|---|---|
+| `claude-sonnet-4-6` | **76** ± 0.2 | 3 | 91% | 100% | 46% | 61% | 68% | no | yes |
+
+## Static design quality
+
+- Score: **46%** (deterministic; 20% of AX under the default v3 weights)
+- `list_issues`: 15%
+- `update_issue`: 15%
+- `create_issue`: 30%
+- `add_issue_comment`: 30%
+- `search_code`: 30%
 
 ## Per-tool results (success variant)
 
 | Tool | Intents | Right tool | Params correct | Synthesized |
 |---|---|---|---|---|
-| `create_repository` | 1 | 100% | 100% | 100% |
-| `search_repositories` | 1 | 100% | 100% | 0% |
-| `get_file_contents` | 1 | 100% | 100% | 100% |
 | `create_or_update_file` | 1 | 100% | 100% | 0% |
+| `search_repositories` | 1 | 100% | 100% | 0% |
+| `create_repository` | 1 | 100% | 100% | 0% |
+| `get_file_contents` | 1 | 100% | 100% | 100% |
+| `push_files` | 1 | 100% | 100% | 0% |
 | `create_issue` | 1 | 100% | 100% | 100% |
 | `create_pull_request` | 1 | 100% | 100% | 100% |
 | `fork_repository` | 1 | 100% | 100% | 0% |
 | `create_branch` | 1 | 100% | 100% | 100% |
 | `list_commits` | 1 | 100% | 100% | 0% |
-| `list_issues` | 1 | 100% | 100% | 100% |
+| `list_issues` | 1 | 100% | 100% | 0% |
 | `update_issue` | 1 | 100% | 100% | 100% |
 | `add_issue_comment` | 1 | 100% | 100% | 100% |
 | `search_code` | 1 | 100% | 100% | 0% |
-| `search_issues` | 1 | 100% | 100% | 100% |
-| `get_issue` | 1 | 100% | 100% | 100% |
+| `search_issues` | 1 | 100% | 100% | 0% |
+| `search_users` | 1 | 100% | 100% | 100% |
+| `get_issue` | 1 | 100% | 100% | 0% |
 | `get_pull_request` | 1 | 100% | 100% | 100% |
 | `list_pull_requests` | 1 | 100% | 100% | 100% |
 | `create_pull_request_review` | 1 | 100% | 100% | 100% |
 | `merge_pull_request` | 1 | 100% | 100% | 0% |
 | `get_pull_request_files` | 1 | 100% | 100% | 100% |
+| `get_pull_request_status` | 1 | 100% | 100% | 100% |
+| `update_pull_request_branch` | 1 | 100% | 100% | 0% |
 
 ## Synthesis trust
 
@@ -55,7 +68,7 @@
 - `fork_repository`: **medium** (output schema absent; description quality: thin)
 - `create_branch`: **medium** (output schema absent; description quality: thin)
 - `list_commits`: **low** (output schema absent; description quality: thin; mock generation failed; using synthetic fallback)
-- `list_issues`: **medium** (output schema absent; description quality: thin)
+- `list_issues`: **low** (output schema absent; description quality: thin; mock generation failed; using synthetic fallback)
 - `update_issue`: **medium** (output schema absent; description quality: thin)
 - `add_issue_comment`: **medium** (output schema absent; description quality: thin)
 - `search_code`: **low** (output schema absent; description quality: thin; mock generation failed; using synthetic fallback)
@@ -69,7 +82,7 @@
 - `get_pull_request_files`: **medium** (output schema absent; description quality: thin)
 - `get_pull_request_status`: **medium** (output schema absent; description quality: thin)
 - `update_pull_request_branch`: **medium** (output schema absent; description quality: thin)
-- `get_pull_request_comments`: **low** (output schema absent; description quality: thin; mock generation failed; using synthetic fallback)
+- `get_pull_request_comments`: **medium** (output schema absent; description quality: thin)
 - `get_pull_request_reviews`: **medium** (output schema absent; description quality: thin)
 
 ## Top fixes
@@ -89,6 +102,6 @@
 
 - Scored model: `claude-sonnet-4-6` @ temperature 0.7
 - Generation + judge: `gemini-2.5-flash` / `gemini-2.5-flash`
-- Repeats: 3 · Intents: 24 · Max rounds: 6
+- Repeats: 3 · Intents: 30 · Max rounds: 6
 - Judge rubric: v1
-- Weights: intent 0.35, tool calls 0.35, synthesis 0.2, error recovery 0.1
+- Weights: intent 0.25, tool calls 0.25, static 0.2, synthesis 0.2, error recovery 0.1

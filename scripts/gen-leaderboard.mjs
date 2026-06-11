@@ -37,8 +37,70 @@ const RUBRICS = {
   },
 };
 
+function stdDev(values) {
+  const mean = values.reduce((a, b) => a + b, 0) / values.length;
+  const variance = values.reduce((sum, v) => sum + (v - mean) ** 2, 0) / values.length;
+  return Math.sqrt(variance);
+}
+
 function displayName(serverName) {
   return DISPLAY_NAMES[serverName] ?? serverName;
+}
+
+function buildLeaderboardData() {
+  const modelsJson = JSON.parse(
+    readFileSync(join(root, 'data', 'models.json'), 'utf8'),
+  );
+
+  const rows = readdirSync(scoresDir)
+    .filter(f => f.endsWith('.json') && f !== 'SCHEMA.json')
+    .map(f => {
+      const data = JSON.parse(readFileSync(join(scoresDir, f), 'utf8'));
+      const modelEntries = Object.entries(data.models);
+      const axScores = modelEntries.map(([, m]) => m.axScore);
+      const aggregate =
+        Math.round((axScores.reduce((a, b) => a + b, 0) / axScores.length) * 10) / 10;
+      const aggregateStd =
+        Math.round(
+          (axScores.length === 1 ? modelEntries[0][1].axScoreStd : stdDev(axScores)) * 10,
+        ) / 10;
+
+      const byModel = {};
+      for (const [modelId, m] of modelEntries) {
+        byModel[modelId] = {
+          axScore: m.axScore,
+          axScoreStd: Math.round(m.axScoreStd * 10) / 10,
+          subScores: {
+            intentInterpretation: m.subScores.intentInterpretation,
+            toolCallConstruction: m.subScores.toolCallConstruction,
+            staticQuality: m.subScores.staticQuality ?? null,
+            resultSynthesis: m.subScores.resultSynthesis,
+            errorRecovery: m.subScores.errorRecovery,
+          },
+          scoreWeights: m.scoreWeights,
+        };
+      }
+
+      return {
+        slug: basename(f, '.json'),
+        schemaVersion: data.schemaVersion ?? 2,
+        name: displayName(data.server.name),
+        aggregate,
+        aggregateStd,
+        byModel,
+        coverage: data.coverage ?? null,
+        topFixes: (data.topFixes ?? []).slice(0, 3),
+        scoredAt: (data.server.scoredAt ?? '').slice(0, 10),
+      };
+    })
+    .sort((a, b) => b.aggregate - a.aggregate);
+
+  return {
+    generatedAt: new Date().toISOString(),
+    models: modelsJson,
+    v3: rows.filter(r => r.schemaVersion >= 3),
+    v2: rows.filter(r => r.schemaVersion < 3),
+  };
 }
 
 function scoreColor(ax) {

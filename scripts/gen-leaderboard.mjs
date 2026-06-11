@@ -150,7 +150,10 @@ function renderExpansion(row, version) {
   const modelBlocks = scoredModels.map(([modelId, m]) => {
     const segments = subScoreDefs.map(def => {
       const val = m.subScores[def.key] ?? 0;
-      const flexVal = Math.round(def.weight * val * 10000);
+      const weight = (m.scoreWeights && m.scoreWeights[def.key] != null)
+        ? m.scoreWeights[def.key]
+        : def.weight;
+      const flexVal = Math.round(weight * val * 10000);
       const pct = Math.round(val * 100);
       return { cls: def.cls, label: def.label, flexVal, pct, colorCls: scoreClass(pct) };
     });
@@ -164,13 +167,16 @@ function renderExpansion(row, version) {
       ? `<div style="flex:${spacerFlex}"></div>`
       : '';
 
+    const labelSpacer = spacerFlex > 0
+      ? `<span style="flex:${spacerFlex}" aria-hidden="true"></span>`
+      : '';
     const barLabels = segments
       .map(seg => `<span style="flex:${seg.flexVal}" class="${seg.colorCls}-text">${seg.pct}% ${seg.label}</span>`)
-      .join('');
+      .join('') + labelSpacer;
 
     return `
       <div>
-        <div class="model-block-label">${escapeHtml(modelId)} &nbsp;<span style="color:#7d8590">${m.axScore} &plusmn;${m.axScoreStd}</span></div>
+        <div class="model-block-label">${escapeHtml(modelId)} &nbsp;<span style="color:#7d8590">${m.axScore} &plusmn;${m.axScoreStd ?? 0}</span></div>
         <div class="bar-container">${barSegments}${spacer}</div>
         <div class="bar-labels">${barLabels}</div>
       </div>`;

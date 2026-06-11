@@ -31,6 +31,29 @@ v3 makes the score a **universal rubric** — comparable across manifests of any
   in the trajectory (legitimate chains), matching construction; distractors still require zero calls.
 - **Single rounding.** `axScore` is rounded exactly once, at report time.
 
+### Additive fields (2026-06-10 — still schemaVersion 3)
+
+All optional; absent in score files produced before this date.
+
+- **Persona / distractor-kind labels.** The generator prompt (v2) labels every intent with a
+  `persona` (`precise | ambiguous | novice | expert | edge_case`) and every distractor with a
+  `distractorKind` (`out-of-domain | adjacent | under-specified | near-miss`), and requires at
+  least one **near-miss** distractor — the subtype that tests description discriminability.
+  `tasks[].persona` carries the label per task; the top-level `evalSetProfile` records the label
+  counts. Labels are best-effort: an intent the generator left untagged simply omits the field.
+- **`models.<id>.axScoreCI95`** — Student-t 95% confidence interval on the AX score
+  (df = repeats−1, sample variance, clamped to [0, 100]). More honest than ±std at n=3. Null for
+  single-pass runs.
+- **`models.<id>.consistency`** — cross-repeat tool-call reproducibility: for each non-distractor
+  intent, the canonical success-variant trajectory's first tool call is compared across the
+  repeated passes (same tool AND deep-equal params, key order ignored); the score is the fraction
+  of identical pairs averaged over intents. Low consistency usually traces to ambiguous parameter
+  names/descriptions. **Unweighted annotation** (same status as `paramsValueMatchRate`). Null for
+  single-pass runs.
+- **`models.<id>.paramsValueMatchRateStd`** — population std (matching `axScoreStd`) of the per-run
+  `paramsValueMatchRate`; recorded so the deferred decision on weighting that annotation is made
+  from real spread data. Null when fewer than two runs had a rate.
+
 ## What changed in v2 (vs v1)
 
 v2 makes a score **defensible** rather than provisional:
@@ -64,6 +87,7 @@ v2 makes a score **defensible** rather than provisional:
   "staticQuality": { ... },   // v3: the breakdown behind the staticQuality sub-score
   "staticReport": { ... },
   "featureSignals": { ... },
+  "evalSetProfile": { ... },  // optional (eval sets generated under the v2 labelled prompt)
   "canary": { ... },          // optional (present when gated)
   "coverage": { ... },        // optional
   "synthesisTrust": { ... },  // optional
@@ -105,6 +129,9 @@ Keyed by **exact model ID**. One block per scored model.
 | `axScoreStd` | number (opt) | Standard deviation of AX across the repeats. |
 | `unstable` | boolean (opt) | True when `axScoreStd` exceeds 8 (run-to-run instability). |
 | `subScoreStds` | object (opt) | Std of each of the five weighted sub-scores across repeats (staticQuality is always 0). |
+| `axScoreCI95` | [number, number] \| null (opt, v3 2026-06-10) | Student-t 95% CI on the AX score (df = repeats−1, clamped to [0,100]). Null for single passes. |
+| `consistency` | number \| null (opt, v3 2026-06-10) | Cross-repeat tool-call identity (same tool + deep-equal params on the canonical success run, fraction of identical pairs). **Unweighted annotation.** Null for single passes. |
+| `paramsValueMatchRateStd` | number \| null (opt, v3 2026-06-10) | Population std of the per-run `paramsValueMatchRate`; null when <2 runs had one. |
 | `tasks` | object[] | Per-task results (representative first-pass sample). |
 
 ### `subScores` (object)
@@ -130,6 +157,7 @@ Keyed by **exact model ID**. One block per scored model.
 | `completed` | boolean | Judge verdict ≥ threshold; false if the judge failed on this task. |
 | `tokensUsed` | integer | Total tokens for this task. |
 | `latencyMs` | integer | Wall-clock latency for this task. |
+| `persona` | string (opt, v3 2026-06-10) | Requester archetype of the intent: `precise` \| `ambiguous` \| `novice` \| `expert` \| `edge_case`. Absent on untagged (pre-generator-v2) eval sets. |
 
 ## `topFixes` (array, required)
 Ranked manifest fixes. `issue` (string), `impact` / `effort` (`high`\|`medium`\|`low`).
@@ -145,6 +173,14 @@ The deterministic breakdown behind the `staticQuality` sub-score.
 ## `staticReport` / `featureSignals` (objects, required)
 Static-analyzer output and raw per-tool features (corpus for design-law mining). Shape owned by the
 engine; opaque to the schema beyond "present".
+
+## `evalSetProfile` (object, optional — v3 2026-06-10)
+Label counts of the generated eval set; absent when the set predates the v2 (labelled) generator
+prompt. Lets a reader judge persona spread and distractor variety without the raw eval set.
+| field | type | notes |
+|-------|------|-------|
+| `personas` | object | Persona → count of intents carrying that label. |
+| `distractorKinds` | object | Distractor kind → count (`near-miss` ≥ 1 is required by the prompt; its absence is warned at generation time). |
 
 ## `canary` (object, optional)
 Live-canary result proving the engine was calibrated at scoring time.

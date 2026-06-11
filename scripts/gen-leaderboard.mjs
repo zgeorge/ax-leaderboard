@@ -117,8 +117,92 @@ function scoreClass(ax) {
   return 'score-orange';
 }
 
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderExpansion(row, version) {
+  return `<div style="color:#7d8590;font-size:11px;"><!-- sub-scores: ${escapeHtml(row.name)} --></div>`;
+}
+
 function renderSection(rows, modelCols, version) {
-  return `<section class="ax-section"><p style="color:#7d8590"><!-- table v${version}: ${rows.length} rows --></p></section>`;
+  const isV3 = version >= 3;
+  const heading = isV3
+    ? 'Scores &mdash; schema v3 (current rubric)'
+    : 'Scores &mdash; schema v2 (legacy, pending re-score)';
+  const banner = isV3 ? '' : `
+    <div class="v2-banner">
+      &#9888; Scored under the <strong>v2 rubric</strong> (no static quality component) &mdash;
+      not comparable to v3. These servers are pending re-score.
+    </div>`;
+
+  // Which model columns start a new family group (get a left-border separator)
+  const isFamilyStart = modelCols.map(
+    (col, i) => i === 0 || modelCols[i - 1].family !== col.family,
+  );
+
+  const theadCols = modelCols.map((col, i) => {
+    const cls = [`family-${col.family}`, isFamilyStart[i] ? 'col-sep' : ''].filter(Boolean).join(' ');
+    return `<th class="${cls}">${col.label}</th>`;
+  }).join('');
+
+  const colCount = 3 + modelCols.length + 2; // rank + server + agg + models + cov + date
+
+  const tbodyRows = rows.map((row, idx) => {
+    const modelCells = modelCols.map((col, i) => {
+      const m = row.byModel[col.id];
+      const tdCls = `model-cell${isFamilyStart[i] ? ' col-sep' : ''}`;
+      if (!m) return `<td class="${tdCls}"><span class="score-empty">&mdash;</span></td>`;
+      return `<td class="${tdCls}"><span class="score-badge ${scoreClass(m.axScore)}">${m.axScore}</span></td>`;
+    }).join('');
+
+    const cov = row.coverage
+      ? `${row.coverage.toolsCovered}/${row.coverage.toolsTotal}`
+      : '&mdash;';
+
+    return `
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">${idx + 1}</td>
+        <td class="server-name">${escapeHtml(row.name)} <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score ${scoreClass(row.aggregate)}">${row.aggregate}</span>
+          <span class="agg-std">&plusmn;${row.aggregateStd}</span>
+        </td>
+        ${modelCells}
+        <td class="cov-cell col-sep">${cov}</td>
+        <td class="date-cell">${row.scoredAt}</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="${colCount}">
+          ${renderExpansion(row, version)}
+        </td>
+      </tr>`;
+  }).join('');
+
+  return `
+    <section class="ax-section">
+      <h2>${heading}</h2>
+      ${banner}
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Server</th>
+              <th style="text-align:center">AX &#x2300;</th>
+              ${theadCols}
+              <th class="col-sep" style="text-align:center">Coverage</th>
+              <th style="text-align:right">Scored</th>
+            </tr>
+          </thead>
+          <tbody>${tbodyRows}</tbody>
+        </table>
+      </div>
+    </section>`;
 }
 
 function safeJsonEmbed(obj) {

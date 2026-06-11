@@ -110,6 +110,138 @@ function scoreColor(ax) {
   return '#f0883e';               // orange
 }
 
+function scoreClass(ax) {
+  if (ax >= 90) return 'score-green';
+  if (ax >= 80) return 'score-blue';
+  if (ax >= 70) return 'score-yellow';
+  return 'score-orange';
+}
+
+function renderSection(rows, modelCols, version) {
+  return `<section class="ax-section"><p style="color:#7d8590"><!-- table v${version}: ${rows.length} rows --></p></section>`;
+}
+
+function generateHTML(data) {
+  const { families } = data.models;
+  const MODEL_COLS = [
+    { id: families.anthropic.cheap.id,    label: 'Haiku',      family: 'anthropic' },
+    { id: families.anthropic.mid.id,      label: 'Sonnet',     family: 'anthropic' },
+    { id: families.anthropic.frontier.id, label: 'Opus',       family: 'anthropic' },
+    { id: families.openai.cheap.id,       label: 'GPT-mini',   family: 'openai'    },
+    { id: families.openai.mid.id,         label: 'GPT-4o',     family: 'openai'    },
+    { id: families.openai.frontier.id,    label: 'o3',         family: 'openai'    },
+    { id: families.google.cheap.id,       label: 'Flash-Lite', family: 'google'    },
+    { id: families.google.mid.id,         label: 'Flash',      family: 'google'    },
+    { id: families.google.frontier.id,    label: 'Pro',        family: 'google'    },
+  ];
+
+  const css = `
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d1117; color: #c9d1d9; font-family: system-ui,-apple-system,'Segoe UI',sans-serif; font-size: 14px; line-height: 1.5; }
+    a { color: #388bfd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-header { padding: 32px 24px 24px; border-bottom: 1px solid #21262d; }
+    .site-header h1 { font-size: 24px; font-weight: 700; color: #e6edf3; margin-bottom: 6px; }
+    .site-header p { color: #7d8590; font-size: 13px; }
+
+    .ax-section { padding: 24px; }
+    .ax-section h2 { font-size: 16px; font-weight: 600; color: #e6edf3; margin-bottom: 16px; }
+    .v2-banner { background: #3d2b0a; border: 1px solid #d29922; border-radius: 6px; padding: 10px 14px; color: #d29922; font-size: 13px; margin-bottom: 16px; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    thead th { padding: 8px 10px; color: #7d8590; font-weight: 500; font-size: 10px; letter-spacing: .05em; text-transform: uppercase; border-bottom: 1px solid #21262d; white-space: nowrap; background: #161b22; position: sticky; top: 0; z-index: 1; }
+    th.family-anthropic { color: #58a6ff; border-bottom: 2px solid #1a3a6a; }
+    th.family-openai    { color: #3fb950; border-bottom: 2px solid #1a4a2e; }
+    th.family-google    { color: #d29922; border-bottom: 2px solid #3d2b0a; }
+    th.col-sep, td.col-sep { border-left: 1px solid #21262d; }
+    tbody tr.server-row { cursor: pointer; transition: background .1s; }
+    tbody tr.server-row:hover { background: #161b22; }
+    tbody tr.server-row.open { background: #161b22; }
+    tbody tr.expansion-row td { background: #0d1117; padding: 14px 16px 14px 48px; border-bottom: 1px solid #21262d; }
+    td { padding: 7px 10px; border-bottom: 1px solid #161b22; vertical-align: middle; }
+
+    .rank { color: #7d8590; font-size: 11px; }
+    .server-name { font-weight: 600; color: #c9d1d9; white-space: nowrap; }
+    .expand-hint { font-size: 10px; color: #7d8590; margin-left: 4px; }
+    .score-badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-weight: 600; font-size: 12px; min-width: 34px; text-align: center; }
+    .agg-score { font-size: 17px; display: block; }
+    .agg-std { font-size: 10px; color: #7d8590; display: block; }
+    .score-green  { background: #1a4a2e; color: #56d364; }
+    .score-blue   { background: #1a3a4a; color: #388bfd; }
+    .score-yellow { background: #3d2b0a; color: #d29922; }
+    .score-orange { background: #3d1f0a; color: #f0883e; }
+    .score-empty  { color: #3d444d; }
+    .score-green-text  { color: #56d364; }
+    .score-blue-text   { color: #388bfd; }
+    .score-yellow-text { color: #d29922; }
+    .score-orange-text { color: #f0883e; }
+    .model-cell   { text-align: center; }
+    .cov-cell     { text-align: center; color: #c9d1d9; white-space: nowrap; }
+    .date-cell    { text-align: right; color: #7d8590; white-space: nowrap; }
+
+    .subscore-blocks { display: flex; flex-direction: column; gap: 14px; }
+    .model-block-label { font-size: 11px; color: #c9d1d9; margin-bottom: 6px; }
+    .bar-container { display: flex; gap: 1px; background: #21262d; border-radius: 3px; height: 8px; overflow: hidden; margin-bottom: 4px; }
+    .bar-segment   { height: 8px; min-width: 1px; }
+    .bar-intent    { background: #1a4a2e; }
+    .bar-tools     { background: #1a3a4a; }
+    .bar-static    { background: #3d1a1a; }
+    .bar-synth     { background: #3d2b0a; }
+    .bar-error     { background: #3d1f0a; }
+    .bar-labels    { display: flex; gap: 1px; font-size: 9px; }
+    .bar-labels span { overflow: hidden; white-space: nowrap; }
+    .top-fixes { margin-top: 10px; font-size: 11px; }
+    .top-fixes-label { letter-spacing: .05em; text-transform: uppercase; font-size: 9px; color: #7d8590; margin-right: 4px; }
+    .fix-item { color: #c9d1d9; }
+
+    .site-footer { padding: 20px 24px; border-top: 1px solid #21262d; font-size: 12px; color: #7d8590; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .site-footer a { color: #7d8590; }
+    .site-footer a:hover { color: #c9d1d9; }
+  `;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AX Leaderboard &mdash; MCP Manifest Quality</title>
+  <style>${css}</style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>AX Leaderboard</h1>
+    <p>MCP manifest quality scores &mdash; model drivability + static design quality, no live server required. &nbsp;<a href="data/scores/SCHEMA.md">Methodology &rarr;</a></p>
+  </header>
+
+  ${renderSection(data.v3, MODEL_COLS, 3)}
+  ${data.v2.length > 0 ? renderSection(data.v2, MODEL_COLS, 2) : ''}
+
+  <footer class="site-footer">
+    <a href="data/scores/SCHEMA.md">Score schema</a>
+    <a href="https://github.com/zgeorge/ax-leaderboard">GitHub</a>
+    <span>Submit: PR your manifest to <code>data/manifests/</code> &mdash; no live server required</span>
+    <span style="margin-left:auto">Generated ${data.generatedAt.slice(0, 10)}</span>
+  </footer>
+
+  <script>
+  const DATA = ${JSON.stringify(data)};
+
+  function toggleRow(serverRow) {
+    const next = serverRow.nextElementSibling;
+    if (!next || !next.classList.contains('expansion-row')) return;
+    const isOpen = next.style.display !== 'none';
+    next.style.display = isOpen ? 'none' : '';
+    serverRow.classList.toggle('open', !isOpen);
+    const hint = serverRow.querySelector('.expand-hint');
+    if (hint) hint.textContent = isOpen ? '▸' : '▾';
+  }
+  </script>
+</body>
+</html>`;
+}
+
 // ── Load & group scores by schema version ────────────────────────────────────
 
 const scoresDir = join(root, 'data', 'scores');
@@ -275,3 +407,7 @@ if (readme.includes('<!-- LEADERBOARD:START -->')) {
 
 writeFileSync(readmePath, updated, 'utf8');
 console.log('✔  README.md');
+
+const htmlData = buildLeaderboardData();
+writeFileSync(join(root, 'index.html'), generateHTML(htmlData), 'utf8');
+console.log('✔  index.html');

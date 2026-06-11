@@ -121,6 +121,12 @@ function renderSection(rows, modelCols, version) {
   return `<section class="ax-section"><p style="color:#7d8590"><!-- table v${version}: ${rows.length} rows --></p></section>`;
 }
 
+function safeJsonEmbed(obj) {
+  return JSON.stringify(obj)
+    .replace(/<\/script>/gi, '<\\/script>')
+    .replace(/<!--/g, '<\\!--');
+}
+
 function generateHTML(data) {
   const { families } = data.models;
   const MODEL_COLS = [
@@ -226,7 +232,7 @@ function generateHTML(data) {
   </footer>
 
   <script>
-  const DATA = ${JSON.stringify(data)};
+  const DATA = ${safeJsonEmbed(data)};
 
   function toggleRow(serverRow) {
     const next = serverRow.nextElementSibling;

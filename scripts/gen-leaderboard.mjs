@@ -110,6 +110,7 @@ function scoreColor(ax) {
   return '#f0883e';               // orange
 }
 
+// Thresholds mirror scoreColor() — keep in sync.
 function scoreClass(ax) {
   if (ax >= 90) return 'score-green';
   if (ax >= 80) return 'score-blue';
@@ -268,12 +269,6 @@ function renderSection(rows, modelCols, version) {
     </section>`;
 }
 
-function safeJsonEmbed(obj) {
-  return JSON.stringify(obj)
-    .replace(/<\/script>/gi, '<\\/script>')
-    .replace(/<!--/g, '<\\!--');
-}
-
 function generateHTML(data) {
   const { families } = data.models;
   const MODEL_COLS = [
@@ -379,8 +374,6 @@ function generateHTML(data) {
   </footer>
 
   <script>
-  const DATA = ${safeJsonEmbed(data)};
-
   function toggleRow(serverRow) {
     const next = serverRow.nextElementSibling;
     if (!next || !next.classList.contains('expansion-row')) return;

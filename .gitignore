@@ -3,3 +3,4 @@ dist/
 .DS_Store
 *.key
 ax_deploy_key*
+.superpowers/

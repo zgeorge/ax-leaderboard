@@ -54,6 +54,20 @@ All optional; absent in score files produced before this date.
   `paramsValueMatchRate`; recorded so the deferred decision on weighting that annotation is made
   from real spread data. Null when fewer than two runs had a rate.
 
+### Additive fields (2026-06-11 — still schemaVersion 3): multi-judge averaging
+
+All optional; absent in single-judge score files (which remain valid unchanged). Synthesis (and
+error recovery) can now be judged by a **pool of judges spanning the two non-scored families**
+(e.g. scoring an Anthropic model: Gemini + OpenAI judges) and averaged — so no single judge family
+biases the judged 30%. See *Methodology → Multi-judge synthesis averaging*.
+
+- **`models.<id>.perJudge[]`** — each judge's own view of the judged components, including a
+  substituted `axScore` answering "what would the score be if this judge were the only one?".
+- **`canary.perJudge[]`** — per-judge gate verdicts: every judge must independently separate the
+  fixtures (clean ≥ 75 / broken ≤ 45); the top-level `pass` is true only when all of them pass.
+- **`runConfig.judgeModels`** — the full judge pool in averaging order; `judgeModel` stays the
+  first entry for backward compatibility.
+
 ## What changed in v2 (vs v1)
 
 v2 makes a score **defensible** rather than provisional:
@@ -132,6 +146,7 @@ Keyed by **exact model ID**. One block per scored model.
 | `axScoreCI95` | [number, number] \| null (opt, v3 2026-06-10) | Student-t 95% CI on the AX score (df = repeats−1, clamped to [0,100]). Null for single passes. |
 | `consistency` | number \| null (opt, v3 2026-06-10) | Cross-repeat tool-call identity (same tool + deep-equal params on the canonical success run, fraction of identical pairs). **Unweighted annotation.** Null for single passes. |
 | `paramsValueMatchRateStd` | number \| null (opt, v3 2026-06-10) | Population std of the per-run `paramsValueMatchRate`; null when <2 runs had one. |
+| `perJudge` | object[] (opt, v3 2026-06-11) | Per-judge breakdown of the judged components; present only on multi-judge runs. See below. |
 | `tasks` | object[] | Per-task results (representative first-pass sample). |
 
 ### `subScores` (object)
@@ -144,6 +159,19 @@ Keyed by **exact model ID**. One block per scored model.
 | `errorRecovery` | number 0–1 | 0.10 | LLM-judge — **absolute** synthesis quality on the error-variant run (honest failure handling, no fabrication) |
 | `tokensPerTask` | number | — | informational, unweighted |
 | `latencyMs` | number | — | informational, unweighted |
+
+### `perJudge[]` (per-judge breakdown, optional — v3 2026-06-11)
+One entry per judge in the pool, in averaging order. Each entry substitutes only THAT judge's
+synthesis/error-recovery samples into the otherwise-identical score composition (same exclusion,
+low-signal down-weighting, and renormalization rules), so its `axScore` is directly comparable to
+the pooled one. Averaged element-wise across repeats like the other model fields.
+| field | type | notes |
+|-------|------|-------|
+| `judgeModel` | string | Exact model ID of this judge. |
+| `resultSynthesis` | number 0–1 | Mean synthesis over the success-variant samples THIS judge parsed (0 by absence). |
+| `errorRecovery` | number 0–1 | Mean absolute synthesis on the error-variant samples this judge parsed (0 by absence). |
+| `axScore` | integer | The run's AX with synthesis + errorRecovery substituted by this judge's means ("what if this judge were the only one?"). Basis of the per-judge canary. |
+| `judgeFailures` | integer | Trajectories THIS judge failed to parse after its retry (the pool may still have scored them — a task is excluded from synthesis only when EVERY judge fails). |
 
 ### `tasks[]` (per-task record)
 | field | type | notes |
@@ -186,10 +214,11 @@ prompt. Lets a reader judge persona spread and distractor variety without the ra
 Live-canary result proving the engine was calibrated at scoring time.
 | field | type | notes |
 |-------|------|-------|
-| `pass` | boolean | clean ≥ 75 AND broken ≤ 45. |
+| `pass` | boolean | clean ≥ 75 AND broken ≤ 45 — and on multi-judge runs, every `perJudge` entry passing too. |
 | `cleanScore` | number | AX of the clean fixture this run. |
 | `badScore` | number | AX of the broken (low) fixture this run. (Field name kept for schema stability.) |
-| `failures` | string[] | Why it failed, if it did. |
+| `failures` | string[] | Why it failed, if it did (includes per-judge failures). |
+| `perJudge` | object[] (opt, v3 2026-06-11) | Per-judge gate verdicts: `{ judgeModel, pass, cleanScore, badScore }`, where the scores are that judge's substituted fixture axScores. Each judge must hold the same thresholds independently, so a drifted judge cannot hide inside a passing pool average. |
 
 ## `coverage` (object, optional)
 | field | type | notes |
@@ -215,7 +244,8 @@ re-weighting would double-count).
 ## `runConfig` (object, optional) — reproducibility
 | field | type | notes |
 |-------|------|-------|
-| `scoredModel` / `generationModel` / `judgeModel` | string | Exact model IDs. |
+| `scoredModel` / `generationModel` / `judgeModel` | string | Exact model IDs. On multi-judge runs `judgeModel` is the first entry of `judgeModels`. |
+| `judgeModels` | string[] (opt, v3 2026-06-11) | The full synthesis-judge pool, in averaging order. Absent on single-judge runs. |
 | `scoredTemperature` | number | Sampling temperature of the scored model. |
 | `repeats` | integer | Repeated passes. |
 | `intentCount` | integer | Intents in the eval set (v3: defaults scale with tool count). |
@@ -263,3 +293,19 @@ key returned data or hedges where data was clear; 0–2 = fabricates facts not i
 ignores an error/empty result. For empty/error outputs a high score requires honestly reporting the
 failure. Unparseable judge output is retried once, then the task is excluded and counted in
 `judgeFailures` — never scored 0.
+
+### Multi-judge synthesis averaging (2026-06-11)
+The judge pool spans the **two model families that are not being scored** (scoring Anthropic:
+Gemini + OpenAI judges; scoring Gemini: Anthropic + OpenAI; scoring OpenAI: Anthropic + Gemini), so
+the judged 30% is never self-graded and no single judge family's bias dominates — family diversity,
+averaged, substitutes for judge size. Per trajectory, the synthesis score is the **mean of the
+judges that returned a parseable verdict**; each judge keeps its own retry, and a task is excluded
+(never scored 0) only when EVERY judge fails. Three safeguards make the pool auditable:
+**(1) per-judge canary validation** — each judge must independently separate the fixtures
+(`canary.perJudge`), so a drifted judge aborts the run even if the pool average would pass;
+**(2) the per-judge breakdown** (`models.<id>.perJudge`) records each judge's standalone view, so
+inter-judge agreement is measurable on every published score (the evidence base for judge-tier
+decisions); **(3) the isolation guard** rejects any judge from the scored model's family at run
+time. Judges are deliberately fast-tier models (e.g. `gemini-2.5-flash`, `gpt-4o-mini`): the rubric
+is narrow and anchor-driven, the gate empirically proves discrimination each run, and tight output
+budgets favor models without reasoning-token overhead.

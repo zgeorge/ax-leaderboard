@@ -126,7 +126,64 @@ function escapeHtml(str) {
 }
 
 function renderExpansion(row, version) {
-  return `<div style="color:#7d8590;font-size:11px;"><!-- sub-scores: ${escapeHtml(row.name)} --></div>`;
+  const isV3 = version >= 3;
+  const subScoreDefs = isV3
+    ? [
+        { key: 'intentInterpretation', label: 'Intent', cls: 'bar-intent', weight: 0.25 },
+        { key: 'toolCallConstruction', label: 'Tools',  cls: 'bar-tools',  weight: 0.25 },
+        { key: 'staticQuality',        label: 'Static', cls: 'bar-static', weight: 0.20 },
+        { key: 'resultSynthesis',      label: 'Synth',  cls: 'bar-synth',  weight: 0.20 },
+        { key: 'errorRecovery',        label: 'Error',  cls: 'bar-error',  weight: 0.10 },
+      ]
+    : [
+        { key: 'intentInterpretation', label: 'Intent', cls: 'bar-intent', weight: 0.35 },
+        { key: 'toolCallConstruction', label: 'Tools',  cls: 'bar-tools',  weight: 0.35 },
+        { key: 'resultSynthesis',      label: 'Synth',  cls: 'bar-synth',  weight: 0.20 },
+        { key: 'errorRecovery',        label: 'Error',  cls: 'bar-error',  weight: 0.10 },
+      ];
+
+  const scoredModels = Object.entries(row.byModel);
+  if (scoredModels.length === 0) {
+    return '<div style="color:#7d8590;font-size:11px;">No scored models.</div>';
+  }
+
+  const modelBlocks = scoredModels.map(([modelId, m]) => {
+    const segments = subScoreDefs.map(def => {
+      const val = m.subScores[def.key] ?? 0;
+      const flexVal = Math.round(def.weight * val * 10000);
+      const pct = Math.round(val * 100);
+      return { cls: def.cls, label: def.label, flexVal, pct, colorCls: scoreClass(pct) };
+    });
+    const usedFlex = segments.reduce((s, seg) => s + seg.flexVal, 0);
+    const spacerFlex = Math.max(0, 10000 - usedFlex);
+
+    const barSegments = segments
+      .map(seg => `<div class="bar-segment ${seg.cls}" style="flex:${seg.flexVal}"></div>`)
+      .join('');
+    const spacer = spacerFlex > 0
+      ? `<div style="flex:${spacerFlex}"></div>`
+      : '';
+
+    const barLabels = segments
+      .map(seg => `<span style="flex:${seg.flexVal}" class="${seg.colorCls}-text">${seg.pct}% ${seg.label}</span>`)
+      .join('');
+
+    return `
+      <div>
+        <div class="model-block-label">${escapeHtml(modelId)} &nbsp;<span style="color:#7d8590">${m.axScore} &plusmn;${m.axScoreStd}</span></div>
+        <div class="bar-container">${barSegments}${spacer}</div>
+        <div class="bar-labels">${barLabels}</div>
+      </div>`;
+  }).join('');
+
+  const topFixesHtml = row.topFixes && row.topFixes.length > 0
+    ? `<div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        ${row.topFixes.map(f => `<span class="fix-item">${escapeHtml(f.issue)}</span>`).join(' &middot; ')}
+       </div>`
+    : '';
+
+  return `<div class="subscore-blocks">${modelBlocks}</div>${topFixesHtml}`;
 }
 
 function renderSection(rows, modelCols, version) {

@@ -174,7 +174,7 @@ function renderSection(rows, modelCols, version) {
         </td>
         ${modelCells}
         <td class="cov-cell col-sep">${cov}</td>
-        <td class="date-cell">${row.scoredAt}</td>
+        <td class="date-cell">${escapeHtml(row.scoredAt)}</td>
       </tr>
       <tr class="expansion-row" style="display:none">
         <td colspan="${colCount}">

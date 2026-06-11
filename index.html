@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AX Leaderboard &mdash; MCP Manifest Quality</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d1117; color: #c9d1d9; font-family: system-ui,-apple-system,'Segoe UI',sans-serif; font-size: 14px; line-height: 1.5; }
+    a { color: #388bfd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-header { padding: 32px 24px 24px; border-bottom: 1px solid #21262d; }
+    .site-header h1 { font-size: 24px; font-weight: 700; color: #e6edf3; margin-bottom: 6px; }
+    .site-header p { color: #7d8590; font-size: 13px; }
+
+    .ax-section { padding: 24px; }
+    .ax-section h2 { font-size: 16px; font-weight: 600; color: #e6edf3; margin-bottom: 16px; }
+    .v2-banner { background: #3d2b0a; border: 1px solid #d29922; border-radius: 6px; padding: 10px 14px; color: #d29922; font-size: 13px; margin-bottom: 16px; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    thead th { padding: 8px 10px; color: #7d8590; font-weight: 500; font-size: 10px; letter-spacing: .05em; text-transform: uppercase; border-bottom: 1px solid #21262d; white-space: nowrap; background: #161b22; position: sticky; top: 0; z-index: 1; }
+    th.family-anthropic { color: #58a6ff; border-bottom: 2px solid #1a3a6a; }
+    th.family-openai    { color: #3fb950; border-bottom: 2px solid #1a4a2e; }
+    th.family-google    { color: #d29922; border-bottom: 2px solid #3d2b0a; }
+    th.col-sep, td.col-sep { border-left: 1px solid #21262d; }
+    tbody tr.server-row { cursor: pointer; transition: background .1s; }
+    tbody tr.server-row:hover { background: #161b22; }
+    tbody tr.server-row.open { background: #161b22; }
+    tbody tr.expansion-row td { background: #0d1117; padding: 14px 16px 14px 48px; border-bottom: 1px solid #21262d; }
+    td { padding: 7px 10px; border-bottom: 1px solid #161b22; vertical-align: middle; }
+
+    .rank { color: #7d8590; font-size: 11px; }
+    .server-name { font-weight: 600; color: #c9d1d9; white-space: nowrap; }
+    .expand-hint { font-size: 10px; color: #7d8590; margin-left: 4px; }
+    .score-badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-weight: 600; font-size: 12px; min-width: 34px; text-align: center; }
+    .agg-score { font-size: 17px; display: block; }
+    .agg-std { font-size: 10px; color: #7d8590; display: block; }
+    .score-green  { background: #1a4a2e; color: #56d364; }
+    .score-blue   { background: #1a3a4a; color: #388bfd; }
+    .score-yellow { background: #3d2b0a; color: #d29922; }
+    .score-orange { background: #3d1f0a; color: #f0883e; }
+    .score-empty  { color: #3d444d; }
+    .score-green-text  { color: #56d364; }
+    .score-blue-text   { color: #388bfd; }
+    .score-yellow-text { color: #d29922; }
+    .score-orange-text { color: #f0883e; }
+    .model-cell   { text-align: center; }
+    .cov-cell     { text-align: center; color: #c9d1d9; white-space: nowrap; }
+    .date-cell    { text-align: right; color: #7d8590; white-space: nowrap; }
+
+    .subscore-blocks { display: flex; flex-direction: column; gap: 14px; }
+    .model-block-label { font-size: 11px; color: #c9d1d9; margin-bottom: 6px; }
+    .bar-container { display: flex; gap: 1px; background: #21262d; border-radius: 3px; height: 8px; overflow: hidden; margin-bottom: 4px; }
+    .bar-segment   { height: 8px; min-width: 1px; }
+    .bar-intent    { background: #1a4a2e; }
+    .bar-tools     { background: #1a3a4a; }
+    .bar-static    { background: #3d1a1a; }
+    .bar-synth     { background: #3d2b0a; }
+    .bar-error     { background: #3d1f0a; }
+    .bar-labels    { display: flex; gap: 1px; font-size: 9px; }
+    .bar-labels span { overflow: hidden; white-space: nowrap; }
+    .top-fixes { margin-top: 10px; font-size: 11px; }
+    .top-fixes-label { letter-spacing: .05em; text-transform: uppercase; font-size: 9px; color: #7d8590; margin-right: 4px; }
+    .fix-item { color: #c9d1d9; }
+
+    .site-footer { padding: 20px 24px; border-top: 1px solid #21262d; font-size: 12px; color: #7d8590; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .site-footer a { color: #7d8590; }
+    .site-footer a:hover { color: #c9d1d9; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>AX Leaderboard</h1>
+    <p>MCP manifest quality scores &mdash; model drivability + static design quality, no live server required. &nbsp;<a href="data/scores/SCHEMA.md">Methodology &rarr;</a></p>
+  </header>
+
+  
+    <section class="ax-section">
+      <h2>Scores &mdash; schema v3 (current rubric)</h2>
+      
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Server</th>
+              <th style="text-align:center">AX &#x2300;</th>
+              <th class="family-anthropic col-sep">Haiku</th><th class="family-anthropic">Sonnet</th><th class="family-anthropic">Opus</th><th class="family-openai col-sep">GPT-mini</th><th class="family-openai">GPT-4o</th><th class="family-openai">o3</th><th class="family-google col-sep">Flash-Lite</th><th class="family-google">Flash</th><th class="family-google">Pro</th>
+              <th class="col-sep" style="text-align:center">Coverage</th>
+              <th style="text-align:right">Scored</th>
+            </tr>
+          </thead>
+          <tbody>
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">1</td>
+        <td class="server-name">GitHub MCP <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score score-yellow">76</span>
+          <span class="agg-std">&plusmn;0.2</span>
+        </td>
+        <td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-badge score-yellow">76</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td>
+        <td class="cov-cell col-sep">24/26</td>
+        <td class="date-cell">2026-06-09</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="14">
+          <div class="subscore-blocks">
+      <div>
+        <div class="model-block-label">claude-sonnet-4-6 &nbsp;<span style="color:#7d8590">76 &plusmn;0.2</span></div>
+        <div class="bar-container"><div class="bar-segment bar-intent" style="flex:2278"></div><div class="bar-segment bar-tools" style="flex:2500"></div><div class="bar-segment bar-static" style="flex:919"></div><div class="bar-segment bar-synth" style="flex:1229"></div><div class="bar-segment bar-error" style="flex:676"></div><div style="flex:2398"></div></div>
+        <div class="bar-labels"><span style="flex:2278" class="score-green-text">91% Intent</span><span style="flex:2500" class="score-green-text">100% Tools</span><span style="flex:919" class="score-orange-text">46% Static</span><span style="flex:1229" class="score-orange-text">61% Synth</span><span style="flex:676" class="score-orange-text">68% Error</span><span style="flex:2398" aria-hidden="true"></span></div>
+      </div></div><div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        <span class="fix-item">list_issues: Tool exposes 9 params; likely overloaded — split into focused tools.</span> &middot; <span class="fix-item">update_issue: Tool exposes 9 params; likely overloaded — split into focused tools.</span> &middot; <span class="fix-item">list_pull_requests: Tool exposes 9 params; likely overloaded — split into focused tools.</span>
+       </div>
+        </td>
+      </tr></tbody>
+        </table>
+      </div>
+    </section>
+  
+    <section class="ax-section">
+      <h2>Scores &mdash; schema v2 (legacy, pending re-score)</h2>
+      
+    <div class="v2-banner">
+      &#9888; Scored under the <strong>v2 rubric</strong> (no static quality component) &mdash;
+      not comparable to v3. These servers are pending re-score.
+    </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Server</th>
+              <th style="text-align:center">AX &#x2300;</th>
+              <th class="family-anthropic col-sep">Haiku</th><th class="family-anthropic">Sonnet</th><th class="family-anthropic">Opus</th><th class="family-openai col-sep">GPT-mini</th><th class="family-openai">GPT-4o</th><th class="family-openai">o3</th><th class="family-google col-sep">Flash-Lite</th><th class="family-google">Flash</th><th class="family-google">Pro</th>
+              <th class="col-sep" style="text-align:center">Coverage</th>
+              <th style="text-align:right">Scored</th>
+            </tr>
+          </thead>
+          <tbody>
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">1</td>
+        <td class="server-name">Sentry MCP <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score score-green">92</span>
+          <span class="agg-std">&plusmn;0.5</span>
+        </td>
+        <td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-badge score-green">92</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td>
+        <td class="cov-cell col-sep">22/22</td>
+        <td class="date-cell">2026-06-09</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="14">
+          <div class="subscore-blocks">
+      <div>
+        <div class="model-block-label">claude-sonnet-4-6 &nbsp;<span style="color:#7d8590">92 &plusmn;0.5</span></div>
+        <div class="bar-container"><div class="bar-segment bar-intent" style="flex:3354"></div><div class="bar-segment bar-tools" style="flex:3500"></div><div class="bar-segment bar-synth" style="flex:1614"></div><div class="bar-segment bar-error" style="flex:759"></div><div style="flex:773"></div></div>
+        <div class="bar-labels"><span style="flex:3354" class="score-green-text">96% Intent</span><span style="flex:3500" class="score-green-text">100% Tools</span><span style="flex:1614" class="score-blue-text">81% Synth</span><span style="flex:759" class="score-yellow-text">76% Error</span><span style="flex:773" aria-hidden="true"></span></div>
+      </div></div><div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        <span class="fix-item">update_issue: Tool exposes 13 params; likely overloaded — split into focused tools.</span> &middot; <span class="fix-item">search_events: Tool exposes 11 params; likely overloaded — split into focused tools.</span> &middot; <span class="fix-item">search_issue_events: Tool exposes 10 params; likely overloaded — split into focused tools.</span>
+       </div>
+        </td>
+      </tr>
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">2</td>
+        <td class="server-name">Notion API <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score score-blue">82</span>
+          <span class="agg-std">&plusmn;0.5</span>
+        </td>
+        <td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-badge score-blue">82</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td>
+        <td class="cov-cell col-sep">22/22</td>
+        <td class="date-cell">2026-06-09</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="14">
+          <div class="subscore-blocks">
+      <div>
+        <div class="model-block-label">claude-sonnet-4-6 &nbsp;<span style="color:#7d8590">82 &plusmn;0.5</span></div>
+        <div class="bar-container"><div class="bar-segment bar-intent" style="flex:2722"></div><div class="bar-segment bar-tools" style="flex:3129"></div><div class="bar-segment bar-synth" style="flex:1606"></div><div class="bar-segment bar-error" style="flex:753"></div><div style="flex:1790"></div></div>
+        <div class="bar-labels"><span style="flex:2722" class="score-yellow-text">78% Intent</span><span style="flex:3129" class="score-blue-text">89% Tools</span><span style="flex:1606" class="score-blue-text">80% Synth</span><span style="flex:753" class="score-yellow-text">75% Error</span><span style="flex:1790" aria-hidden="true"></span></div>
+      </div></div><div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        <span class="fix-item">API-query-data-source: Tool exposes 9 params; likely overloaded — split into focused tools.</span> &middot; <span class="fix-item">API-get-user: Description is only 9 words; expand to clarify intent.</span> &middot; <span class="fix-item">API-get-user: No output schema; mock generation and result synthesis are less reliable.</span>
+       </div>
+        </td>
+      </tr>
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">3</td>
+        <td class="server-name">Memory Server <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score score-yellow">74</span>
+          <span class="agg-std">&plusmn;1.2</span>
+        </td>
+        <td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-badge score-yellow">74</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td>
+        <td class="cov-cell col-sep">9/9</td>
+        <td class="date-cell">2026-06-09</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="14">
+          <div class="subscore-blocks">
+      <div>
+        <div class="model-block-label">claude-sonnet-4-6 &nbsp;<span style="color:#7d8590">74 &plusmn;1.2</span></div>
+        <div class="bar-container"><div class="bar-segment bar-intent" style="flex:2285"></div><div class="bar-segment bar-tools" style="flex:3439"></div><div class="bar-segment bar-synth" style="flex:925"></div><div class="bar-segment bar-error" style="flex:689"></div><div style="flex:2662"></div></div>
+        <div class="bar-labels"><span style="flex:2285" class="score-orange-text">65% Intent</span><span style="flex:3439" class="score-green-text">98% Tools</span><span style="flex:925" class="score-orange-text">46% Synth</span><span style="flex:689" class="score-orange-text">69% Error</span><span style="flex:2662" aria-hidden="true"></span></div>
+      </div></div><div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        <span class="fix-item">create_entities: Description is only 8 words; expand to clarify intent.</span> &middot; <span class="fix-item">create_entities: 1 param(s) lack a description or schema.</span> &middot; <span class="fix-item">create_relations: 1 param(s) lack a description or schema.</span>
+       </div>
+        </td>
+      </tr>
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">4</td>
+        <td class="server-name">Seq. Thinking <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score score-yellow">73</span>
+          <span class="agg-std">&plusmn;1.2</span>
+        </td>
+        <td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-badge score-yellow">73</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td>
+        <td class="cov-cell col-sep">1/1</td>
+        <td class="date-cell">2026-06-09</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="14">
+          <div class="subscore-blocks">
+      <div>
+        <div class="model-block-label">claude-sonnet-4-6 &nbsp;<span style="color:#7d8590">73 &plusmn;1.2</span></div>
+        <div class="bar-container"><div class="bar-segment bar-intent" style="flex:2771"></div><div class="bar-segment bar-tools" style="flex:3500"></div><div class="bar-segment bar-synth" style="flex:853"></div><div class="bar-segment bar-error" style="flex:127"></div><div style="flex:2749"></div></div>
+        <div class="bar-labels"><span style="flex:2771" class="score-yellow-text">79% Intent</span><span style="flex:3500" class="score-green-text">100% Tools</span><span style="flex:853" class="score-orange-text">43% Synth</span><span style="flex:127" class="score-orange-text">13% Error</span><span style="flex:2749" aria-hidden="true"></span></div>
+      </div></div><div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        <span class="fix-item">sequentialthinking: Tool exposes 9 params; likely overloaded — split into focused tools.</span> &middot; <span class="fix-item">sequentialthinking: Param names mix casing conventions (e.g. snake_case and camelCase).</span>
+       </div>
+        </td>
+      </tr>
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">5</td>
+        <td class="server-name">Filesystem <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score score-yellow">72</span>
+          <span class="agg-std">&plusmn;3.3</span>
+        </td>
+        <td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-badge score-yellow">72</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td>
+        <td class="cov-cell col-sep">13/14</td>
+        <td class="date-cell">2026-06-09</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="14">
+          <div class="subscore-blocks">
+      <div>
+        <div class="model-block-label">claude-sonnet-4-6 &nbsp;<span style="color:#7d8590">72 &plusmn;3.3</span></div>
+        <div class="bar-container"><div class="bar-segment bar-intent" style="flex:1944"></div><div class="bar-segment bar-tools" style="flex:3009"></div><div class="bar-segment bar-synth" style="flex:1406"></div><div class="bar-segment bar-error" style="flex:807"></div><div style="flex:2834"></div></div>
+        <div class="bar-labels"><span style="flex:1944" class="score-orange-text">56% Intent</span><span style="flex:3009" class="score-blue-text">86% Tools</span><span style="flex:1406" class="score-yellow-text">70% Synth</span><span style="flex:807" class="score-blue-text">81% Error</span><span style="flex:2834" aria-hidden="true"></span></div>
+      </div></div><div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        <span class="fix-item">read_file: 1 param(s) lack a description or schema.</span> &middot; <span class="fix-item">read_text_file: 1 param(s) lack a description or schema.</span> &middot; <span class="fix-item">read_media_file: 1 param(s) lack a description or schema.</span>
+       </div>
+        </td>
+      </tr>
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">6</td>
+        <td class="server-name">Everything <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score score-orange">68</span>
+          <span class="agg-std">&plusmn;0.8</span>
+        </td>
+        <td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-badge score-orange">68</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td>
+        <td class="cov-cell col-sep">13/13</td>
+        <td class="date-cell">2026-06-09</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="14">
+          <div class="subscore-blocks">
+      <div>
+        <div class="model-block-label">claude-sonnet-4-6 &nbsp;<span style="color:#7d8590">68 &plusmn;0.8</span></div>
+        <div class="bar-container"><div class="bar-segment bar-intent" style="flex:2625"></div><div class="bar-segment bar-tools" style="flex:2333"></div><div class="bar-segment bar-synth" style="flex:1325"></div><div class="bar-segment bar-error" style="flex:526"></div><div style="flex:3191"></div></div>
+        <div class="bar-labels"><span style="flex:2625" class="score-yellow-text">75% Intent</span><span style="flex:2333" class="score-orange-text">67% Tools</span><span style="flex:1325" class="score-orange-text">66% Synth</span><span style="flex:526" class="score-orange-text">53% Error</span><span style="flex:3191" aria-hidden="true"></span></div>
+      </div></div><div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        <span class="fix-item">echo: Description is only 5 words; expand to clarify intent.</span> &middot; <span class="fix-item">echo: No output schema; mock generation and result synthesis are less reliable.</span> &middot; <span class="fix-item">get-annotated-message: No output schema; mock generation and result synthesis are less reliable.</span>
+       </div>
+        </td>
+      </tr>
+      <tr class="server-row" onclick="toggleRow(this)">
+        <td class="rank">7</td>
+        <td class="server-name">Playwright <span class="expand-hint">&#9658;</span></td>
+        <td style="text-align:center">
+          <span class="score-badge agg-score score-orange">67</span>
+          <span class="agg-std">&plusmn;1.4</span>
+        </td>
+        <td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-badge score-orange">67</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell col-sep"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td><td class="model-cell"><span class="score-empty">&mdash;</span></td>
+        <td class="cov-cell col-sep">23/23</td>
+        <td class="date-cell">2026-06-09</td>
+      </tr>
+      <tr class="expansion-row" style="display:none">
+        <td colspan="14">
+          <div class="subscore-blocks">
+      <div>
+        <div class="model-block-label">claude-sonnet-4-6 &nbsp;<span style="color:#7d8590">67 &plusmn;1.4</span></div>
+        <div class="bar-container"><div class="bar-segment bar-intent" style="flex:2139"></div><div class="bar-segment bar-tools" style="flex:2232"></div><div class="bar-segment bar-synth" style="flex:1783"></div><div class="bar-segment bar-error" style="flex:574"></div><div style="flex:3272"></div></div>
+        <div class="bar-labels"><span style="flex:2139" class="score-orange-text">61% Intent</span><span style="flex:2232" class="score-orange-text">64% Tools</span><span style="flex:1783" class="score-blue-text">89% Synth</span><span style="flex:574" class="score-orange-text">57% Error</span><span style="flex:3272" aria-hidden="true"></span></div>
+      </div></div><div class="top-fixes">
+        <span class="top-fixes-label">Top fixes</span>
+        <span class="fix-item">browser_close: Description is only 3 words; expand to clarify intent.</span> &middot; <span class="fix-item">browser_close: No output schema; mock generation and result synthesis are less reliable.</span> &middot; <span class="fix-item">browser_resize: Description is only 4 words; expand to clarify intent.</span>
+       </div>
+        </td>
+      </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <a href="data/scores/SCHEMA.md">Score schema</a>
+    <a href="https://github.com/zgeorge/ax-leaderboard">GitHub</a>
+    <span>Submit: PR your manifest to <code>data/manifests/</code> &mdash; no live server required</span>
+    <span style="margin-left:auto">Generated 2026-06-11</span>
+  </footer>
+
+  <script>
+  const DATA = {"generatedAt":"2026-06-11T07:30:09.061Z","models":{"schemaVersion":1,"updatedAt":"2026-06-08T00:00:00Z","note":"Full 9-model target matrix. The current proof of concept scores ONLY anthropic.mid (claude-sonnet-4-6) end-to-end. Other cells document intent and activate when OpenAI/Google providers land. Verify every ID against provider docs before a real multi-model sweep; never use 'latest' aliases.","pocModel":"claude-sonnet-4-6","families":{"anthropic":{"cheap":{"id":"claude-haiku-4-5-20251001","label":"Haiku 4.5"},"mid":{"id":"claude-sonnet-4-6","label":"Sonnet 4.6"},"frontier":{"id":"claude-opus-4-8","label":"Opus 4.8"}},"openai":{"cheap":{"id":"gpt-4o-mini","label":"GPT-4o mini"},"mid":{"id":"gpt-4o","label":"GPT-4o"},"frontier":{"id":"o3","label":"o3"}},"google":{"cheap":{"id":"gemini-2.5-flash-lite","label":"Gemini 2.5 Flash-Lite"},"mid":{"id":"gemini-2.5-flash","label":"Gemini 2.5 Flash"},"frontier":{"id":"gemini-2.5-pro","label":"Gemini 2.5 Pro"}}}},"v3":[{"slug":"github","schemaVersion":3,"name":"GitHub MCP","aggregate":76,"aggregateStd":0.2,"byModel":{"claude-sonnet-4-6":{"axScore":76,"axScoreStd":0.2,"subScores":{"intentInterpretation":0.9111111111111111,"toolCallConstruction":1,"staticQuality":0.4596153846153847,"resultSynthesis":0.6144444444444445,"errorRecovery":0.6763888888888889},"scoreWeights":{"intentInterpretation":0.25,"toolCallConstruction":0.25,"staticQuality":0.2,"resultSynthesis":0.2,"errorRecovery":0.1}}},"coverage":{"toolsTotal":26,"toolsCovered":24,"ratio":0.9230769230769231,"uncoveredTools":["get_pull_request_comments","get_pull_request_reviews"],"distractorCount":6,"distractorRatio":0.2,"warning":"Eval set exercised 24/26 tools; uncovered tools were NOT evaluated. Re-run with --intents 39 or higher for full coverage."},"topFixes":[{"issue":"list_issues: Tool exposes 9 params; likely overloaded — split into focused tools.","impact":"high","effort":"medium"},{"issue":"update_issue: Tool exposes 9 params; likely overloaded — split into focused tools.","impact":"high","effort":"medium"},{"issue":"list_pull_requests: Tool exposes 9 params; likely overloaded — split into focused tools.","impact":"high","effort":"medium"}],"scoredAt":"2026-06-09"}],"v2":[{"slug":"sentry","schemaVersion":2,"name":"Sentry MCP","aggregate":92,"aggregateStd":0.5,"byModel":{"claude-sonnet-4-6":{"axScore":92,"axScoreStd":0.5,"subScores":{"intentInterpretation":0.9583333333333334,"toolCallConstruction":1,"staticQuality":null,"resultSynthesis":0.8069444444444445,"errorRecovery":0.7590909090909091},"scoreWeights":{"intentInterpretation":0.35,"toolCallConstruction":0.35,"resultSynthesis":0.2,"errorRecovery":0.1}}},"coverage":{"toolsTotal":22,"toolsCovered":22,"ratio":1,"uncoveredTools":[],"distractorCount":2,"distractorRatio":0.08333333333333333},"topFixes":[{"issue":"update_issue: Tool exposes 13 params; likely overloaded — split into focused tools.","impact":"high","effort":"medium"},{"issue":"search_events: Tool exposes 11 params; likely overloaded — split into focused tools.","impact":"high","effort":"medium"},{"issue":"search_issue_events: Tool exposes 10 params; likely overloaded — split into focused tools.","impact":"high","effort":"medium"}],"scoredAt":"2026-06-09"},{"slug":"notion","schemaVersion":2,"name":"Notion API","aggregate":82,"aggregateStd":0.5,"byModel":{"claude-sonnet-4-6":{"axScore":82,"axScoreStd":0.5,"subScores":{"intentInterpretation":0.7777777777777777,"toolCallConstruction":0.8939393939393939,"staticQuality":null,"resultSynthesis":0.8027777777777779,"errorRecovery":0.753030303030303},"scoreWeights":{"intentInterpretation":0.35,"toolCallConstruction":0.35,"resultSynthesis":0.2,"errorRecovery":0.1}}},"coverage":{"toolsTotal":22,"toolsCovered":22,"ratio":1,"uncoveredTools":[],"distractorCount":2,"distractorRatio":0.08333333333333333},"topFixes":[{"issue":"API-query-data-source: Tool exposes 9 params; likely overloaded — split into focused tools.","impact":"high","effort":"medium"},{"issue":"API-get-user: Description is only 9 words; expand to clarify intent.","impact":"medium","effort":"low"},{"issue":"API-get-user: No output schema; mock generation and result synthesis are less reliable.","impact":"medium","effort":"low"}],"scoredAt":"2026-06-09"},{"slug":"memory","schemaVersion":2,"name":"Memory Server","aggregate":74,"aggregateStd":1.2,"byModel":{"claude-sonnet-4-6":{"axScore":74,"axScoreStd":1.2,"subScores":{"intentInterpretation":0.6527777777777777,"toolCallConstruction":0.9824561403508771,"staticQuality":null,"resultSynthesis":0.4625000000000001,"errorRecovery":0.6894736842105263},"scoreWeights":{"intentInterpretation":0.35,"toolCallConstruction":0.35,"resultSynthesis":0.2,"errorRecovery":0.1}}},"coverage":{"toolsTotal":9,"toolsCovered":9,"ratio":1,"uncoveredTools":[],"distractorCount":5,"distractorRatio":0.20833333333333334},"topFixes":[{"issue":"create_entities: Description is only 8 words; expand to clarify intent.","impact":"medium","effort":"low"},{"issue":"create_entities: 1 param(s) lack a description or schema.","impact":"medium","effort":"low"},{"issue":"create_relations: 1 param(s) lack a description or schema.","impact":"medium","effort":"low"}],"scoredAt":"2026-06-09"},{"slug":"sequential-thinking","schemaVersion":2,"name":"Seq. Thinking","aggregate":73,"aggregateStd":1.2,"byModel":{"claude-sonnet-4-6":{"axScore":73,"axScoreStd":1.2,"subScores":{"intentInterpretation":0.7916666666666666,"toolCallConstruction":1,"staticQuality":null,"resultSynthesis":0.4263888888888889,"errorRecovery":0.12745098039215688},"scoreWeights":{"intentInterpretation":0.35,"toolCallConstruction":0.35,"resultSynthesis":0.2,"errorRecovery":0.1}}},"coverage":{"toolsTotal":1,"toolsCovered":1,"ratio":1,"uncoveredTools":[],"distractorCount":7,"distractorRatio":0.2916666666666667},"topFixes":[{"issue":"sequentialthinking: Tool exposes 9 params; likely overloaded — split into focused tools.","impact":"high","effort":"medium"},{"issue":"sequentialthinking: Param names mix casing conventions (e.g. snake_case and camelCase).","impact":"low","effort":"low"}],"scoredAt":"2026-06-09"},{"slug":"filesystem","schemaVersion":2,"name":"Filesystem","aggregate":72,"aggregateStd":3.3,"byModel":{"claude-sonnet-4-6":{"axScore":72,"axScoreStd":3.3,"subScores":{"intentInterpretation":0.5555555555555555,"toolCallConstruction":0.8596491228070176,"staticQuality":null,"resultSynthesis":0.7027777777777778,"errorRecovery":0.8070175438596493},"scoreWeights":{"intentInterpretation":0.35,"toolCallConstruction":0.35,"resultSynthesis":0.2,"errorRecovery":0.1}}},"coverage":{"toolsTotal":14,"toolsCovered":13,"ratio":0.9285714285714286,"uncoveredTools":["read_file"],"distractorCount":5,"distractorRatio":0.20833333333333334},"topFixes":[{"issue":"read_file: 1 param(s) lack a description or schema.","impact":"medium","effort":"low"},{"issue":"read_text_file: 1 param(s) lack a description or schema.","impact":"medium","effort":"low"},{"issue":"read_media_file: 1 param(s) lack a description or schema.","impact":"medium","effort":"low"}],"scoredAt":"2026-06-09"},{"slug":"everything","schemaVersion":2,"name":"Everything","aggregate":68,"aggregateStd":0.8,"byModel":{"claude-sonnet-4-6":{"axScore":68,"axScoreStd":0.8,"subScores":{"intentInterpretation":0.75,"toolCallConstruction":0.6666666666666666,"staticQuality":null,"resultSynthesis":0.6625000000000001,"errorRecovery":0.525925925925926},"scoreWeights":{"intentInterpretation":0.35,"toolCallConstruction":0.35,"resultSynthesis":0.2,"errorRecovery":0.1}}},"coverage":{"toolsTotal":13,"toolsCovered":13,"ratio":1,"uncoveredTools":[],"distractorCount":6,"distractorRatio":0.25},"topFixes":[{"issue":"echo: Description is only 5 words; expand to clarify intent.","impact":"medium","effort":"low"},{"issue":"echo: No output schema; mock generation and result synthesis are less reliable.","impact":"medium","effort":"low"},{"issue":"get-annotated-message: No output schema; mock generation and result synthesis are less reliable.","impact":"medium","effort":"low"}],"scoredAt":"2026-06-09"},{"slug":"playwright","schemaVersion":2,"name":"Playwright","aggregate":67,"aggregateStd":1.4,"byModel":{"claude-sonnet-4-6":{"axScore":67,"axScoreStd":1.4,"subScores":{"intentInterpretation":0.6111111111111112,"toolCallConstruction":0.6376811594202899,"staticQuality":null,"resultSynthesis":0.8916666666666666,"errorRecovery":0.573913043478261},"scoreWeights":{"intentInterpretation":0.35,"toolCallConstruction":0.35,"resultSynthesis":0.2,"errorRecovery":0.1}}},"coverage":{"toolsTotal":23,"toolsCovered":23,"ratio":1,"uncoveredTools":[],"distractorCount":1,"distractorRatio":0.041666666666666664},"topFixes":[{"issue":"browser_close: Description is only 3 words; expand to clarify intent.","impact":"medium","effort":"low"},{"issue":"browser_close: No output schema; mock generation and result synthesis are less reliable.","impact":"medium","effort":"low"},{"issue":"browser_resize: Description is only 4 words; expand to clarify intent.","impact":"medium","effort":"low"}],"scoredAt":"2026-06-09"}]};
+
+  function toggleRow(serverRow) {
+    const next = serverRow.nextElementSibling;
+    if (!next || !next.classList.contains('expansion-row')) return;
+    const isOpen = next.style.display !== 'none';
+    next.style.display = isOpen ? 'none' : '';
+    serverRow.classList.toggle('open', !isOpen);
+    const hint = serverRow.querySelector('.expand-hint');
+    if (hint) hint.textContent = isOpen ? '▸' : '▾';
+  }
+  </script>
+</body>
+</html>
